@@ -202,6 +202,6 @@ export const config = {
   //  - Our own honeypot + admin API endpoints (so middleware's internal
   //    fetch to /api/honeypot doesn't get re-blocked by itself)
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|logo.svg|Baraar_Sreesha_Resume_ATS_2026.pdf|api/honeypot|api/admin).*)",
+    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|llm.txt|logo.svg|Baraar_Sreesha_Resume_ATS_2026.pdf|api/honeypot|api/admin|api/track|blog).*)",
   ],
 };

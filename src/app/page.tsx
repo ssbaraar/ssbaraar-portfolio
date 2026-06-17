@@ -7,6 +7,7 @@ import { HomePage } from "@/components/portfolio/home-page";
 import { BlogIndex } from "@/components/portfolio/blog-index";
 import { BlogPostPage } from "@/components/portfolio/blog-post-page";
 import { blogPosts } from "@/lib/blog-posts";
+import { getAllPosts, getPostBySlug } from "@/lib/storage";
 import type { Metadata } from "next";
 
 type SearchParams = {
@@ -17,13 +18,14 @@ type SearchParams = {
 /**
  * Server component — reads URL params and renders the right view.
  *
- * Routes (all on `/` — single-page app pattern):
+ * Routes (all on `/`):
  *   /                  → homepage (portfolio)
  *   /?view=blog        → blog index (full screen, all posts)
  *   /?blog=<slug>      → full-screen blog post
  *
- * Server-rendered for SEO: built-in blog posts are in the bundle,
- * so individual post pages get proper SSR + metadata + JSON-LD.
+ * Server-rendered for SEO: built-in blog posts are in the bundle.
+ * Stored posts (created via admin panel) are fetched from KV/file storage
+ * so they're SSR'd too — visible to all visitors + indexed by Google.
  */
 export default async function Home({
   searchParams,
@@ -34,20 +36,25 @@ export default async function Home({
 
   // Full-screen blog post view
   if (params.blog) {
-    const post = blogPosts.find((p) => p.slug === params.blog);
+    // Try storage first (admin-created posts), then built-in
+    const storedPost = await getPostBySlug(params.blog);
+    const post = storedPost || blogPosts.find((p) => p.slug === params.blog);
+
     if (post) {
+      // Fetch all posts for the "related posts" section
+      const allPosts = await getAllPosts();
       return (
         <div className="relative flex min-h-screen flex-col bg-background">
           <AntiInspect />
           <CursorGlow />
-          <BlogPostPage post={post} allPosts={blogPosts} />
+          <BlogPostPage post={post} allPosts={allPosts} />
           <Footer />
           <AdminPanel />
         </div>
       );
     }
-    // If slug doesn't match a built-in post, fall through to client-side
-    // component that can also check localStorage (for admin-panel posts)
+
+    // Fall through to client component (checks localStorage as last resort)
     return (
       <div className="relative flex min-h-screen flex-col bg-background">
         <AntiInspect />
@@ -86,7 +93,8 @@ export async function generateMetadata({
   const params = await searchParams;
 
   if (params.blog) {
-    const post = blogPosts.find((p) => p.slug === params.blog);
+    const storedPost = await getPostBySlug(params.blog);
+    const post = storedPost || blogPosts.find((p) => p.slug === params.blog);
     if (post) {
       return {
         title: `${post.title} — Baraar Sreesha`,
@@ -100,11 +108,13 @@ export async function generateMetadata({
           publishedTime: post.publishedAt,
           authors: [post.author.name],
           siteName: "Baraar Sreesha",
+          images: post.coverImage ? [{ url: post.coverImage }] : undefined,
         },
         twitter: {
           card: "summary_large_image",
           title: post.title,
           description: post.excerpt,
+          images: post.coverImage ? [post.coverImage] : undefined,
         },
       };
     }

@@ -19,7 +19,8 @@ export type BlogBlock =
   | { type: "quote"; text: string; cite?: string }
   | { type: "code"; lang?: string; code: string }
   | { type: "callout"; variant: "info" | "warn" | "tip"; title?: string; text: string }
-  | { type: "stat"; value: string; label: string };
+  | { type: "stat"; value: string; label: string }
+  | { type: "image"; src: string; alt: string; caption?: string };
 
 export type BlogPost = {
   slug: string;
@@ -37,6 +38,7 @@ export type BlogPost = {
     role: string;
   };
   content: BlogBlock[];
+  coverImage?: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -56,6 +58,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: "11 min",
     emoji: "🏗️",
     accent: "var(--lime)",
+    coverImage: "/blog/n8n-gcp-cover.svg",
     keywords: [
       "self-host n8n",
       "n8n GCP",
@@ -338,6 +341,7 @@ find /tmp -name "n8n-backup-*.sql.gz" -mtime +7 -delete
     readingTime: "13 min",
     emoji: "🤖",
     accent: "var(--coral)",
+    coverImage: "/blog/langgraph-crewai-autogen-cover.svg",
     keywords: [
       "LangGraph vs CrewAI",
       "LangGraph vs AutoGen",
@@ -623,6 +627,7 @@ result = crew.kickoff(inputs={"company_name": "Acme Corp"})`,
     readingTime: "9 min",
     emoji: "💸",
     accent: "var(--lavender)",
+    coverImage: "/blog/clay-pipeline-cover.svg",
     keywords: [
       "Clay pipeline",
       "replace Apollo ZoomInfo",

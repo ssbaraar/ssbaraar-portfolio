@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="lime1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#84cc16"/>
+      <stop offset="100%" stop-color="#65a30d"/>
+    </linearGradient>
+    <filter id="glow1">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <!-- Grid -->
+  <g opacity="0.08" stroke="#84cc16" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  <!-- Glowing blobs -->
+  <circle cx="200" cy="150" r="120" fill="#84cc16" opacity="0.15" filter="url(#glow1)"/>
+  <circle cx="1000" cy="500" r="100" fill="#ff6b5b" opacity="0.12" filter="url(#glow1)"/>
+  <!-- Terminal window -->
+  <g transform="translate(150, 280)">
+    <rect width="900" height="280" rx="16" fill="#1c2128" stroke="#30363d" stroke-width="2"/>
+    <circle cx="32" cy="32" r="8" fill="#ff6b5b"/>
+    <circle cx="56" cy="32" r="8" fill="#ffc857"/>
+    <circle cx="80" cy="32" r="8" fill="#84cc16"/>
+    <text x="450" y="38" text-anchor="middle" fill="#8b949e" font-family="monospace" font-size="14">root@n8n-gcp:~/docker-compose</text>
+    <text x="32" y="90" fill="#84cc16" font-family="monospace" font-size="16">$ docker compose up -d</text>
+    <text x="32" y="120" fill="#8b949e" font-family="monospace" font-size="14">[+] Running 3/3</text>
+    <text x="32" y="145" fill="#8b949e" font-family="monospace" font-size="14"> ✔ Network n8n_default  Created</text>
+    <text x="32" y="170" fill="#8b949e" font-family="monospace" font-size="14"> ✔ Container postgres    Started</text>
+    <text x="32" y="195" fill="#8b949e" font-family="monospace" font-size="14"> ✔ Container n8n         Started</text>
+    <text x="32" y="225" fill="#84cc16" font-family="monospace" font-size="16">$ curl https://n8n.yourdomain.com ✓</text>
+  </g>
+  <!-- Title -->
+  <text x="600" y="120" text-anchor="middle" fill="#f0f6fc" font-family="sans-serif" font-size="48" font-weight="bold">Self-hosting n8n on GCP</text>
+  <text x="600" y="170" text-anchor="middle" fill="#84cc16" font-family="sans-serif" font-size="22" font-weight="500">Docker · PostgreSQL · Nginx · free SSL</text>
+  <!-- Cost badge -->
+  <g transform="translate(900, 100)">
+    <rect x="-90" y="-22" width="180" height="44" rx="22" fill="url(#lime1)"/>
+    <text x="0" y="6" text-anchor="middle" fill="#0d1117" font-family="sans-serif" font-size="16" font-weight="bold">$500/mo → $12/mo</text>
+  </g>
+</svg>

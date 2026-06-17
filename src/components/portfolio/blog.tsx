@@ -40,7 +40,18 @@ function BlogCard({ post }: { post: StoredPost }) {
       href={`/?blog=${post.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-foreground/15"
     >
-      <div className="h-1.5 w-full" style={{ background: post.accent }} />
+      {post.coverImage ? (
+        <div className="aspect-[1200/630] overflow-hidden border-b border-border bg-secondary/30">
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        <div className="h-1.5 w-full" style={{ background: post.accent }} />
+      )}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-4 flex items-center gap-2 text-xs">
           <span

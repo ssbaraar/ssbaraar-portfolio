@@ -15,6 +15,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { blogPosts, type BlogPost, type BlogBlock } from "@/lib/blog-posts";
+import { PageViewTracker } from "@/components/portfolio/page-view-tracker";
 
 // ─── Block renderer (shared with the old modal) ────────────────────────────
 function BlogBlockView({ block }: { block: BlogBlock }) {
@@ -141,6 +142,24 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
           </div>
           <div className="text-sm text-muted-foreground">{block.label}</div>
         </div>
+      );
+    case "image":
+      return (
+        <figure className="my-6">
+          <div className="overflow-hidden rounded-2xl border border-border bg-card/40">
+            <img
+              src={block.src}
+              alt={block.alt}
+              className="h-auto w-full"
+              loading="lazy"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="mt-2 text-center text-xs text-muted-foreground">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     default:
       return null;
@@ -448,11 +467,28 @@ export function BlogPostPage(props: BlogPostPageProps) {
       <ArticleJsonLd post={post} />
       <ReadingProgress />
       <BlogNavBar slug={post.slug} />
+      <PageViewTracker />
 
       <main className="flex-1">
         {/* Article hero */}
         <section className="pt-10 pb-8 sm:pt-16 sm:pb-12">
           <div className="mx-auto max-w-3xl px-4 sm:px-6">
+            {/* Cover image */}
+            {post.coverImage && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+                className="mb-8 overflow-hidden rounded-3xl border border-border bg-card/40"
+              >
+                <img
+                  src={post.coverImage}
+                  alt={`${post.title} — cover image`}
+                  className="h-auto w-full"
+                />
+              </motion.div>
+            )}
+
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}

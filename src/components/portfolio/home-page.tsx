@@ -18,15 +18,12 @@ import { Footer } from "@/components/portfolio/footer";
 import { CursorGlow } from "@/components/portfolio/cursor-glow";
 import { AntiInspect } from "@/components/portfolio/anti-inspect";
 import { AdminPanel } from "@/components/portfolio/admin-panel";
+import { PageViewTracker } from "@/components/portfolio/page-view-tracker";
 
-/**
- * Homepage — full portfolio single-page experience.
- * Routes to blog index or full-screen blog post are handled
- * by the server component in app/page.tsx.
- */
 export function HomePage() {
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
+      <PageViewTracker />
       <AntiInspect />
       <CursorGlow />
       <Navbar />

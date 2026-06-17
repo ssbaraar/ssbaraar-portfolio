@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#1a1f2e"/>
+    </linearGradient>
+    <linearGradient id="amber3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffc857"/>
+      <stop offset="100%" stop-color="#ff8c42"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+  <!-- Money / data flow visualization -->
+  <!-- Old subscription (crossed out) -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="280" height="160" rx="16" fill="#1c2128" stroke="#ff6b5b" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="140" y="40" text-anchor="middle" fill="#ff6b5b" font-family="monospace" font-size="14" letter-spacing="2">BEFORE</text>
+    <text x="140" y="80" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">Apollo + ZoomInfo</text>
+    <text x="140" y="120" text-anchor="middle" fill="#ff6b5b" font-family="sans-serif" font-size="36" font-weight="bold">$2,000</text>
+    <text x="140" y="145" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">/ month · 60-90d stale</text>
+    <line x1="20" y1="20" x2="260" y2="140" stroke="#ff6b5b" stroke-width="3" opacity="0.6"/>
+  </g>
+  <!-- Arrow -->
+  <g transform="translate(420, 270)">
+    <path d="M 0 30 L 100 30 L 100 0 L 160 60 L 100 120 L 100 90 L 0 90 Z" fill="url(#amber3)" opacity="0.8"/>
+    <text x="80" y="80" text-anchor="middle" fill="#0d1117" font-family="sans-serif" font-size="14" font-weight="bold">Clay</text>
+  </g>
+  <!-- New pipeline -->
+  <g transform="translate(620, 200)">
+    <rect x="0" y="0" width="280" height="160" rx="16" fill="#1c2128" stroke="#84cc16" stroke-width="2"/>
+    <text x="140" y="40" text-anchor="middle" fill="#84cc16" font-family="monospace" font-size="14" letter-spacing="2">AFTER</text>
+    <text x="140" y="80" text-anchor="middle" fill="#e6edf3" font-family="sans-serif" font-size="14">Custom Clay pipeline</text>
+    <text x="140" y="120" text-anchor="middle" fill="#84cc16" font-family="sans-serif" font-size="36" font-weight="bold">~$280</text>
+    <text x="140" y="145" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">/ month · 7-14d fresh</text>
+  </g>
+  <!-- Pipeline nodes -->
+  <g transform="translate(950, 240)">
+    <circle cx="40" cy="40" r="30" fill="#1c2128" stroke="#a78bfa" stroke-width="2"/>
+    <text x="40" y="48" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="14" font-weight="bold">S</text>
+    <circle cx="120" cy="40" r="30" fill="#1c2128" stroke="#ff6b5b" stroke-width="2"/>
+    <text x="120" y="48" text-anchor="middle" fill="#ff6b5b" font-family="sans-serif" font-size="14" font-weight="bold">E</text>
+    <circle cx="80" cy="120" r="30" fill="#1c2128" stroke="#84cc16" stroke-width="2"/>
+    <text x="80" y="128" text-anchor="middle" fill="#84cc16" font-family="sans-serif" font-size="14" font-weight="bold">CRM</text>
+    <line x1="40" y1="40" x2="120" y2="40" stroke="#8b949e" stroke-width="2"/>
+    <line x1="120" y1="40" x2="80" y2="120" stroke="#8b949e" stroke-width="2"/>
+    <line x1="40" y1="40" x2="80" y2="120" stroke="#8b949e" stroke-width="2" stroke-dasharray="2 4"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="100" text-anchor="middle" fill="#f0f6fc" font-family="sans-serif" font-size="44" font-weight="bold">$2,000/mo → ~$280/mo</text>
+  <text x="600" y="150" text-anchor="middle" fill="#84cc16" font-family="sans-serif" font-size="22">Custom Clay pipeline · 5-10x fresher data</text>
+  <!-- Bottom stats -->
+  <g transform="translate(0, 480)">
+    <text x="300" y="40" text-anchor="middle" fill="#ffc857" font-family="sans-serif" font-size="32" font-weight="bold">5-10x</text>
+    <text x="300" y="70" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">fresher data</text>
+    <text x="600" y="40" text-anchor="middle" fill="#84cc16" font-family="sans-serif" font-size="32" font-weight="bold">2,400+</text>
+    <text x="600" y="70" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">leads (was 200)</text>
+    <text x="900" y="40" text-anchor="middle" fill="#a78bfa" font-family="sans-serif" font-size="32" font-weight="bold">11 days</text>
+    <text x="900" y="70" text-anchor="middle" fill="#8b949e" font-family="sans-serif" font-size="14">payback period</text>
+  </g>
+</svg>
