@@ -44,8 +44,8 @@ const channels = [
   {
     icon: Boxes,
     label: "HuggingFace",
-    value: "relnse",
-    href: "https://huggingface.co/relnse",
+    value: "ssbaraar",
+    href: "https://huggingface.co/ssbaraar",
     accent: "var(--mint)",
   },
 ];

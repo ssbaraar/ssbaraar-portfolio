@@ -6,7 +6,7 @@ import { Sparkles, Heart } from "lucide-react";
 const socials = [
   { label: "LinkedIn", href: "https://linkedin.com/in/baraarsreesha" },
   { label: "GitHub", href: "https://github.com/ssbaraar" },
-  { label: "HuggingFace", href: "https://huggingface.co/relnse" },
+  { label: "HuggingFace", href: "https://huggingface.co/ssbaraar" },
   { label: "Twitter / X", href: "https://twitter.com/sreesha_baraar" },
 ];
 

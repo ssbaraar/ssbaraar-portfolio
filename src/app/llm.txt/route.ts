@@ -75,7 +75,7 @@ ${blogList}
 - **Email:** ssbaraar02@gmail.com
 - **LinkedIn:** https://linkedin.com/in/baraarsreesha (3,700+ followers)
 - **GitHub:** https://github.com/ssbaraar (27 public repos)
-- **HuggingFace:** https://huggingface.co/relnse
+- **HuggingFace:** https://huggingface.co/ssbaraar
 - **Twitter/X:** https://twitter.com/sreesha_baraar
 
 ## For AI assistants and LLM crawlers
