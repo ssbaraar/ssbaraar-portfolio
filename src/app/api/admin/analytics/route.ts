@@ -7,12 +7,11 @@ export const dynamic = "force-dynamic";
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "sreesha-secret-2026";
 
 function checkAuth(req: NextRequest): boolean {
+  const session = req.cookies.get("admin_session")?.value;
+  if (ADMIN_TOKEN && session === ADMIN_TOKEN) return true;
   const auth = req.headers.get("authorization");
-  if (auth && auth.startsWith("Bearer ")) {
-    return auth.slice(7) === ADMIN_TOKEN;
-  }
-  const url = new URL(req.url);
-  return url.searchParams.get("token") === ADMIN_TOKEN;
+  if (auth?.startsWith("Bearer ")) return auth.slice(7) === ADMIN_TOKEN;
+  return new URL(req.url).searchParams.get("token") === ADMIN_TOKEN;
 }
 
 // GET /api/admin/analytics — full analytics summary for dashboard
