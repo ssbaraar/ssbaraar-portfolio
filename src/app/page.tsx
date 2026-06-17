@@ -14,6 +14,7 @@ import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 import { CursorGlow } from "@/components/portfolio/cursor-glow";
 import { AntiInspect } from "@/components/portfolio/anti-inspect";
+import { AdminPanel } from "@/components/portfolio/admin-panel";
 
 export default function Home() {
   return (
@@ -36,6 +37,8 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      {/* Hidden admin panel — opens when URL contains ?admin=1 */}
+      <AdminPanel />
     </div>
   );
 }

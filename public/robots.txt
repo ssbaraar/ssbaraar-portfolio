@@ -1,7 +1,11 @@
+# Legit search engines — allow full crawl
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +14,58 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# Block known SEO scrapers + scanners entirely
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: SerpstatBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SEOkicks
+Disallow: /
+
+User-agent: BacklinkCrawler
+Disallow: /
+
+# Everything else — allowed, but skip admin/honeypot paths
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /.env
+Disallow: /wp-admin
+
+Sitemap: https://baraarsreesha.com/sitemap.xml
