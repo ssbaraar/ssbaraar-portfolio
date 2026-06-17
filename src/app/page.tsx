@@ -13,10 +13,12 @@ import { FAQ } from "@/components/portfolio/faq";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 import { CursorGlow } from "@/components/portfolio/cursor-glow";
+import { AntiInspect } from "@/components/portfolio/anti-inspect";
 
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
+      <AntiInspect />
       <CursorGlow />
       <Navbar />
       <main className="flex-1">

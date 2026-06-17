@@ -2,28 +2,68 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X, Sparkles } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Work", href: "#work", id: "work" },
+  { label: "Services", href: "#services", id: "services" },
+  { label: "Process", href: "#process", id: "process" },
+  { label: "About", href: "#about", id: "about" },
+  { label: "FAQ", href: "#faq", id: "faq" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [activeId, setActiveId] = React.useState<string | null>(null);
 
+  // Top scroll-progress bar
+  const { scrollYProgress } = useScroll();
+  const progressScale = useSpring(scrollYProgress, {
+    stiffness: 200,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  // Sticky-state detection
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scroll-spy: highlight the section currently in view
+  React.useEffect(() => {
+    const sectionIds = ["work", "services", "process", "about", "faq", "contact"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Pick the entry closest to the top of the viewport that is intersecting
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      {
+        // Trigger when section's top crosses ~30% from the top of viewport
+        rootMargin: "-30% 0px -60% 0px",
+        threshold: [0, 0.1, 0.25, 0.5, 1],
+      }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
   }, []);
 
   React.useEffect(() => {
@@ -44,6 +84,14 @@ export function Navbar() {
           scrolled ? "py-2.5" : "py-4"
         )}
       >
+        {/* Scroll progress bar — sits on the bottom edge of the navbar pill */}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <motion.div
+            style={{ scaleX: progressScale }}
+            className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-px max-w-7xl origin-left bg-primary/70"
+          />
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div
             className={cn(
@@ -64,18 +112,38 @@ export function Navbar() {
               <span className="hidden sm:inline">Sreesha</span>
             </Link>
 
-            {/* Desktop nav */}
+            {/* Desktop nav with active-section highlight */}
             <nav className="hidden items-center gap-1 md:flex">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="group relative rounded-full px-3.5 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  {item.label}
-                  <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeId === item.id;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    aria-current={isActive ? "true" : undefined}
+                    className={cn(
+                      "group relative rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors",
+                      isActive
+                        ? "text-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    )}
+                  >
+                    {/* Active background pill (animated) */}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-active-pill"
+                        className="absolute inset-0 -z-10 rounded-full bg-primary/20 ring-1 ring-inset ring-primary/40"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative">{item.label}</span>
+                    {/* Hover underline (only when not active) */}
+                    {!isActive && (
+                      <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+                    )}
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="flex items-center gap-2">
@@ -122,23 +190,30 @@ export function Navbar() {
               </button>
             </div>
             <nav className="flex flex-col gap-2 px-4 pt-6">
-              {navItems.map((item, i) => (
-                <motion.div
-                  key={item.href}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.05 + i * 0.06 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between border-b border-border/60 py-4 font-display text-3xl font-semibold tracking-tight"
+              {navItems.map((item, i) => {
+                const isActive = activeId === item.id;
+                return (
+                  <motion.div
+                    key={item.href}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + i * 0.06 }}
                   >
-                    <span>{item.label}</span>
-                    <span className="text-primary">→</span>
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center justify-between border-b border-border/60 py-4 font-display text-3xl font-semibold tracking-tight"
+                    >
+                      <span className={cn(isActive && "text-primary")}>
+                        {item.label}
+                      </span>
+                      <span className="text-primary">
+                        {isActive ? "•" : "→"}
+                      </span>
+                    </Link>
+                  </motion.div>
+                );
+              })}
               <Link
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
