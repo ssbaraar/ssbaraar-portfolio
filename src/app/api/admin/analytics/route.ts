@@ -4,14 +4,14 @@ import { getAnalytics, getStorageStatus } from "@/lib/storage";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "sreesha-secret-2026";
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 
 function checkAuth(req: NextRequest): boolean {
+  if (!ADMIN_TOKEN) return false;
   const session = req.cookies.get("admin_session")?.value;
-  if (ADMIN_TOKEN && session === ADMIN_TOKEN) return true;
+  if (session === ADMIN_TOKEN) return true;
   const auth = req.headers.get("authorization");
-  if (auth?.startsWith("Bearer ")) return auth.slice(7) === ADMIN_TOKEN;
-  return new URL(req.url).searchParams.get("token") === ADMIN_TOKEN;
+  return auth?.startsWith("Bearer ") ? auth.slice(7) === ADMIN_TOKEN : false;
 }
 
 // GET /api/admin/analytics — full analytics summary for dashboard
