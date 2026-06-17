@@ -12,6 +12,7 @@ const navItems = [
   { label: "Services", href: "#services", id: "services" },
   { label: "Process", href: "#process", id: "process" },
   { label: "About", href: "#about", id: "about" },
+  { label: "Blog", href: "#blog", id: "blog" },
   { label: "FAQ", href: "#faq", id: "faq" },
 ];
 
@@ -38,7 +39,7 @@ export function Navbar() {
 
   // Scroll-spy: highlight the section currently in view
   React.useEffect(() => {
-    const sectionIds = ["work", "services", "process", "about", "faq", "contact"];
+    const sectionIds = ["work", "services", "process", "about", "blog", "faq", "contact"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);

@@ -10,6 +10,7 @@ import { Process } from "@/components/portfolio/process";
 import { TechStack } from "@/components/portfolio/tech-stack";
 import { About } from "@/components/portfolio/about";
 import { FAQ } from "@/components/portfolio/faq";
+import { Blog } from "@/components/portfolio/blog";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 import { CursorGlow } from "@/components/portfolio/cursor-glow";
@@ -34,6 +35,7 @@ export default function Home() {
         <TechStack />
         <About />
         <FAQ />
+        <Blog />
         <Contact />
       </main>
       <Footer />

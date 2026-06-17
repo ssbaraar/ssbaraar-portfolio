@@ -27,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Baraar Sreesha — Applied AI & GTM Engineer who ships to production",
   description:
-    "Applied AI • GenAI • Forward-Deployed • Fractional GTM Engineer. I build agentic pipelines, RAG systems, and Clay/n8n/HubSpot automation for B2B revenue teams — deployed, not demoed.",
+    "Applied AI • GenAI • Forward-Deployed • Fractional GTM Engineer. I build agentic pipelines, RAG systems, and Clay/n8n/HubSpot automation for B2B revenue teams — deployed, not demoed. Blog includes production tutorials on LangGraph, CrewAI, n8n, and Clay pipelines.",
   keywords: [
     "Applied AI Engineer",
     "GenAI Engineer",
@@ -36,12 +36,16 @@ export const metadata: Metadata = {
     "RAG",
     "LangGraph",
     "CrewAI",
+    "AutoGen",
     "FastAPI",
     "Clay",
     "n8n",
     "HubSpot automation",
     "Fractional AI",
     "Baraar Sreesha",
+    "self-host n8n GCP",
+    "LangGraph vs CrewAI comparison",
+    "Clay pipeline lead intelligence",
   ],
   authors: [{ name: "Baraar Sreesha Sreenivas" }],
   openGraph: {
