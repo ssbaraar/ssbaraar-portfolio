@@ -477,8 +477,7 @@ export function Blog() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Tutorials, framework comparisons, and case studies from 2.5+ years
-            of building production AI and GTM automation systems.
+            Tutorials, comparisons, and case studies from 2.5+ years of building production AI systems.
           </p>
         </div>
 

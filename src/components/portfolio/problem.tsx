@@ -7,20 +7,20 @@ const problems = [
   {
     icon: Zap,
     emoji: "⚠️",
-    title: "It worked in staging, broke on day one.",
-    body: "Your AI pilot looked great in the demo. Then it hit real data, real users, real latency. Production is a different planet — and nobody on the team built for it.",
+    title: "Worked in staging, broke on day one.",
+    body: "Pilot looked great in the demo. Then it hit real data, real users, real latency. Production is a different planet.",
   },
   {
     icon: Clock,
     emoji: "🐌",
-    title: "Manual work that should have been automated a year ago.",
-    body: "Your revenue team is still researching leads by hand, updating CRM fields one by one, and routing prospects through spreadsheets. You know it's broken. Nobody has the engineering time to fix it.",
+    title: "Manual work that should've been automated.",
+    body: "Revenue team researching leads by hand. CRM updated one field at a time. Prospects routed through spreadsheets.",
   },
   {
     icon: CheckCircle2,
     emoji: "🎭",
-    title: "Beautiful demo. System nobody uses.",
-    body: "You hired a vendor who delivered a slick demo and a system the team abandoned in week two. The model worked. The system around it — retrieval, routing, fallback logic, monitoring — was never built.",
+    title: "Beautiful demo. Nobody uses it.",
+    body: "Vendor delivered a slick demo. The system around it — retrieval, routing, fallbacks — was never built.",
   },
 ];
 
@@ -43,13 +43,6 @@ export function Problem() {
             <span className="gradient-text-coral">never make it to production</span>.
             The rest fail in Q1.
           </h2>
-          <p className="mt-4 text-sm text-muted-foreground sm:text-base">
-            Not because the model was wrong. Because the system around it — the
-            retrieval, the routing, the CRM integration, the fallback logic —
-            was never built for the real world. I fix all three. Designed for
-            production from day one: monitoring, fallback paths, latency budgets,
-            real business outcomes.
-          </p>
         </div>
 
         <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
@@ -86,15 +79,13 @@ export function Problem() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-7 flex items-center gap-3 rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-5"
+          className="mt-7 flex items-center gap-3 rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-4 sm:p-5"
         >
           <TrendingUp className="h-6 w-6 shrink-0 text-primary" strokeWidth={2} />
-          <p className="text-sm font-medium sm:text-base">
+          <p className="text-sm sm:text-base">
             <span className="font-bold">My lane:</span>{" "}
             <span className="text-muted-foreground">
-              the intersection of AI engineering and revenue operations. I build
-              the system, not just the model — and I don&apos;t leave until it
-              runs in production.
+              AI engineering ∩ revenue operations. I build the system, not just the model.
             </span>
           </p>
         </motion.div>

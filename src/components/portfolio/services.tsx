@@ -40,7 +40,6 @@ const services: Service[] = [
       "Sourcing via Clay, Apollo, scraping, Google Maps",
       "Waterfall enrichment + LLM lead scoring",
       "HubSpot / Salesforce / Airtable handoff",
-      "AI account summaries + first-line generation",
     ],
     price: "$1,500 – $3,000",
     timeline: "1–2 weeks",
@@ -58,8 +57,7 @@ const services: Service[] = [
       "Clay table architecture + waterfall enrichment",
       "n8n automation + HubSpot/Salesforce push",
       "LLM personalization (first lines, research packets)",
-      "Slack/email alerts + error handling + monitoring",
-      "SDR-ready output — no manual CSV work",
+      "Alerts + error handling + monitoring + docs",
     ],
     price: "$2,500 – $5,000",
     timeline: "2–4 weeks",
@@ -76,7 +74,6 @@ const services: Service[] = [
     bullets: [
       "Multi-document ingestion + OCR pipeline if needed",
       "Hybrid retrieval (BM25 keyword + vector semantic)",
-      "Metadata-filtered retrieval (dept / date / type)",
       "Citation-grounded answers + hallucination guardrails",
       "FastAPI service + Docker deployment",
     ],
@@ -94,10 +91,9 @@ const services: Service[] = [
       "Production multi-agent system with tool calling, planning loops, self-correction, and structured output — wired into your stack via API.",
     bullets: [
       "Multi-agent architecture (LangGraph / CrewAI / AutoGen)",
-      "Tool calling, planning/execution loops, state mgmt",
+      "Tool calling, planning loops, state mgmt",
       "Self-correcting workflows with error recovery",
-      "Observability (LangSmith, Langfuse) + evals",
-      "FastAPI + Docker production deployment",
+      "Observability + evals + FastAPI/Docker deploy",
     ],
     price: "$3,000 – $8,000",
     timeline: "3–5 weeks",
@@ -115,8 +111,7 @@ const services: Service[] = [
       "PDF / form / document ingestion + OCR pipeline",
       "Field extraction + structured data output",
       "RAG assistant for internal document search",
-      "FastAPI REST API wired into CRM / ops workflow",
-      "Validation + low-confidence human review flags",
+      "FastAPI REST API wired into CRM / ops",
     ],
     price: "$3,000 – $8,000",
     timeline: "3–6 weeks",
@@ -135,7 +130,6 @@ const services: Service[] = [
       "Weekly async updates + Loom walkthroughs",
       "Priority response within 4 business hours",
       "Monthly scope review + roadmap session",
-      "Minimum 4-week commitment",
     ],
     price: "$1,500 – $4,000 / mo",
     timeline: "Ongoing",
@@ -242,8 +236,7 @@ export function Services() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground sm:text-right">
-            Fixed-price or retainer. Every project ships with deployment,
-            monitoring, documentation, and a 2-week post-launch support window.
+            Fixed-price or retainer. Every project ships with deployment + 2-week post-launch support.
           </p>
         </div>
 
@@ -266,8 +259,7 @@ export function Services() {
               <h3 className="font-display text-lg font-bold">AI Audit — entry offer</h3>
             </div>
             <p className="mt-1 text-sm text-muted-foreground">
-              45-min call + written roadmap. Filters out low-intent leads and
-              naturally feeds into a bigger project.
+              45-min call + written roadmap. Filters tire-kickers, feeds bigger projects.
             </p>
           </div>
           <div className="text-left sm:text-right">

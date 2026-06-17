@@ -86,11 +86,7 @@ export function Contact() {
                 production?
               </h2>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-background/70 sm:text-base">
-                If you have a manual ops workflow that should be automated, an
-                AI prototype that never made it to production, or a GTM system
-                still running on spreadsheets — let&apos;s talk. A 20-minute call
-                is enough for me to tell you if I can help and what it would look
-                like.
+                Manual ops that should be automated. AI prototype that never shipped. GTM system on spreadsheets. A 20-min call is enough for me to tell you if I can help.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">

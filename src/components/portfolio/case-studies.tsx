@@ -30,7 +30,7 @@ const cases: CaseStudy[] = [
     industry: "B2B SaaS · Sales-led",
     type: "GTM Lead Intelligence + HubSpot Automation",
     headline:
-      "Replaced $2,000/mo data subscriptions with a custom lead pipeline at a fraction of cost — and fresher.",
+      "Replaced $2,000/mo data subscriptions with a custom pipeline at a fraction of cost — and fresher.",
     stack: ["Python", "Clay", "n8n", "HubSpot API", "Google Maps", "LLMs"],
     results: [
       { icon: DollarSign, label: "Subscription cost", value: "$2k/mo → fraction" },
@@ -46,7 +46,7 @@ const cases: CaseStudy[] = [
     industry: "Outbound · Sales automation",
     type: "AI Pitch Deck + Outbound Email Automation",
     headline:
-      "Deck + personalized email delivered in minutes, not hours. Sales team redirected to closing conversations.",
+      "Deck + personalized email delivered in minutes, not hours. Sales team redirected to closing.",
     stack: ["n8n", "Gemini", "Google Slides API", "Gmail API", "Drive"],
     results: [
       { icon: Clock, label: "Time per deck + email", value: "2–4h → <10min" },
@@ -203,9 +203,7 @@ export function CaseStudies() {
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Four production deployments — across lead intelligence, sales
-            automation, enterprise RAG, and regulated finance. Named where I
-            can, anonymized where I can&apos;t.
+            Four production deployments — across lead intelligence, sales automation, enterprise RAG, and regulated finance.
           </p>
         </div>
 
@@ -229,10 +227,7 @@ export function CaseStudies() {
                 Self-hosted n8n on GCP — production automation backbone
               </h3>
               <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-                Replaced $500+/mo SaaS subscriptions with a self-hosted n8n on
-                GCP — Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure
-                layer behind every GTM/RevOps workflow I ship. (One of my
-                top-performing LinkedIn posts — 38 likes.)
+                Replaced $500+/mo SaaS subscriptions with self-hosted n8n on GCP — Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure layer behind every GTM/RevOps workflow I ship.
               </p>
             </div>
           </div>

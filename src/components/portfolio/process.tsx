@@ -10,7 +10,7 @@ const steps = [
     title: "Discovery call",
     duration: "20 min · free",
     description:
-      "We discuss your workflow, pain points, tech stack, and goals. I ask the right questions to understand what's actually broken — not just what the symptoms look like.",
+      "We discuss your workflow, pain points, and goals. I ask the right questions to understand what's actually broken.",
     accent: "var(--lime)",
     emoji: "📞",
   },
@@ -20,7 +20,7 @@ const steps = [
     title: "Scoping & proposal",
     duration: "2–3 days",
     description:
-      "I map the full system architecture, scope the build, define deliverables + acceptance criteria, and send a fixed-price proposal with timeline. No hourly billing surprises.",
+      "I map the architecture, scope the build, define deliverables + acceptance criteria. Fixed-price proposal. No hourly surprises.",
     accent: "var(--coral)",
     emoji: "📋",
   },
@@ -30,7 +30,7 @@ const steps = [
     title: "Build & iterate",
     duration: "1–6 weeks",
     description:
-      "I build the system with weekly async Loom updates. You see every major decision. You can test before final delivery. No black boxes, no surprise pivots.",
+      "I build with weekly async Loom updates. You see every major decision. No black boxes, no surprise pivots.",
     accent: "var(--lavender)",
     emoji: "🔨",
   },
@@ -40,7 +40,7 @@ const steps = [
     title: "Deploy + handoff",
     duration: "Final week",
     description:
-      "I deploy the production system, write the docs, run a walkthrough call. You own the code. 2-week post-launch support window included in every project.",
+      "I deploy, write the docs, run a walkthrough call. You own the code. 2-week post-launch support included.",
     accent: "var(--amber)",
     emoji: "🚀",
   },

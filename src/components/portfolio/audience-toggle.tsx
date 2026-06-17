@@ -13,7 +13,7 @@ const content = {
     icon: Briefcase,
     accent: "var(--lavender)",
     headline: "Hire an engineer who ships, not one who demos.",
-    sub: "I've spent 2.5+ years building AI systems that run in production — RAG, multi-agent workflows, GTM automation. I don't leave until it's deployed, monitored, and the team can run it without me.",
+    sub: "2.5+ years building RAG, multi-agent workflows, and GTM automation that runs in production. I don't leave until it's deployed, monitored, and the team can run it without me.",
     roles: [
       "Applied AI Engineer",
       "GenAI Engineer",
@@ -23,9 +23,9 @@ const content = {
       "Fractional / contract AI",
     ],
     proof: [
-      "Senior SWE — GenAI @ Motiveminds Consulting (enterprise SAP/Salesforce GenAI)",
-      "SWE — GenAI/GTM @ W3 SaaS Technologies, Dubai DIFC (fintech-grade)",
-      "GenAI Research Intern @ Blockchain Laboratories, Wyoming (remote)",
+      "Senior SWE — GenAI @ Motiveminds (enterprise SAP/Salesforce)",
+      "SWE — GenAI/GTM @ W3 SaaS, Dubai DIFC (fintech-grade)",
+      "GenAI Research Intern @ Blockchain Laboratories, Wyoming",
       "Full-stack @ Hyderabad Forex (OCR pipeline, regulated finance)",
     ],
     cta: "Download ATS resume",
@@ -36,7 +36,7 @@ const content = {
     icon: Rocket,
     accent: "var(--lime)",
     headline: "Your AI pilot stalls in staging. I finish the build.",
-    sub: "I work with founder-led B2B SaaS, outbound agencies, and SMBs ($1M–$10M) to replace manual GTM work with systems that actually run — Clay, n8n, HubSpot, custom FastAPI, RAG, agents.",
+    sub: "I work with founder-led B2B SaaS, outbound agencies, and SMBs ($1M–$10M) to replace manual GTM work with systems that actually run.",
     roles: [
       "Lead Intelligence Sprint",
       "Clay + n8n Outbound Engine",
@@ -46,9 +46,9 @@ const content = {
       "Fractional AI Retainer",
     ],
     proof: [
-      "Replaced $2,000/mo data subscriptions with a fresher custom Clay pipeline",
-      "Cut deck + email creation from 2–4 hrs to <10 min via n8n + Gemini",
-      "−40% manual data entry, −30% onboarding time at Hyderabad Forex (OCR)",
+      "Replaced $2,000/mo data subscriptions with a fresher Clay pipeline",
+      "Cut deck + email creation from 2–4 hrs to <10 min (n8n + Gemini)",
+      "−40% data entry, −30% onboarding time at Hyderabad Forex (OCR)",
       "Production RAG over hundreds of internal PDFs with citation grounding",
     ],
     cta: "See service packages",

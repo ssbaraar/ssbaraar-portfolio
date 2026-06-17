@@ -12,10 +12,9 @@ const experience = [
     icon: Building2,
     accent: "var(--lime)",
     bullets: [
-      "Partner directly with enterprise clients on SAP + Salesforce GenAI workflows",
-      "Architect multi-agent systems with tool calling, state management, self-correcting execution loops",
-      "Build enterprise RAG with citation grounding, hallucination control, 95%+ accuracy",
-      "Containerized FastAPI deployment + LangSmith observability + evals",
+      "Enterprise SAP + Salesforce GenAI workflows",
+      "Multi-agent systems · RAG @ 95%+ accuracy",
+      "FastAPI + LangSmith observability",
     ],
   },
   {
@@ -26,10 +25,9 @@ const experience = [
     icon: Building2,
     accent: "var(--coral)",
     bullets: [
-      "+20% lead-gen efficiency via Clay / n8n / Apollo / HubSpot / Salesforce",
-      "+50% outbound acceleration via automated prospect research + AI personalization",
-      "Dockerized Python/FastAPI microservices for fintech-grade workflows",
-      "Shipped GenAI SaaS product features using LLM APIs + backend services",
+      "+20% lead-gen · +50% outbound acceleration",
+      "Clay / n8n / Apollo / HubSpot automation",
+      "Dockerized FastAPI for fintech-grade workflows",
     ],
   },
   {
@@ -40,9 +38,9 @@ const experience = [
     icon: Building2,
     accent: "var(--lavender)",
     bullets: [
-      "Multi-agent prototypes: LangChain, LangGraph, LangFlow, CrewAI, AutoGen, Agent Zero",
-      "+25% RAG and multi-agent performance via advanced vector search + retrieval eval",
-      "Researched hallucination control, retrieval grounding, self-correcting workflow patterns",
+      "Multi-agent prototypes: LangGraph, CrewAI, AutoGen",
+      "+25% RAG performance via retrieval eval",
+      "Hallucination control research for enterprise PoCs",
     ],
   },
   {
@@ -53,9 +51,9 @@ const experience = [
     icon: Building2,
     accent: "var(--amber)",
     bullets: [
-      "−40% manual data entry via OCR KYC pipeline",
-      "−30% onboarding turnaround via FastAPI REST API automation",
-      "Production deployment in regulated financial operations",
+      "−40% manual data entry · −30% onboarding time",
+      "OCR KYC pipeline + FastAPI REST API",
+      "Production deployment in regulated finance",
     ],
   },
   {
@@ -65,7 +63,7 @@ const experience = [
     location: "Mysuru, India",
     icon: GraduationCap,
     accent: "var(--mint)",
-    bullets: ["CSE foundations — algorithms, systems, databases, networks"],
+    bullets: ["Algorithms · systems · databases · networks"],
   },
 ];
 
@@ -102,35 +100,46 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground sm:text-base"
+              className="mt-6 space-y-3 text-base leading-relaxed text-muted-foreground"
             >
               <p>
-                I got into AI engineering because I kept watching the same thing
-                happen: a team would spend months building an AI prototype that
-                worked beautifully in a notebook, demo it to the C-suite, get
-                budget approved — and then watch it slowly die in staging because
-                nobody thought about production.
+                I build AI systems that ship to production — not just demos.
+                Latency budgets before model selection. Fallback paths before the
+                happy path. Monitoring before the feature code.
               </p>
               <p>
-                That&apos;s the gap I close. I build AI systems with production
-                in mind from day one. That means thinking about latency budgets
-                before model selection, building fallback paths before the happy
-                path, and writing the monitoring setup before the feature code.
+                Currently Senior SWE — GenAI &amp; Solutions Architect at
+                Motiveminds Consulting. Open to fractional, scoped, and full-time
+                Applied AI / GTM / FDE roles.
               </p>
-              <p>
-                My work sits at the intersection of two worlds that don&apos;t
-                usually talk to each other: AI engineering and GTM / revenue
-                operations. I&apos;ve built multi-agent LangGraph systems for
-                enterprise clients, RAG knowledge assistants over thousands of
-                internal documents, and Clay + n8n outbound pipelines that
-                replaced $2,000/month data subscriptions with fresher custom data.
-              </p>
-              <p>
-                Currently a Senior SWE — GenAI &amp; Solutions Architect at
-                Motiveminds Consulting. Open to fractional retainer engagements,
-                scoped project builds, and full-time Applied AI / GTM / Forward
-                Deployed AI roles at remote-first companies.
-              </p>
+            </motion.div>
+
+            {/* Highlight chips instead of paragraphs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="mt-6 flex flex-wrap gap-2"
+            >
+              {[
+                { label: "LangGraph multi-agent", color: "var(--lime)" },
+                { label: "RAG · 95%+ accuracy", color: "var(--coral)" },
+                { label: "Clay + n8n GTM", color: "var(--lavender)" },
+                { label: "FastAPI · Docker", color: "var(--amber)" },
+              ].map((chip) => (
+                <span
+                  key={chip.label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/40 px-3 py-1.5 text-xs font-medium backdrop-blur"
+                  style={{ color: chip.color }}
+                >
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ background: chip.color }}
+                  />
+                  <span className="text-foreground/80">{chip.label}</span>
+                </span>
+              ))}
             </motion.div>
 
             {/* Quick facts */}
@@ -139,7 +148,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-7 grid grid-cols-2 gap-3"
+              className="mt-6 grid grid-cols-2 gap-3"
             >
               <div className="rounded-2xl border border-border bg-card/40 p-4 backdrop-blur">
                 <div className="font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
@@ -155,7 +164,7 @@ export function About() {
                   Community
                 </div>
                 <div className="mt-1 font-display text-sm font-semibold">
-                  RAG++ Bengaluru · 3,700+ LI
+                  RAG++ · 3,700+ LI
                 </div>
               </div>
             </motion.div>
