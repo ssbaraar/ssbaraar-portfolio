@@ -1,0 +1,876 @@
+================================================================================
+PORTFOLIO WEBSITE CONTENT DOCUMENT
+Baraar Sreesha Sreenivas — Applied AI & GTM Systems Engineer
+github.com/ssbaraar | linkedin.com/in/baraarsreesha | ssbaraar02@gmail.com
+Generated: June 2026 | Personal Use Only
+================================================================================
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — SITE METADATA & SEO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Page Title (browser tab):
+  Baraar Sreesha | Applied AI & GTM Automation Engineer — Bengaluru
+
+Meta Description (155 chars):
+  I build production RAG systems, agentic AI workflows, and Clay/n8n/HubSpot GTM
+  automations for B2B revenue teams. Fractional retainer or scoped projects.
+
+Open Graph Title:
+  Baraar Sreesha — Applied AI & GTM Engineer
+
+Open Graph Description:
+  Agentic AI • RAG Systems • GTM Automation. I build the AI and automation layer
+  that revenue teams actually need in production.
+
+Primary Keywords:
+  applied AI engineer, GenAI engineer India, RAG system engineer, GTM automation
+  engineer, Clay n8n HubSpot automation, agentic AI freelancer, fractional AI
+  engineer
+
+Secondary Keywords:
+  LangGraph engineer, CrewAI developer, FastAPI LLM API, lead intelligence
+  pipeline, B2B outbound automation, revops automation engineer Bangalore
+
+Recommended URL / Domain:
+  baraarsreesha.com  (buy on Namecheap ~$10/yr — professional, easy to say)
+  Alternative: ssbaraar.dev | baraarsreesha.vercel.app
+
+Structured Data (Person schema):
+  Name: Baraar Sreesha Sreenivas
+  jobTitle: Applied AI & GTM Systems Engineer
+  addressLocality: Bengaluru, India
+  sameAs: [linkedin, github, huggingface, twitter/X]
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — HERO SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+RECOMMENDED HERO HEADLINE (Option A — Outcome-first, B2B-focused):
+  "I build AI systems that work in production — not just demos."
+
+HERO SUBTEXT (below headline):
+  "Applied AI & GTM Systems Engineer. I build agentic pipelines, RAG knowledge
+  systems, and Clay/n8n/HubSpot automation for B2B revenue teams — from FastAPI
+  deployment to production handoff. Based in Bengaluru. Available for fractional
+  retainer and scoped projects worldwide."
+
+TYPING ANIMATION (3 rotating lines):
+  Line 1: "I build AI systems that work in production, not just demos."
+  Line 2: "GTM AI • RevOps Automation • GenAI Agents • RAG Systems"
+  Line 3: "Applied AI Engineer — Bengaluru, India — Remote worldwide"
+
+CTA BUTTONS:
+  Primary:   📅  Book a 20-min Intro Call  →  calendly.com/baraarsreesha/intro
+  Secondary: →  See My Work  (anchor to #case-studies)
+  Tertiary:  Download Resume  (PDF link)
+
+ALTERNATIVE HEADLINE OPTIONS:
+  Option B: "Your AI project stalled in staging. I finish the build."
+  Option C: "Fractional AI engineer. Agentic pipelines, RAG, GTM automation —
+             deployed, not demoed."
+  Option D: "In 4–6 weeks, your revenue team has a working AI automation system."
+  Option E: "I close the gap between your GTM team and your engineering team."
+
+HERO VISUAL NOTES:
+  Best:   Real headshot + live architecture diagram of a multi-agent system
+  Second: Short Loom screen recording of a live n8n or Clay workflow (muted loop)
+  Third:  Dark-mode code snippet from a deployed FastAPI service
+  Avoid:  Stock photos, generic AI robot art, blue glowing network images
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — SOCIAL PROOF STRIP (Below Hero)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Strip headline (optional): "Trusted by teams at:" OR "Tools I build with:"
+
+LOGOS / BADGES TO INCLUDE (8 items):
+  1. Motiveminds Consulting — "Senior GenAI Engineer"
+  2. W3 SaaS Technologies — Dubai DIFC (fintech/enterprise signal)
+  3. Blockchain Laboratories — Remote US, Wyoming
+  4. Hyderabad Forex Limited — Forex/fintech case study
+  5. Clay — ecosystem signal (apply for Clay Expert listing)
+  6. n8n — (apply for n8n Expert Partner listing — free)
+  7. HubSpot — Solutions Partner badge (free to apply)
+  8. LangChain / DeepLearning.AI — certification badge
+
+QUICK STATS BAR (4 numbers):
+  2.5+ yrs  |  Production AI Experience
+  5+        |  Production AI Deployments
+  40%       |  Manual Ops Reduction (OCR pipeline)
+  3,700+    |  LinkedIn Followers in AI Space
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — PROBLEM STATEMENT / "BEFORE STATE"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION HEADLINE:
+  "Most AI projects never make it to production."
+
+PROBLEM STATEMENT COPY — VERSION A (B2B Freelance Focus):
+  Most B2B teams face the same 3 problems with AI:
+
+  • Their AI pilot worked in staging. It broke on day one in production.
+  • Their revenue team is still manually researching leads, updating CRMs, and
+    routing prospects — work that should have been automated 12 months ago.
+  • They hired an AI vendor who delivered a beautiful demo and a system that
+    nobody uses.
+
+  I fix all three. I build RAG systems, agentic workflows, and GTM automations
+  that are designed for production from day one — with monitoring, fallback
+  paths, latency budgets, and real business outcomes.
+
+PROBLEM STATEMENT COPY — VERSION B (Punchy):
+  "95% of AI pilots never reach production."
+
+  The rest fail within the first quarter. Not because the model was wrong.
+  Because the system around it — the retrieval, the routing, the CRM
+  integration, the fallback logic — was never built for the real world.
+
+  I'm an Applied AI Engineer. I build the system, not just the model. From
+  LangGraph agent to FastAPI deployment to HubSpot sync — I own the full stack
+  and I don't leave until it runs in production.
+
+NAMED TARGET CLIENT STATEMENT:
+  "I work with: founder-led B2B SaaS companies (Seed–Series C), B2B outbound
+  agencies, AI automation agencies, and traditional SMBs ($1M–$10M revenue) in
+  the US, UAE, UK, and Australia who have real revenue workflows that need
+  automation — and no internal engineer to build it."
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 5 — SERVICES / WHAT I BUILD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section headline: "What I Build"
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 1 — GTM Lead Intelligence Sprint
+────────────────────────────────────────────────────────────────────────────────
+For: Recruiting agencies, outbound teams, B2B SaaS founders
+
+Outcome:
+  Replace manual prospect research with a custom pipeline that sources,
+  enriches, scores, and routes 100–500 sales-ready accounts into your CRM
+  every week.
+
+Deliverables:
+  • ICP filter design and account criteria translation
+  • Lead sourcing workflow (Clay, Apollo, web scraping, Google Maps)
+  • Waterfall enrichment + LLM-powered lead scoring
+  • HubSpot / Salesforce / Airtable CRM handoff
+  • AI account summaries + personalized first-line generation
+
+Investment: $1,500–$3,000 fixed  |  Timeline: 1–2 weeks
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 2 — Clay + n8n Outbound Engine
+────────────────────────────────────────────────────────────────────────────────
+For: Outbound agencies, sales-led SaaS, SDR teams
+
+Outcome:
+  Automate your entire outbound operations — from lead sourcing to personalized
+  messaging to CRM sequencing — into one reliable, repeatable system.
+
+Deliverables:
+  • Clay table architecture + waterfall enrichment
+  • n8n workflow automation + HubSpot/Salesforce push
+  • LLM personalization (first lines, account summaries, research packets)
+  • Slack/email alerts, error handling, monitoring, documentation
+  • SDR-ready output — no manual CSV work
+
+Investment: $2,500–$5,000 fixed  |  Timeline: 2–4 weeks
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 3 — RAG System Build
+────────────────────────────────────────────────────────────────────────────────
+For: Companies with large document libraries, internal wikis, or compliance docs
+
+Outcome:
+  A production-grade knowledge assistant your team can query in plain English —
+  with citation-grounded responses, hybrid retrieval, and a FastAPI deployment.
+
+Deliverables:
+  • Multi-document ingestion + OCR pipeline (if needed)
+  • Hybrid retrieval (BM25 keyword + vector semantic search)
+  • Metadata-filtered retrieval by department/date/type
+  • Citation-grounded responses + hallucination guardrails
+  • FastAPI service + containerized Docker deployment
+
+Investment: $3,000–$6,000 fixed  |  Timeline: 2–4 weeks
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 4 — Agentic AI Workflow Build
+────────────────────────────────────────────────────────────────────────────────
+For: Teams that need a multi-step AI system, not just a chatbot
+
+Outcome:
+  A production multi-agent system with tool calling, planning loops,
+  self-correction, and structured output — wired into your existing stack
+  via API.
+
+Deliverables:
+  • Multi-agent architecture (LangGraph / CrewAI / AutoGen)
+  • Tool calling, planning/execution loops, state management
+  • Self-correcting workflows with error recovery paths
+  • Observability setup (LangSmith, Langfuse) + evals
+  • FastAPI + Docker production deployment
+
+Investment: $3,000–$8,000 fixed  |  Timeline: 3–5 weeks
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 5 — Document Intake + AI Assistant
+────────────────────────────────────────────────────────────────────────────────
+For: Forex, insurance, mortgage, legal, consulting firms
+
+Outcome:
+  Automate document-heavy intake and give your team an AI layer over their
+  documents. Proven: built for Hyderabad Forex (−40% data entry, −30%
+  onboarding time).
+
+Deliverables:
+  • PDF/form/document ingestion + OCR pipeline
+  • Field extraction and structured data output
+  • RAG assistant for internal document search
+  • FastAPI REST API wired into your CRM/ops workflow
+
+Investment: $3,000–$8,000 fixed  |  Timeline: 3–6 weeks
+
+────────────────────────────────────────────────────────────────────────────────
+SERVICE 6 — Fractional AI Retainer
+────────────────────────────────────────────────────────────────────────────────
+For: Companies that need ongoing AI engineering without a full-time hire
+
+Outcome:
+  A dedicated fractional AI engineer — available weekly for builds, iterations,
+  enrichment, CRM automation, new AI features, and monitoring.
+
+Deliverables:
+  • 8–20 hrs/week depending on tier
+  • Weekly async updates + Loom walkthroughs
+  • Priority response within 4 business hours
+  • Monthly scope review + roadmap session
+
+Investment: $1,500–$4,000/month  |  Minimum 4-week commitment
+
+────────────────────────────────────────────────────────────────────────────────
+ADD-ON: AI Audit (Entry Offer)
+────────────────────────────────────────────────────────────────────────────────
+A paid scoping engagement ($150–$300, 45-min call + written report) where you
+review their current GTM or AI workflow and deliver a prioritized automation
+roadmap. Filters out low-intent leads and naturally feeds into a larger project.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 6 — CASE STUDIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+────────────────────────────────────────────────────────────────────────────────
+CASE STUDY 1 — GTM Lead Intelligence & HubSpot Automation System
+────────────────────────────────────────────────────────────────────────────────
+
+HEADLINE:
+  "Replaced $2,000/mo data subscriptions with a custom lead pipeline at a
+  fraction of the cost — with higher freshness."
+
+SNAPSHOT:
+  Client:        U.S.-based B2B company (Series B SaaS, ~80 employees)
+  Industry:      B2B SaaS / Sales-led
+  Project Type:  GTM Lead Intelligence System + HubSpot CRM Automation
+  Timeline:      2–3 weeks
+  Stack:         Python, Clay, n8n, HubSpot API, Google Maps scraping, LLM APIs
+
+Situation:
+  The client relied on Apollo and ZoomInfo subscriptions for lead sourcing —
+  spending $2,000+/month on data that was often 60–90 days stale for their
+  specific niche. SDRs were spending 3–4 hours per day manually qualifying
+  leads before they could touch a CRM.
+
+Trigger:
+  A campaign targeting a specific sub-vertical returned only 200 leads from
+  Apollo vs. the 2,000+ the team knew existed. The data gap was costing deals.
+
+Barrier:
+  No internal technical capacity to build custom scrapers, wire them into Clay,
+  or manage the HubSpot sync logic.
+
+Solution:
+  Built a full custom lead intelligence pipeline: Google Maps + custom web
+  scrapers + Google Search enrichment → Clay workflow for enrichment and LLM-
+  based qualification scoring → structured, de-duped records pushed to HubSpot
+  with custom fields, lead sources, and sequence triggers.
+
+Results:
+  Data subscription cost:   $2,000+/mo       →  Fraction of cost
+  Lead data freshness:      60–90 days stale  →  7–14 days (near real-time)
+  SDR manual research:      3–4 hrs/day       →  <30 min/day
+  HubSpot data quality:     Manual, messy     →  Structured, de-duped, tagged
+
+────────────────────────────────────────────────────────────────────────────────
+CASE STUDY 2 — AI Pitch Deck & Outbound Email Automation
+────────────────────────────────────────────────────────────────────────────────
+
+HEADLINE:
+  "Deck + personalized email delivered in minutes — not hours. Sales team's
+  time redirected to closing conversations."
+
+SNAPSHOT:
+  Client:        B2B SaaS sales team (US-based)
+  Project Type:  AI pitch deck generation + personalized outbound email automation
+  Timeline:      2 weeks
+  Stack:         n8n, Google Gemini, Google Slides API, Gmail API, Google Drive
+
+Situation:
+  The sales team was spending 2–4 hours per prospect creating investor-ready
+  pitch decks and personalized follow-up emails. Human review at every step
+  made the process sequential and slow.
+
+Trigger:
+  A pipeline target of 50 outbound sequences per week made the manual process
+  unsustainable.
+
+Barrier:
+  Google Slides API, Gmail API, and LLM orchestration had to be unified into a
+  single workflow with a human-in-the-loop approval step before delivery.
+
+Solution:
+  n8n automation: form input (company name, goals, audience) → Gemini generates
+  deck content → Google Slides API populates branded template → Gemini generates
+  personalized follow-up email → Gmail approval step → delivery via Google Drive.
+
+Results:
+  Time per deck + email:  2–4 hours manual  →  <10 minutes automated
+  Outbound capacity:      ~10 sequences/wk  →  50+ sequences/week
+  Human review:           Every step        →  Single approval gate only
+
+────────────────────────────────────────────────────────────────────────────────
+CASE STUDY 3 — Enterprise PDF RAG System
+────────────────────────────────────────────────────────────────────────────────
+
+HEADLINE:
+  "Multi-document knowledge assistant with hybrid retrieval and citation-
+  grounded responses — production-deployed over hundreds of internal PDFs."
+
+SNAPSHOT:
+  Client:        Enterprise team, 500+ employees
+  Industry:      Enterprise knowledge management
+  Project Type:  Multi-document RAG system with hybrid retrieval
+  Timeline:      3–4 weeks
+  Stack:         LangChain, LlamaIndex, FAISS, AstraDB, MongoDB Atlas, BM25
+                 Hybrid, FastAPI, Docker, Google Drive API
+
+Situation:
+  A large team had hundreds of internal PDFs — policy docs, contracts,
+  engineering specs. Finding information required manual search, repeated Slack
+  questions, and slow decision cycles.
+
+Trigger:
+  A compliance audit required cross-referencing dozens of documents in a short
+  timeframe. Manual search took 3 full days.
+
+Barrier:
+  Simple keyword search missed semantically related content. Standard RAG
+  returned hallucinated answers not grounded in actual documents.
+
+Solution:
+  Multi-PDF ingestion with metadata tagging (department, date, document type)
+  → BM25 keyword + vector semantic hybrid retrieval → metadata-filtered
+  retrieval → citation-grounded responses tracing to source document + page
+  number → Google Drive integration for live sync → tested across FAISS,
+  AstraDB, and MongoDB Atlas backends.
+
+Results:
+  Document search time:  30–90 min manual    →  <2 min AI query
+  Answer grounding:      None (unverifiable)  →  100% citation-traced
+  Cross-doc synthesis:   Manual, error-prone  →  Automated via hybrid retrieval
+  Deployment:            N/A                  →  FastAPI + Docker, containerized
+
+────────────────────────────────────────────────────────────────────────────────
+CASE STUDY 4 — OCR Financial Document Automation @ Hyderabad Forex Limited
+────────────────────────────────────────────────────────────────────────────────
+
+HEADLINE:
+  "40% reduction in manual data entry. 30% faster onboarding. Production OCR
+  pipeline at a regulated financial services firm."
+
+SNAPSHOT:
+  Client:        Hyderabad Forex Limited (named — disclosed)
+  Industry:      Forex / Financial Services / Currency Exchange
+  Project Type:  OCR KYC pipeline + FastAPI automation
+  Timeline:      Apr 2024 – Aug 2024 (4 months)
+  Primary Result: −40% manual data entry | −30% onboarding turnaround
+  Stack:         Python, OCR (computer vision), FastAPI, REST APIs
+
+Situation:
+  Hyderabad Forex processed KYC documents (ID cards, utility bills, transaction
+  records) entirely by hand — a team member manually typed extracted fields into
+  their system for every new customer.
+
+Trigger:
+  Growing customer onboarding volumes created a bottleneck: customers waited
+  days for account activation, and manual entry errors were causing compliance
+  re-work.
+
+Barrier:
+  Financial documents are highly varied in format, print quality, and language.
+  A standard OCR tool was insufficient — custom field extraction and structured
+  output were required. The API layer needed financial-grade security.
+
+Solution:
+  OCR and computer vision pipeline: ingests financial documents (photos, scans)
+  → extracts structured fields (name, ID number, address, transaction amounts)
+  → exposes output via secure FastAPI REST APIs integrated directly into the
+  onboarding system → validation logic + error-flagging for human review on
+  low-confidence extractions.
+
+Results:
+  Manual data entry volume:  100% manual        →  −40% (auto-extracted)
+  Customer onboarding time:  2–3 days average    →  −30% faster
+  Compliance re-work:        Frequent (errors)   →  Significantly reduced
+  System integration:        None (manual entry) →  FastAPI REST API, live
+
+────────────────────────────────────────────────────────────────────────────────
+CASE STUDY 5 — Self-Hosted n8n on GCP: Production Automation Infrastructure
+────────────────────────────────────────────────────────────────────────────────
+
+HEADLINE:
+  "Production-grade, self-hosted n8n on Google Cloud — replacing $500+/mo
+  SaaS subscriptions with a custom automation backbone."
+
+SNAPSHOT:
+  Type:          Infrastructure build (own use + portfolio demonstration)
+  Project:       n8n self-hosting + GCP setup
+  Timeline:      1 week setup + ongoing
+  Stack:         n8n, Docker Compose, GCP VM, PostgreSQL, Nginx, SSL/Let's Encrypt
+  LinkedIn:      38 likes — one of top-performing tutorial posts
+
+What was built:
+  n8n with Docker Compose on a GCP VM → PostgreSQL database backend for
+  workflow persistence → DNS + SSL via Nginx for secure external access →
+  foundation for all GTM and RevOps automation workflows.
+
+Why this is in the portfolio:
+  Signals 3 things: (1) you understand the infrastructure behind the tools,
+  not just the workflows on top, (2) you think about cost optimization
+  (self-hosting vs. $500+/mo SaaS), (3) you can set up a full automation
+  backend from scratch.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7 — HOW I WORK (Process Section)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section headline: "How It Works"  OR  "From Discovery to Deployment"
+
+STEP 1 — Discovery Call  (20 min — Free)
+  We discuss your workflow, pain points, tech stack, and goals. I ask the right
+  questions to understand what's actually broken, not just what the symptoms
+  look like.
+
+STEP 2 — Scoping & Proposal  (2–3 days)
+  I map the full system architecture, scope the build, define deliverables and
+  acceptance criteria, and send a fixed-price proposal with timeline. No hourly
+  billing surprises.
+
+STEP 3 — Build & Iterate  (1–6 weeks)
+  I build the system with weekly async Loom updates. You see every major
+  decision. You can test the system before final delivery. No black boxes.
+
+STEP 4 — Deploy + Handoff  (Final week)
+  I deploy the production system, write the documentation, and run a walkthrough
+  call. You own the code. 2-week post-launch support window included in every
+  project.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 8 — ABOUT ME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ABOUT ME — LONG FORM:
+
+I'm Baraar Sreesha Sreenivas — an Applied AI and GTM Systems Engineer based
+in Bengaluru, India.
+
+I got into AI engineering because I kept watching the same thing happen: a team
+would spend months building an AI prototype that worked beautifully in a
+notebook, demo it to the C-suite, get budget approved — and then watch it slowly
+die in staging because nobody thought about production.
+
+That's the gap I close. I build AI systems with production in mind from day one.
+That means thinking about latency budgets before model selection, building
+fallback paths before the happy path, and writing the monitoring setup before
+the feature code.
+
+My work sits at the intersection of two worlds that don't usually talk to each
+other: AI engineering and GTM/revenue operations. I've built multi-agent
+LangGraph systems for enterprise clients, RAG knowledge assistants over thousands
+of internal documents, and Clay+n8n outbound pipelines that replaced $2,000/month
+data subscriptions with fresher custom data.
+
+Currently a Senior Software Engineer – GenAI & Solutions Architect at
+Motiveminds Consulting, where I work directly with enterprise clients on SAP
+and Salesforce-integrated agentic workflows. Previously at W3 SaaS Technologies
+(Dubai DIFC), Blockchain Laboratories (Wyoming, remote), and Hyderabad Forex
+Limited.
+
+I'm part of the Bengaluru AI community — you'll find me at RAG++ meetups, on
+agentic AI podcasts, and posting on LinkedIn about the things that actually fail
+in production (my most-engaged content by far).
+
+Open to: fractional retainer engagements (remote, worldwide), scoped project
+builds, and full-time Applied AI / GTM Engineer / Forward Deployed AI roles at
+remote-first companies.
+
+────────────────────────────────────────────────────────────────────────────────
+ABOUT ME — SHORT FORM (for sidebar/card layouts):
+
+I build AI systems that work in production — not just demos.
+
+Applied AI Engineer with 2.5 years of production experience. I specialize in
+RAG systems, multi-agent workflows (LangGraph, CrewAI), and GTM automation
+(Clay, n8n, HubSpot). Based in Bengaluru — available remotely worldwide.
+
+My lane is the intersection of AI engineering and revenue operations. I've built
+OCR pipelines for fintech firms, agentic workflows for enterprise clients on
+SAP/Salesforce, and lead intelligence systems that replaced expensive data
+subscriptions with custom pipelines.
+
+Part of the Bengaluru AI community. 3,700+ LinkedIn followers. Regular at
+RAG++ meetups.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 9 — SKILLS / TECH STACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AI ORCHESTRATION:
+  LangChain, LangGraph, LlamaIndex, CrewAI, AutoGen, Agent Zero, LangFlow
+
+LLM PROVIDERS:
+  OpenAI GPT-4, Anthropic Claude, Google Gemini, Azure OpenAI, Google Vertex AI,
+  Groq
+
+VECTOR DATABASES & RETRIEVAL:
+  Qdrant, Pinecone, FAISS, AstraDB, MongoDB Atlas, BM25 Hybrid
+
+GTM & REVOPS:
+  Clay, n8n, Make (Integromat), Zapier, Apollo, ZoomInfo, HubSpot, Salesforce
+
+BACKEND & APIS:
+  Python, FastAPI, Flask, REST APIs, Webhooks, Streaming, Structured JSON outputs
+
+INFRASTRUCTURE:
+  Docker, Docker Compose, GCP, PostgreSQL, Nginx, CI/CD, Git
+
+OBSERVABILITY & EVALS:
+  LangSmith, Langfuse, Phoenix Arize, Evals, Guardrails, Hallucination control
+
+DATA & SCRAPING:
+  Web scraping (Python), Google Maps API, SQL, Snowflake, dbt, MongoDB,
+  OCR / Computer Vision
+
+CERTIFICATIONS:
+  • LangChain: Chat with Your Data — DeepLearning.AI
+  • Multi-Agent System with CrewAI — DeepLearning.AI
+  • Generative AI for Everyone — DeepLearning.AI / Andrew Ng
+  • Introduction to Generative AI — Google Cloud / Coursera
+  • Dell Technologies AI-THON
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 10 — EXPERIENCE TIMELINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Jul 2025 – Present
+  Senior Software Engineer – GenAI & Solutions Architect
+  Motiveminds Consulting Pvt Ltd | Bengaluru, India (Remote)
+  • Partner directly with enterprise clients on SAP + Salesforce GenAI workflows
+  • Architect multi-agent systems with tool calling, state management, and
+    self-correcting execution loops
+  • Build enterprise RAG knowledge assistants with citation grounding,
+    hallucination control, and 95%+ accuracy
+  • Containerized FastAPI deployment with LangSmith observability + evals
+  • Go-to technical solutions architect — messy business problems → deployed AI
+
+Jan 2025 – Jul 2025
+  Software Engineer – GenAI / GTM
+  W3 SaaS Technologies Ltd. | Remote — Dubai International Financial Centre
+  • +20% lead gen efficiency via Clay/n8n/Apollo/HubSpot/Salesforce automation
+  • +50% outbound acceleration via automated prospect research + AI personalization
+  • Dockerized Python/FastAPI microservices for fintech-grade financial workflows
+  • Shipped GenAI SaaS product features using LLM APIs + backend services
+
+Jul 2024 – Dec 2024
+  GenAI Research Intern
+  Blockchain Laboratories | Remote — Wyoming, United States
+  • Multi-agent prototypes: LangChain, LangGraph, LangFlow, CrewAI, AutoGen,
+    Agent Zero
+  • +25% RAG and multi-agent performance via advanced vector search + retrieval
+    evaluation
+  • Researched hallucination control, retrieval grounding, self-correcting
+    workflow patterns for enterprise PoCs
+
+Apr 2024 – Aug 2024
+  Full Stack Developer
+  Hyderabad Forex Limited | Hyderabad, India
+  • −40% manual data entry via OCR KYC pipeline
+  • −30% onboarding turnaround via FastAPI REST API automation
+  • Production deployment in regulated financial operations
+
+2020 – 2024
+  B.E. Computer Science
+  JSS Science and Technology University | Mysuru, India
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 11 — LIVE DEMO SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+OPTION A (Best — build this):
+  "Ask Sreesha" — a RAG chatbot trained on your own portfolio content (resume,
+  case studies, GitHub READMEs, projects). Recruiters and clients ask natural
+  language questions about your experience.
+  Stack: LangGraph + Qdrant + FastAPI + simple React chat UI
+  This simultaneously proves RAG + agentic AI + FastAPI in one live demo.
+  3 of the top-10 AI engineer portfolios do this (Muhammad Saad, Prateesh Reddy,
+  Step 7 Consulting).
+
+OPTION B:
+  Embed a 30-second Loom (no audio, looping) of a live Clay/n8n workflow running.
+
+OPTION C:
+  Interactive architecture diagram — clickable Mermaid or Figma diagram of your
+  multi-agent system with hover-expand details.
+
+Section headline: "Try a Live Demo"  OR  "See It Running"  OR  "Ask Me Anything"
+CTA under demo: "Want this for your team? Book a call →"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 12 — TESTIMONIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHO TO COLLECT FROM:
+  1. Manager at Motiveminds Consulting
+  2. Contact at W3 SaaS Technologies (Dubai)
+  3. Contact at Hyderabad Forex Limited (can speak to OCR results directly)
+  4. Anyone from Blockchain Laboratories who reviewed your RAG work
+
+TEMPLATE TO SEND (email / DM):
+  Subject: Quick favour — LinkedIn recommendation?
+
+  Hey [Name], hope you're doing well! I'm building my portfolio site and would
+  love to include a short testimonial from our time working together. If you
+  have 5 minutes, here's a template you can edit:
+
+  "[Name] is one of the rare engineers who operates at the intersection of AI
+  and business operations. When we worked together on [project], he [specific
+  outcome or metric]. He understood our business context, built to production
+  standards from day one, and was communicative throughout. If you need an
+  engineer who actually ships AI systems — not just prototypes — [Name] is the
+  person."
+
+  Feel free to edit/shorten. The metric in the middle is the most important —
+  even a rough number ('cut our review time by about half') is perfect. Happy
+  to return the favour anytime.
+
+DISPLAY FORMAT:
+  Avatar/photo + quote (large, italic) + name + title + company + metric badge
+  e.g. "−40% onboarding time"
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 13 — FAQ
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q: What's your rate?
+A: My fixed-price projects range from $1,500 for a scoped lead intelligence
+   sprint to $8,000 for a full RAG system or multi-agent workflow build.
+   Fractional retainers start at $1,500/month. I publish these ranges because
+   I want to save us both time if the budget isn't a fit. We can discuss
+   specifics on a 20-min intro call.
+
+Q: How long does a typical project take?
+A: Scoped projects: 1–6 weeks depending on complexity. A lead intelligence
+   sprint is 1–2 weeks. A full RAG system is 3–4 weeks. A multi-agent workflow
+   build is 3–5 weeks. I share a detailed scope doc with timeline before any
+   work begins — no surprises.
+
+Q: Do you work on a retainer?
+A: Yes. My fractional retainer (8–20 hrs/week, $1,500–$4,000/month) is designed
+   for companies that need ongoing AI engineering without a full-time hire.
+   Minimum 4-week commitment. Weekly async updates + monthly roadmap session
+   included.
+
+Q: Can you show NDA-protected client work?
+A: Most of my enterprise work is under NDA. For those projects, I share
+   anonymized-but-specific details: industry, company size, stack, and outcomes.
+   I can also provide reference contacts (with client permission) for serious
+   engagements.
+
+Q: Do you only do the build, or do you also do strategy?
+A: Both. I help you translate your business objective into an architecture first
+   — then build it. I won't recommend a technology before I understand what's
+   actually broken in your operations. That's a diagnostic conversation, not a
+   sales pitch.
+
+Q: What tools/stack do you use?
+A: For GenAI: LangGraph, CrewAI, AutoGen, LangChain, LlamaIndex — with OpenAI,
+   Anthropic, Gemini, or Azure OpenAI. For RAG: Qdrant, Pinecone, FAISS,
+   AstraDB. For GTM automation: Clay, n8n, HubSpot, Apollo. Backend: FastAPI +
+   Docker. I pick the right tool for the job, not the one I'm most comfortable
+   with.
+
+Q: Do you handle deployment, or just the build?
+A: Full deployment is included in every project scope. I deliver a running
+   system, not a GitHub repo. That means Docker containerization, cloud
+   deployment (GCP, AWS, or whatever you use), monitoring setup, documentation,
+   and a handoff call.
+
+Q: Are you open to full-time roles?
+A: Yes. I'm open to remote Applied AI, GTM Engineer, Forward Deployed AI, and
+   AI Automation Engineering roles at US/global remote companies. Serious
+   inquiries welcome — book an intro call or email me directly.
+
+Q: Where are you based and what timezone do you work in?
+A: Bengaluru, India — IST (UTC+5:30). I work async-first and overlap well with
+   US morning and EU afternoon. Most of my clients are in the US, UK, and UAE.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 14 — CONTACT / FINAL CTA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FINAL CTA HEADLINE:
+  "Ready to build something that actually runs in production?"
+  OR: "Book a free 20-min intro call."
+
+CTA COPY:
+  If you have a manual ops workflow that should be automated, an AI prototype
+  that never made it to production, or a GTM system that your team is still
+  running on spreadsheets — let's talk. A 20-minute call is enough for me to
+  tell you if I can help and what it would look like.
+
+CONTACT DETAILS:
+  Primary CTA: 📅  Book a 20-min Intro Call
+               calendly.com/baraarsreesha/intro
+               (set this up immediately — reduces email friction by ~80%)
+
+  Email:       ssbaraar02@gmail.com
+  LinkedIn:    linkedin.com/in/baraarsreesha  (3,700+ followers)
+  GitHub:      github.com/ssbaraar  (27 public repos)
+  HuggingFace: huggingface.co/relnse
+  Twitter/X:   @sreesha_baraar
+  Location:    Bengaluru, India (IST — UTC+5:30)  |  Available worldwide remote
+
+  Add: "I respond to all enquiries within 1 business day."
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 15 — BLOG / THOUGHT LEADERSHIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FIRST 5 BLOG POSTS (sourced from your top LinkedIn posts):
+
+Post 1 (38 likes on LinkedIn):
+  Self-hosting n8n on GCP: Production setup with Docker, PostgreSQL, and Nginx
+  — Step-by-step guide
+  (Already written as LinkedIn content — expand to 1,200 words)
+
+Post 2 (44 likes on LinkedIn):
+  LangGraph vs CrewAI vs AutoGen: When to use each one — My honest comparison
+  after shipping in all three
+
+Post 3 (107 likes on LinkedIn):
+  What I took away from RAG++ Bengaluru — The conversation that actually changed
+  how I think about retrieval
+
+Post 4 (contrarian take):
+  Why 95% of AI automations will break in Q3 2026 — And the one architectural
+  decision that separates the ones that survive
+
+Post 5 (tutorial format):
+  How I replaced a $2,000/month data subscription with a custom Clay pipeline
+  that's actually fresher
+
+Format: 800–1,500 words. Technical but not academic. Practical takeaway at the
+end. Same voice as your LinkedIn posts.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 16 — SITE ARCHITECTURE MAP & IMPLEMENTATION GUIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PAGE STRUCTURE (hand to developer):
+
+  / (homepage)
+  ├── Hero                    ← Section 2
+  ├── Social proof strip      ← Section 3
+  ├── Problem statement       ← Section 4
+  ├── Services (6 cards)      ← Section 5
+  ├── Case Studies (3 featured — CS1, CS3, CS4)  ← Section 6
+  ├── How I Work              ← Section 7
+  ├── Live Demo               ← Section 11
+  ├── Testimonials            ← Section 12
+  ├── FAQ                     ← Section 13
+  └── Contact CTA             ← Section 14
+
+  /about      → Section 8 (long form about + stats)
+  /work       → Section 6 (all 5 case studies)
+  /services   → Section 5 (full service cards + process)
+  /skills     → Section 9 (full skills grid + certs)
+  /experience → Section 10 (experience timeline)
+  /blog       → Section 15 (blog posts)
+
+TECH STACK RECOMMENDATION:
+  Next.js + Tailwind CSS — deploy on Vercel (free tier handles your traffic)
+  Alternative: Plain HTML/CSS/JS on GitHub Pages (zero cost, fastest to ship)
+
+DOMAIN:
+  baraarsreesha.com (Namecheap, ~$10/yr)
+
+ANALYTICS:
+  Plausible or Posthog (both free tier) — see which case studies get most
+  time-on-page
+
+BUILD PRIORITY ORDER:
+  Week 1:   Hero + Problem + Services + Contact  (these 4 sections convert)
+  Week 2:   Add Case Studies (3) + How I Work + About
+  Week 3:   Add Skills + Experience + FAQ
+  Month 2:  Add Blog + "Ask Sreesha" RAG chatbot demo
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SOURCES & RESEARCH BASIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Built from:
+  • LinkedIn profile scrape via Apify (3,705 followers, top 50 posts analyzed)
+  • GitHub profile README — github.com/ssbaraar (27 repos, 5 detailed projects)
+  • Resume (.tex file — full experience, skills, projects)
+  • ICP_and_Clients.xlsx + Perfect_ICP_For_Clients_And_Recruiters.md
+  • GTM_Fractional_Positioning_and_ICP.md
+  • Cover Letter (FDE/Applied AI/GTM focus)
+  • Portfolio research across 40+ sources including:
+      dataexpert.io, interviewkickstart.com, gtm-engineering.io,
+      automaly.io, virgent.ai, step7consulting.com, cjwray.com,
+      fractional.ai, gofractional.com, eca-partners.com,
+      zenvanriel.com, trajectoryweb, knapsackcreative.com,
+      lilachbullock.com, blog.duda.co, dowhatmatter.com
+
+Key research stats used:
+  • Portfolios with measurable outcomes get 3x more recruiter callbacks
+  • 87% of tech recruiters check GitHub during evaluation
+  • Client logos alone lift conversion 43%; logos + testimonials = 84% lift
+  • Publishing pricing reduces wasted discovery calls by ~60%
+  • 72% of B2B buyers rank case studies as their #1 content asset
+  • Microsoft/IDC: average $3.50 ROI per $1 invested in AI (2025)
+
+================================================================================
+END OF DOCUMENT
+For Baraar Sreesha Sreenivas — Personal Use Only — June 2026
+================================================================================
