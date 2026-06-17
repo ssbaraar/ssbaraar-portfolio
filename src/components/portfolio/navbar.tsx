@@ -8,12 +8,12 @@ import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Work", href: "#work", id: "work" },
-  { label: "Services", href: "#services", id: "services" },
-  { label: "Process", href: "#process", id: "process" },
-  { label: "About", href: "#about", id: "about" },
-  { label: "Blog", href: "#blog", id: "blog" },
-  { label: "FAQ", href: "#faq", id: "faq" },
+  { label: "Work", href: "/#work", id: "work" },
+  { label: "Services", href: "/#services", id: "services" },
+  { label: "Process", href: "/#process", id: "process" },
+  { label: "About", href: "/#about", id: "about" },
+  { label: "Blog", href: "/?view=blog", id: "blog" },
+  { label: "FAQ", href: "/#faq", id: "faq" },
 ];
 
 export function Navbar() {
@@ -103,7 +103,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link
-              href="#top"
+              href="/#top"
               className="group flex items-center gap-2.5 font-display text-base font-semibold tracking-tight"
             >
               <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background transition-transform duration-300 group-hover:rotate-[18deg]">
@@ -150,7 +150,7 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <ThemeToggle />
               <Link
-                href="#contact"
+                href="/#contact"
                 className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-transform duration-200 hover:scale-[1.03] active:scale-95 sm:inline-flex"
               >
                 Let&apos;s talk →
@@ -216,7 +216,7 @@ export function Navbar() {
                 );
               })}
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 className="mt-6 inline-flex h-14 items-center justify-center rounded-2xl bg-foreground text-lg font-semibold text-background"
               >

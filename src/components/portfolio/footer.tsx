@@ -11,12 +11,13 @@ const socials = [
 ];
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Work", href: "/#work" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "About", href: "/#about" },
+  { label: "Blog", href: "/?view=blog" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Footer() {
@@ -27,7 +28,7 @@ export function Footer() {
           {/* Brand block */}
           <div>
             <Link
-              href="#top"
+              href="/#top"
               className="group inline-flex items-center gap-2.5 font-display text-base font-semibold"
             >
               <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background transition-transform duration-300 group-hover:rotate-[18deg]">
