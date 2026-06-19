@@ -87,7 +87,9 @@ export function Hero() {
             className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Link
-              href="#contact"
+              href="https://calendly.com/baraarsreesha/intro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-sm font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80 sm:w-auto"
             >
               <Calendar className="h-4 w-4" />

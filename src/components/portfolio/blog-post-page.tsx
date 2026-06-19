@@ -557,7 +557,9 @@ export function BlogPostPage(props: BlogPostPageProps) {
                 </div>
               </div>
               <Link
-                href="/#contact"
+                href="https://calendly.com/baraarsreesha/intro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ml-auto hidden items-center gap-1.5 rounded-full border border-border px-4 py-2 text-xs font-semibold transition-colors hover:bg-secondary sm:inline-flex"
               >
                 Work with me
@@ -595,7 +597,9 @@ export function BlogPostPage(props: BlogPostPageProps) {
                 for B2B teams worldwide. Book a 20-minute intro call.
               </p>
               <Link
-                href="/#contact"
+                href="https://calendly.com/baraarsreesha/intro"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-foreground px-6 text-sm font-semibold text-background transition-transform hover:scale-[1.02] active:scale-95"
               >
                 Book a 20-min intro call

@@ -245,7 +245,9 @@ export function BlogIndex() {
             B2B teams worldwide. Book a 20-minute intro call.
           </p>
           <Link
-            href="/#contact"
+            href="https://calendly.com/baraarsreesha/intro"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 text-sm font-semibold text-background transition-opacity hover:opacity-90 active:opacity-80"
           >
             Book a 20-min intro call
