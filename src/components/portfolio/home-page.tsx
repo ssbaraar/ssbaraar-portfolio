@@ -15,7 +15,6 @@ import { FAQ } from "@/components/portfolio/faq";
 import { Blog } from "@/components/portfolio/blog";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
-import { CursorGlow } from "@/components/portfolio/cursor-glow";
 import { AntiInspect } from "@/components/portfolio/anti-inspect";
 import { AdminPanel } from "@/components/portfolio/admin-panel";
 import { PageViewTracker } from "@/components/portfolio/page-view-tracker";
@@ -25,7 +24,6 @@ export function HomePage() {
     <div className="relative flex min-h-screen flex-col bg-background">
       <PageViewTracker />
       <AntiInspect />
-      <CursorGlow />
       <Navbar />
       <main className="flex-1">
         <Hero />

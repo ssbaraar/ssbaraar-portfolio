@@ -5,7 +5,8 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const revalidate = 300; // refresh every 5 min
 
-const BASE_URL = "https://baraarsreesha.com";
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ssbaraar-portfolio.vercel.app";
 
 // GET /sitemap.xml — auto-generated from all posts (built-in + stored)
 // Replaces the static public/sitemap.xml file.
@@ -24,7 +25,7 @@ export async function GET() {
       priority: "0.9",
     },
     {
-      loc: `${BASE_URL}/llm.txt`,
+      loc: `${BASE_URL}/llms.txt`,
       changefreq: "monthly",
       priority: "0.5",
     },

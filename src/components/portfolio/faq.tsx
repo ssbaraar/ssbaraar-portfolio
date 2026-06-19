@@ -56,7 +56,7 @@ export function FAQ() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             FAQ
@@ -71,14 +71,14 @@ export function FAQ() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-3xl border border-border bg-card/40 p-4 backdrop-blur sm:p-6"
+          className="rounded-2xl border border-border bg-card p-4 sm:p-6"
         >
           <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="overflow-hidden rounded-2xl border border-border/60 bg-background/40 px-4 data-[state=open]:border-foreground/15 data-[state=open]:bg-background/60"
+                className="overflow-hidden rounded-xl border border-border bg-secondary/40 px-4 data-[state=open]:border-foreground/15 data-[state=open]:bg-secondary/60"
               >
                 <AccordionTrigger className="py-4 text-left font-display text-base font-semibold tracking-tight hover:no-underline sm:text-lg">
                   <span className="flex items-start gap-3">
@@ -89,7 +89,7 @@ export function FAQ() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  <span className="pl-7 block">{faq.a}</span>
+                  <span className="block pl-7">{faq.a}</span>
                 </AccordionContent>
               </AccordionItem>
             ))}

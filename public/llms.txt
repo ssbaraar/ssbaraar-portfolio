@@ -1,0 +1,54 @@
+# Baraar Sreesha — Applied AI & GTM Engineer
+
+> Applied AI Engineer building agentic pipelines, RAG systems, and GTM/RevOps automation for B2B revenue teams. Based in Bengaluru, India. Available fractional and full-time, remote worldwide.
+
+## Who I am
+
+Baraar Sreesha Sreenivas is an Applied AI Engineer with 2.5+ years of experience shipping production AI systems — not just prototypes. I specialize in the intersection of AI engineering and revenue operations: RAG pipelines, multi-agent LLM workflows, and Clay/n8n/HubSpot automation that actually runs in production.
+
+**Key roles I fit:** Applied AI Engineer · GenAI Engineer · Forward-Deployed Engineer · GTM Engineer · Fractional AI Retainer
+
+## What I build
+
+- **RAG Systems** — multi-document knowledge assistants with hybrid retrieval (BM25 + vector), citation-grounded responses, FastAPI deployment
+- **Agentic Workflows** — LangGraph, CrewAI, AutoGen multi-agent systems for autonomous GTM and RevOps tasks
+- **GTM Lead Intelligence** — Clay + n8n + HubSpot pipelines replacing expensive data subscriptions with fresher, custom data
+- **Document AI** — OCR pipelines, KYC automation, structured data extraction from PDFs and images
+- **AI Sales Automation** — personalized pitch deck + email generation in minutes, not hours
+
+## Production case studies
+
+- Replaced $2,000/mo Apollo + ZoomInfo with custom Clay pipeline — 7–14 day data freshness vs 60–90 days
+- Built AI pitch deck + email automation for B2B SaaS sales team — 2–4h per deck reduced to <10 min
+- Enterprise RAG over 500+ internal PDFs — 30–90 min doc search → <2 min, 100% citation-grounded
+- OCR KYC pipeline for Hyderabad Forex Limited — 40% reduction in manual data entry, 30% faster onboarding
+
+## Tech stack
+
+**AI Orchestration:** LangGraph, CrewAI, LangChain, LlamaIndex, AutoGen, AgentZero, LangFlow
+**LLM Providers:** OpenAI GPT-4, Anthropic Claude, Google Gemini, Azure OpenAI, Groq
+**Vector DBs:** Qdrant, Pinecone, FAISS, AstraDB, MongoDB Atlas, BM25 Hybrid
+**GTM & RevOps:** Clay, n8n, HubSpot API, Google Maps API, Apollo, ZoomInfo
+**Backend:** FastAPI, Python, Docker, PostgreSQL, GCP, Nginx
+**Observability:** LangSmith, Weights & Biases
+
+## Blog
+
+Production tutorials and case studies on Applied AI engineering:
+
+- [Self-hosting n8n on GCP: A production setup with Docker, PostgreSQL, and Nginx](https://ssbaraar-portfolio.vercel.app/?blog=self-hosting-n8n-on-gcp-production-setup)
+- [LangGraph vs CrewAI vs AutoGen: When to use each one — my honest comparison after shipping in all three](https://ssbaraar-portfolio.vercel.app/?blog=langgraph-vs-crewai-vs-autogen-real-comparison)
+- [How I replaced a $2,000/month data subscription with a custom Clay pipeline that's actually fresher](https://ssbaraar-portfolio.vercel.app/?blog=replace-2000-mo-apollo-zoominfo-with-clay-pipeline)
+
+## Contact
+
+- **Email:** ssbaraar02@gmail.com
+- **LinkedIn:** https://linkedin.com/in/baraarsreesha
+- **GitHub:** https://github.com/ssbaraar
+- **HuggingFace:** https://huggingface.co/ssbaraar
+- **Twitter/X:** https://twitter.com/sreesha_baraar
+- **Book a call:** https://calendly.com/baraarsreesha/intro
+
+## Location
+
+Bengaluru, India · IST (UTC+5:30) · Remote worldwide · Responds within 1 business day

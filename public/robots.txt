@@ -102,4 +102,4 @@ Disallow: /admin
 Disallow: /.env
 Disallow: /wp-admin
 
-Sitemap: https://baraarsreesha.com/sitemap.xml
+Sitemap: https://ssbaraar-portfolio.vercel.app/sitemap.xml

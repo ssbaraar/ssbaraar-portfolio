@@ -6,10 +6,8 @@ import * as React from "react";
 type Stat = {
   value: number;
   suffix?: string;
-  prefix?: string;
   label: string;
   hint: string;
-  color: string;
 };
 
 const stats: Stat[] = [
@@ -18,40 +16,34 @@ const stats: Stat[] = [
     suffix: "+",
     label: "yrs",
     hint: "production AI experience",
-    color: "var(--lime)",
   },
   {
     value: 5,
     suffix: "+",
     label: "deploys",
     hint: "production AI systems shipped",
-    color: "var(--coral)",
   },
   {
     value: 40,
     suffix: "%",
     label: "reduction",
     hint: "manual ops via OCR pipeline",
-    color: "var(--lavender)",
   },
   {
     value: 3700,
     suffix: "+",
     label: "followers",
     hint: "AI community on LinkedIn",
-    color: "var(--amber)",
   },
 ];
 
 function CountUp({
   to,
   suffix = "",
-  prefix = "",
   decimals = 0,
 }: {
   to: number;
   suffix?: string;
-  prefix?: string;
   decimals?: number;
 }) {
   const ref = React.useRef<HTMLSpanElement>(null);
@@ -76,7 +68,6 @@ function CountUp({
 
   return (
     <span ref={ref} className="tabular-nums">
-      {prefix}
       <motion.span>{rounded}</motion.span>
       {suffix}
     </span>
@@ -95,16 +86,9 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 p-5 backdrop-blur transition-all hover:-translate-y-1 hover:border-foreground/15 sm:p-7"
+              className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-7"
             >
-              <div
-                className="absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-10 blur-2xl transition-opacity group-hover:opacity-30"
-                style={{ background: stat.color }}
-              />
-              <div
-                className="font-display text-4xl font-bold leading-none tracking-tight sm:text-5xl lg:text-6xl"
-                style={{ color: stat.color }}
-              >
+              <div className="font-display text-4xl font-bold leading-none tracking-tight text-foreground sm:text-5xl lg:text-6xl">
                 <CountUp
                   to={stat.value}
                   suffix={stat.suffix}

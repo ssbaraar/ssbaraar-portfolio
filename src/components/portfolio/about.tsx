@@ -10,7 +10,6 @@ const experience = [
     company: "Motiveminds Consulting",
     location: "Bengaluru, India · Remote",
     icon: Building2,
-    accent: "var(--lime)",
     bullets: [
       "Enterprise SAP + Salesforce GenAI workflows",
       "Multi-agent systems · RAG @ 95%+ accuracy",
@@ -23,7 +22,6 @@ const experience = [
     company: "W3 SaaS Technologies",
     location: "Remote · Dubai International Financial Centre",
     icon: Building2,
-    accent: "var(--coral)",
     bullets: [
       "+20% lead-gen · +50% outbound acceleration",
       "Clay / n8n / Apollo / HubSpot automation",
@@ -36,7 +34,6 @@ const experience = [
     company: "Blockchain Laboratories",
     location: "Remote · Wyoming, United States",
     icon: Building2,
-    accent: "var(--lavender)",
     bullets: [
       "Multi-agent prototypes: LangGraph, CrewAI, AutoGen",
       "+25% RAG performance via retrieval eval",
@@ -49,7 +46,6 @@ const experience = [
     company: "Hyderabad Forex Limited",
     location: "Hyderabad, India",
     icon: Building2,
-    accent: "var(--amber)",
     bullets: [
       "−40% manual data entry · −30% onboarding time",
       "OCR KYC pipeline + FastAPI REST API",
@@ -62,9 +58,15 @@ const experience = [
     company: "JSS Science and Technology University",
     location: "Mysuru, India",
     icon: GraduationCap,
-    accent: "var(--mint)",
     bullets: ["Algorithms · systems · databases · networks"],
   },
+];
+
+const chips = [
+  "LangGraph multi-agent",
+  "RAG · 95%+ accuracy",
+  "Clay + n8n GTM",
+  "FastAPI · Docker",
 ];
 
 export function About() {
@@ -78,7 +80,7 @@ export function About() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               About me
@@ -91,8 +93,8 @@ export function About() {
               className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
             >
               I&apos;m Baraar Sreesha — I close the gap between{" "}
-              <span className="squiggly-coral">AI engineering</span> and{" "}
-              <span className="squiggly">revenue operations</span>.
+              <span className="text-primary">AI engineering</span> and{" "}
+              <span className="text-primary">revenue operations</span>.
             </motion.h2>
 
             <motion.div
@@ -114,7 +116,6 @@ export function About() {
               </p>
             </motion.div>
 
-            {/* Highlight chips instead of paragraphs */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,27 +123,17 @@ export function About() {
               transition={{ delay: 0.15 }}
               className="mt-6 flex flex-wrap gap-2"
             >
-              {[
-                { label: "LangGraph multi-agent", color: "var(--lime)" },
-                { label: "RAG · 95%+ accuracy", color: "var(--coral)" },
-                { label: "Clay + n8n GTM", color: "var(--lavender)" },
-                { label: "FastAPI · Docker", color: "var(--amber)" },
-              ].map((chip) => (
+              {chips.map((chip) => (
                 <span
-                  key={chip.label}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/40 px-3 py-1.5 text-xs font-medium backdrop-blur"
-                  style={{ color: chip.color }}
+                  key={chip}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium"
                 >
-                  <span
-                    className="h-1.5 w-1.5 rounded-full"
-                    style={{ background: chip.color }}
-                  />
-                  <span className="text-foreground/80">{chip.label}</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary/60" />
+                  {chip}
                 </span>
               ))}
             </motion.div>
 
-            {/* Quick facts */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +141,7 @@ export function About() {
               transition={{ delay: 0.2 }}
               className="mt-6 grid grid-cols-2 gap-3"
             >
-              <div className="rounded-2xl border border-border bg-card/40 p-4 backdrop-blur">
+              <div className="rounded-xl border border-border bg-card p-4">
                 <div className="font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
                   Based
                 </div>
@@ -159,7 +150,7 @@ export function About() {
                   Bengaluru, India
                 </div>
               </div>
-              <div className="rounded-2xl border border-border bg-card/40 p-4 backdrop-blur">
+              <div className="rounded-xl border border-border bg-card p-4">
                 <div className="font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
                   Community
                 </div>
@@ -172,15 +163,11 @@ export function About() {
 
           {/* Experience timeline */}
           <div>
-            <div className="mb-6 flex items-center gap-2">
-              <span className="text-xl">📍</span>
-              <h3 className="font-display text-sm font-bold uppercase tracking-wider text-muted-foreground">
-                Experience timeline
-              </h3>
-            </div>
+            <h3 className="mb-6 font-display text-xs font-bold uppercase tracking-wider text-muted-foreground">
+              Experience timeline
+            </h3>
 
             <div className="relative">
-              {/* Vertical line */}
               <div className="absolute left-[18px] top-2 bottom-2 w-px bg-border" />
 
               <div className="space-y-4">
@@ -195,19 +182,12 @@ export function About() {
                       transition={{ duration: 0.4, delay: i * 0.08 }}
                       className="relative pl-12"
                     >
-                      {/* Node */}
-                      <div
-                        className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border-2 border-background bg-card"
-                        style={{ color: item.accent }}
-                      >
+                      <div className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground">
                         <Icon className="h-4 w-4" strokeWidth={2} />
                       </div>
 
-                      <div className="rounded-2xl border border-border bg-card/40 p-4 backdrop-blur transition-colors hover:border-foreground/15">
-                        <div
-                          className="font-mono-jb text-[10px] uppercase tracking-wider"
-                          style={{ color: item.accent }}
-                        >
+                      <div className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-foreground/20">
+                        <div className="font-mono-jb text-[10px] uppercase tracking-wider text-primary">
                           {item.period}
                         </div>
                         <h4 className="mt-1 font-display text-base font-bold leading-tight tracking-tight">
@@ -222,10 +202,7 @@ export function About() {
                               key={b}
                               className="flex items-start gap-2 text-xs text-foreground/75"
                             >
-                              <span
-                                className="mt-1.5 h-1 w-1 shrink-0 rounded-full"
-                                style={{ background: item.accent }}
-                              />
+                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
                               <span>{b}</span>
                             </li>
                           ))}

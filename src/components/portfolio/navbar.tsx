@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -106,9 +106,8 @@ export function Navbar() {
               href="/#top"
               className="group flex items-center gap-2.5 font-display text-base font-semibold tracking-tight"
             >
-              <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-full bg-foreground text-background transition-transform duration-300 group-hover:rotate-[18deg]">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background">
                 <span className="font-display text-sm font-bold">B</span>
-                <Sparkles className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 text-primary" />
               </span>
               <span className="hidden sm:inline">Sreesha</span>
             </Link>
@@ -151,7 +150,7 @@ export function Navbar() {
               <ThemeToggle />
               <Link
                 href="/#contact"
-                className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-transform duration-200 hover:scale-[1.03] active:scale-95 sm:inline-flex"
+                className="hidden rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-90 active:opacity-80 sm:inline-flex"
               >
                 Let&apos;s talk →
               </Link>

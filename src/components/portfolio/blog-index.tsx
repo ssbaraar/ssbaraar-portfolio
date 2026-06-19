@@ -9,7 +9,6 @@ import {
   Clock,
   Calendar,
   Search,
-  Sparkles,
   Rss,
 } from "lucide-react";
 import { blogPosts, type BlogPost } from "@/lib/blog-posts";
@@ -40,7 +39,7 @@ function BlogCard({ post }: { post: StoredPost }) {
   return (
     <Link
       href={`/?blog=${post.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-foreground/15"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/20"
     >
       {post.coverImage ? (
         <div className="aspect-[1200/630] overflow-hidden border-b border-border bg-secondary/30">
@@ -52,15 +51,12 @@ function BlogCard({ post }: { post: StoredPost }) {
           />
         </div>
       ) : (
-        <div className="h-1.5 w-full" style={{ background: post.accent }} />
+        <div className="h-px w-full bg-primary/40" />
       )}
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-4 flex items-center gap-2 text-xs">
-          <span
-            className="rounded-full border border-border bg-background/60 px-2.5 py-1 font-mono-jb uppercase tracking-wider"
-            style={{ color: post.accent }}
-          >
+          <span className="rounded-md border border-border bg-secondary px-2.5 py-1 font-mono-jb uppercase tracking-wider text-muted-foreground">
             {post.category}
           </span>
           <span className="flex items-center gap-1 text-muted-foreground">
@@ -68,19 +64,15 @@ function BlogCard({ post }: { post: StoredPost }) {
             {post.readingTime}
           </span>
           {post._stored && (
-            <span className="ml-auto flex items-center gap-1 rounded-full bg-lime/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-foreground">
-              <Sparkles className="h-2.5 w-2.5" />
+            <span className="ml-auto rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-primary">
               New
             </span>
           )}
         </div>
 
-        <div className="mb-3 flex items-start gap-3">
-          <span className="text-3xl">{post.emoji}</span>
-          <h3 className="font-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
-            {post.title}
-          </h3>
-        </div>
+        <h3 className="mb-3 font-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
+          {post.title}
+        </h3>
 
         <p className="text-sm leading-relaxed text-muted-foreground">
           {post.excerpt}
@@ -145,7 +137,7 @@ export function BlogIndex() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
           >
             <Rss className="h-3 w-3 text-primary" />
             Writing
@@ -157,7 +149,7 @@ export function BlogIndex() {
             className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
           >
             Things I&apos;ve{" "}
-            <span className="squiggly">shipped &amp; learned</span>.
+            shipped &amp; learned.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -244,7 +236,7 @@ export function BlogIndex() {
         )}
 
         {/* Footer CTA */}
-        <div className="mt-16 rounded-3xl border border-border bg-card/40 p-7 text-center backdrop-blur sm:p-10">
+        <div className="mt-16 rounded-2xl border border-border bg-card p-7 text-center sm:p-10">
           <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">
             Want this for your team?
           </h2>
@@ -254,7 +246,7 @@ export function BlogIndex() {
           </p>
           <Link
             href="/#contact"
-            className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-foreground px-6 text-sm font-semibold text-background transition-transform hover:scale-[1.02] active:scale-95"
+            className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-foreground px-6 text-sm font-semibold text-background transition-opacity hover:opacity-90 active:opacity-80"
           >
             Book a 20-min intro call
             <ArrowUpRight className="h-4 w-4" />

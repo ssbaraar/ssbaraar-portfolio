@@ -19,8 +19,6 @@ type CaseStudy = {
   headline: string;
   stack: string[];
   results: { icon: typeof TrendingDown; label: string; value: string }[];
-  accent: string;
-  emoji: string;
 };
 
 const cases: CaseStudy[] = [
@@ -37,8 +35,6 @@ const cases: CaseStudy[] = [
       { icon: Clock, label: "Data freshness", value: "60–90d → 7–14d" },
       { icon: TrendingDown, label: "SDR research", value: "3–4h → <30min/day" },
     ],
-    accent: "var(--lime)",
-    emoji: "🛰️",
   },
   {
     id: "pitch-deck",
@@ -53,8 +49,6 @@ const cases: CaseStudy[] = [
       { icon: Gauge, label: "Outbound capacity", value: "10 → 50+/wk" },
       { icon: TrendingDown, label: "Human review gates", value: "every step → 1 gate" },
     ],
-    accent: "var(--coral)",
-    emoji: "🎨",
   },
   {
     id: "enterprise-rag",
@@ -69,8 +63,6 @@ const cases: CaseStudy[] = [
       { icon: Gauge, label: "Answer grounding", value: "None → 100% cited" },
       { icon: TrendingDown, label: "Cross-doc synthesis", value: "Manual → automated" },
     ],
-    accent: "var(--lavender)",
-    emoji: "📚",
   },
   {
     id: "forex-ocr",
@@ -85,8 +77,6 @@ const cases: CaseStudy[] = [
       { icon: Clock, label: "Onboarding time", value: "−30% faster" },
       { icon: Gauge, label: "Compliance rework", value: "frequent → reduced" },
     ],
-    accent: "var(--amber)",
-    emoji: "💱",
   },
 ];
 
@@ -97,27 +87,23 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 2) * 0.1 }}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-foreground/15"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/20"
     >
-      {/* Top color band */}
-      <div className="h-1.5 w-full" style={{ background: study.accent }} />
+      {/* Top accent line */}
+      <div className="h-px w-full bg-primary/40" />
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">
         {/* Header */}
-        <div className="mb-5 flex items-start justify-between gap-4">
+        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              <span className="text-base">{study.emoji}</span>
-              <span>{study.industry}</span>
+            <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+              {study.industry}
             </div>
-            <div className="mt-1 font-mono-jb text-[11px] text-muted-foreground/80">
+            <div className="mt-0.5 font-mono-jb text-[11px] text-muted-foreground/70">
               {study.client}
             </div>
           </div>
-          <span
-            className="rounded-full border border-border bg-background/60 px-2.5 py-1 font-mono-jb text-[10px] uppercase tracking-wider"
-            style={{ color: study.accent }}
-          >
+          <span className="self-start rounded-md border border-border bg-secondary px-2.5 py-1 font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
             {study.type}
           </span>
         </div>
@@ -134,13 +120,9 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
             return (
               <div
                 key={r.label}
-                className="rounded-2xl border border-border/60 bg-background/40 p-3"
+                className="rounded-xl border border-border bg-secondary/50 p-3"
               >
-                <Icon
-                  className="h-4 w-4"
-                  style={{ color: study.accent }}
-                  strokeWidth={2}
-                />
+                <Icon className="h-4 w-4 text-primary" strokeWidth={2} />
                 <div className="mt-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
                   {r.label}
                 </div>
@@ -157,14 +139,14 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
           {study.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-border bg-background/50 px-2.5 py-1 font-mono-jb text-[10px] text-muted-foreground"
+              className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono-jb text-[10px] text-muted-foreground"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4">
+        <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
           <span className="text-xs text-muted-foreground">
             Case 0{index + 1} · production-deployed
           </span>
@@ -192,7 +174,7 @@ export function CaseStudies() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Selected work
@@ -218,18 +200,15 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-5 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-3xl border border-border bg-card/30 p-6 sm:flex-row sm:items-center"
+          className="mt-5 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center"
         >
-          <div className="flex items-start gap-4">
-            <span className="text-3xl">🏗️</span>
-            <div>
-              <h3 className="font-display text-lg font-bold">
-                Self-hosted n8n on GCP — production automation backbone
-              </h3>
-              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-                Replaced $500+/mo SaaS subscriptions with self-hosted n8n on GCP — Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure layer behind every GTM/RevOps workflow I ship.
-              </p>
-            </div>
+          <div>
+            <h3 className="font-display text-lg font-bold">
+              Self-hosted n8n on GCP — production automation backbone
+            </h3>
+            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
+              Replaced $500+/mo SaaS subscriptions with self-hosted n8n on GCP — Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure layer behind every GTM/RevOps workflow I ship.
+            </p>
           </div>
           <div className="shrink-0 text-left sm:text-right">
             <div className="font-mono-jb text-xs uppercase tracking-wider text-muted-foreground">
@@ -244,9 +223,9 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-10 rounded-3xl border border-border bg-card/40 p-7 backdrop-blur sm:p-10"
+          className="mt-10 rounded-2xl border border-border bg-card p-7 sm:p-10"
         >
-          <Quote className="h-8 w-8 text-primary" />
+          <Quote className="h-7 w-7 text-primary" />
           <p className="mt-4 font-display text-xl font-medium leading-snug tracking-tight sm:text-2xl">
             &ldquo;I build the system, not just the model. From LangGraph agent
             to FastAPI deployment to HubSpot sync — I own the full stack and I

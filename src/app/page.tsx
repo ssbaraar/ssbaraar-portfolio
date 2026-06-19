@@ -43,8 +43,27 @@ export default async function Home({
     if (post) {
       // Fetch all posts for the "related posts" section
       const allPosts = await getAllPosts();
+      const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ssbaraar-portfolio.vercel.app";
+      const blogPostSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "@id": `${siteUrl}/?blog=${post.slug}#article`,
+        headline: post.title,
+        description: post.description ?? post.excerpt,
+        url: `${siteUrl}/?blog=${post.slug}`,
+        datePublished: post.publishedAt,
+        dateModified: post.publishedAt,
+        author: { "@id": `${siteUrl}/#person` },
+        publisher: { "@id": `${siteUrl}/#website` },
+        ...(post.keywords ? { keywords: post.keywords.join(", ") } : {}),
+        ...(post.coverImage ? { image: { "@type": "ImageObject", url: `${siteUrl}${post.coverImage}` } } : {}),
+      };
       return (
         <div className="relative flex min-h-screen flex-col bg-background">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+          />
           <AntiInspect />
           <CursorGlow />
           <BlogPostPage post={post} allPosts={allPosts} />
@@ -97,10 +116,11 @@ export async function generateMetadata({
     const post = storedPost || blogPosts.find((p) => p.slug === params.blog);
     if (post) {
       return {
-        title: `${post.title} — Baraar Sreesha`,
-        description: post.description,
+        title: post.title,
+        description: post.description ?? post.excerpt,
         keywords: post.keywords,
         authors: [{ name: post.author.name }],
+        alternates: { canonical: `/?blog=${post.slug}` },
         openGraph: {
           title: post.title,
           description: post.excerpt,
@@ -108,13 +128,17 @@ export async function generateMetadata({
           publishedTime: post.publishedAt,
           authors: [post.author.name],
           siteName: "Baraar Sreesha",
-          images: post.coverImage ? [{ url: post.coverImage }] : undefined,
+          url: `/?blog=${post.slug}`,
+          images: post.coverImage
+            ? [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }]
+            : [{ url: "/opengraph-image", width: 1200, height: 630, alt: post.title }],
         },
         twitter: {
           card: "summary_large_image",
           title: post.title,
           description: post.excerpt,
-          images: post.coverImage ? [post.coverImage] : undefined,
+          images: post.coverImage ? [post.coverImage] : ["/opengraph-image"],
+          creator: "@sreesha_baraar",
         },
       };
     }
@@ -122,9 +146,9 @@ export async function generateMetadata({
 
   if (params.view === "blog") {
     return {
-      title: "Blog — Baraar Sreesha",
+      title: "Blog",
       description:
-        "Tutorials, framework comparisons, and case studies from 2.5+ years of building production AI and GTM automation systems. LangGraph, CrewAI, n8n, Clay, RAG, multi-agent workflows.",
+        "Tutorials, framework comparisons, and case studies from building production AI and GTM automation systems. LangGraph, CrewAI, n8n, Clay, RAG, multi-agent workflows.",
       keywords: [
         "AI engineering blog",
         "LangGraph tutorial",
@@ -134,49 +158,46 @@ export async function generateMetadata({
         "RAG systems",
         "Applied AI engineer blog",
       ],
+      alternates: { canonical: "/?view=blog" },
       openGraph: {
         title: "Blog — Baraar Sreesha",
         description:
           "Production AI tutorials, framework comparisons, and case studies.",
         siteName: "Baraar Sreesha",
         type: "website",
+        url: "/?view=blog",
+        images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Blog — Baraar Sreesha",
+        description: "Production AI tutorials, framework comparisons, and case studies.",
+        images: ["/opengraph-image"],
+        creator: "@sreesha_baraar",
       },
     };
   }
 
   return {
-    title: "Baraar Sreesha — Applied AI & GTM Engineer who ships to production",
+    title: "Baraar Sreesha — Applied AI & GTM Engineer",
     description:
-      "Applied AI • GenAI • Forward-Deployed • Fractional GTM Engineer. I build agentic pipelines, RAG systems, and Clay/n8n/HubSpot automation for B2B revenue teams — deployed, not demoed.",
-    keywords: [
-      "Applied AI Engineer",
-      "GenAI Engineer",
-      "GTM Engineer",
-      "Forward Deployed Engineer",
-      "RAG",
-      "LangGraph",
-      "CrewAI",
-      "AutoGen",
-      "FastAPI",
-      "Clay",
-      "n8n",
-      "HubSpot automation",
-      "Fractional AI",
-      "Baraar Sreesha",
-    ],
-    authors: [{ name: "Baraar Sreesha Sreenivas" }],
+      "Applied AI & GTM Engineer. I build agentic pipelines, RAG systems, and Clay/n8n/HubSpot automation for B2B revenue teams — deployed to production, not just demoed.",
+    alternates: { canonical: "/" },
     openGraph: {
       title: "Baraar Sreesha — Applied AI & GTM Engineer",
       description:
         "Agentic AI • RAG • GTM automation that ships to production. Bengaluru, remote worldwide.",
       siteName: "Baraar Sreesha",
       type: "website",
+      url: "/",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Baraar Sreesha — Applied AI & GTM Engineer" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Baraar Sreesha — Applied AI & GTM Engineer",
-      description:
-        "Agentic AI • RAG • GTM automation that ships to production.",
+      description: "Agentic AI • RAG • GTM automation that ships to production.",
+      images: ["/opengraph-image"],
+      creator: "@sreesha_baraar",
     },
   };
 }

@@ -111,8 +111,8 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
             block.variant === "tip"
               ? "border-primary/40 bg-primary/5"
               : block.variant === "warn"
-                ? "border-coral/40 bg-coral/5"
-                : "border-lavender/40 bg-lavender/5"
+                ? "border-destructive/40 bg-destructive/5"
+                : "border-border bg-secondary/50"
           }`}
         >
           {block.title && (

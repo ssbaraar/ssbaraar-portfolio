@@ -11,7 +11,6 @@ const content = {
   recruiters: {
     label: "I'm hiring",
     icon: Briefcase,
-    accent: "var(--lavender)",
     headline: "Hire an engineer who ships, not one who demos.",
     sub: "2.5+ years building RAG, multi-agent workflows, and GTM automation that runs in production. I don't leave until it's deployed, monitored, and the team can run it without me.",
     roles: [
@@ -34,7 +33,6 @@ const content = {
   founders: {
     label: "I need a build",
     icon: Rocket,
-    accent: "var(--lime)",
     headline: "Your AI pilot stalls in staging. I finish the build.",
     sub: "I work with founder-led B2B SaaS, outbound agencies, and SMBs ($1M–$10M) to replace manual GTM work with systems that actually run.",
     roles: [
@@ -69,7 +67,7 @@ export function AudienceToggle() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Pick your lane
@@ -81,7 +79,7 @@ export function AudienceToggle() {
         </div>
 
         {/* Toggle */}
-        <div className="mx-auto mb-10 flex max-w-md items-center gap-1.5 rounded-full border border-border bg-card/60 p-1.5 backdrop-blur">
+        <div className="mx-auto mb-10 flex max-w-md items-center gap-1.5 rounded-lg border border-border bg-secondary p-1.5">
           {(Object.keys(content) as Audience[]).map((key) => {
             const item = content[key];
             const Icon = item.icon;
@@ -92,14 +90,14 @@ export function AudienceToggle() {
                 type="button"
                 onClick={() => setAudience(key)}
                 className={cn(
-                  "relative flex flex-1 items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors",
-                  isActive ? "text-background" : "text-foreground/70 hover:text-foreground"
+                  "relative flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors",
+                  isActive ? "text-background" : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {isActive && (
                   <motion.span
                     layoutId="audience-pill"
-                    className="absolute inset-0 rounded-full bg-foreground"
+                    className="absolute inset-0 rounded-md bg-foreground"
                     transition={{ type: "spring", stiffness: 350, damping: 32 }}
                   />
                 )}
@@ -118,12 +116,8 @@ export function AudienceToggle() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3 }}
-            className="relative overflow-hidden rounded-3xl border border-border bg-card/50 p-6 backdrop-blur sm:p-10"
+            className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-10"
           >
-            <div
-              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-20 blur-3xl"
-              style={{ background: data.accent }}
-            />
             <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <h3 className="font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
@@ -136,7 +130,7 @@ export function AudienceToggle() {
                   href={data.href}
                   target={data.href.startsWith("#") ? undefined : "_blank"}
                   rel={data.href.startsWith("#") ? undefined : "noopener noreferrer"}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition-transform hover:scale-[1.03] active:scale-95"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
                 >
                   {data.cta}
                   <ArrowRight className="h-4 w-4" />
@@ -144,17 +138,14 @@ export function AudienceToggle() {
               </div>
               <div className="grid gap-6">
                 <div>
-                  <div
-                    className="mb-3 text-xs font-semibold uppercase tracking-wider"
-                    style={{ color: data.accent }}
-                  >
+                  <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
                     {audience === "recruiters" ? "Roles I fit" : "Ways to engage"}
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {data.roles.map((role) => (
                       <span
                         key={role}
-                        className="rounded-full border border-border bg-background/60 px-3 py-1.5 text-xs font-medium"
+                        className="rounded-full border border-border bg-secondary px-3 py-1.5 text-xs font-medium"
                       >
                         {role}
                       </span>
@@ -162,10 +153,7 @@ export function AudienceToggle() {
                   </div>
                 </div>
                 <div>
-                  <div
-                    className="mb-3 text-xs font-semibold uppercase tracking-wider"
-                    style={{ color: data.accent }}
-                  >
+                  <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
                     Proof
                   </div>
                   <ul className="space-y-2">
@@ -174,10 +162,7 @@ export function AudienceToggle() {
                         key={p}
                         className="flex items-start gap-2 text-sm text-muted-foreground"
                       >
-                        <Check
-                          className="mt-0.5 h-4 w-4 shrink-0"
-                          style={{ color: data.accent }}
-                        />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                         <span>{p}</span>
                       </li>
                     ))}
