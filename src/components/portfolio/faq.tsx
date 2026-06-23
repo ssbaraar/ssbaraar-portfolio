@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import { Sparkle, Star4 } from "@/components/portfolio/doodles";
 
 const faqs = [
   {
@@ -49,7 +50,9 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative bg-canvas py-20 sm:py-28">
+    <section id="faq" className="relative overflow-hidden bg-canvas py-20 sm:py-28">
+      <Sparkle className="pointer-events-none absolute left-[8%] top-24 hidden h-9 w-9 text-brand-coral/40 lg:block" />
+      <Star4 className="pointer-events-none absolute right-[9%] top-28 hidden h-7 w-7 text-ink/15 lg:block" />
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <div className="mb-12 text-center">
           <motion.span

@@ -15,6 +15,7 @@ import {
   RotateCw,
   RotateCcw,
 } from "lucide-react";
+import { Sparkle, Star4 } from "@/components/portfolio/doodles";
 
 type Service = {
   id: string;
@@ -140,9 +141,6 @@ const skins: Skin[] = [
   { card: "bg-surface-card", text: "text-ink", soft: "text-muted-foreground", tile: "bg-ink/[0.06] text-ink", rule: "border-ink/10", dot: "bg-ink/40", btn: "bg-ink text-white" },
 ];
 
-// Staggered vertical offsets per column for an intentionally "uneven" grid
-const stagger = ["lg:mt-0", "lg:mt-16", "lg:mt-8"];
-
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = service.icon;
   const s = skins[index % skins.length];
@@ -154,7 +152,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className={`${stagger[index % 3]} [perspective:1600px]`}
+      className="[perspective:1600px]"
     >
       <div className="group relative h-[23rem] w-full transition-transform duration-300 hover:-translate-y-1.5 sm:h-[24rem]">
         <div
@@ -250,6 +248,8 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 export function Services() {
   return (
     <section id="services" className="relative bg-canvas py-20 sm:py-28">
+      <Sparkle className="pointer-events-none absolute right-[5%] top-20 hidden h-10 w-10 text-brand-coral/40 lg:block" />
+      <Star4 className="pointer-events-none absolute left-[3%] top-[44%] hidden h-8 w-8 text-ink/15 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
@@ -275,7 +275,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid items-start gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <ServiceCard key={s.id} service={s} index={i} />
           ))}

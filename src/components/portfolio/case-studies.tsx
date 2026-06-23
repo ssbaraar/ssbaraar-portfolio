@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Quote,
 } from "lucide-react";
+import { Squiggle, Loop } from "@/components/portfolio/doodles";
 
 type CaseStudy = {
   id: string;
@@ -171,7 +172,9 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
 
 export function CaseStudies() {
   return (
-    <section id="work" className="relative bg-surface-soft py-20 sm:py-28">
+    <section id="work" className="relative overflow-hidden bg-surface-soft py-20 sm:py-28">
+      <Squiggle className="pointer-events-none absolute right-[4%] top-24 hidden h-9 w-24 text-ink/20 lg:block" />
+      <Loop className="pointer-events-none absolute left-[2%] bottom-24 hidden h-14 w-14 text-brand-coral/30 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>

@@ -3,6 +3,7 @@
 import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, Rocket, ArrowRight, Check } from "lucide-react";
+import { Squiggle, Sparkle } from "@/components/portfolio/doodles";
 import { cn } from "@/lib/utils";
 
 type Audience = "recruiters" | "founders";
@@ -59,7 +60,9 @@ export function AudienceToggle() {
   const data = content[audience];
 
   return (
-    <section className="bg-canvas py-16 sm:py-24">
+    <section className="relative overflow-hidden bg-canvas py-16 sm:py-24">
+      <Squiggle className="pointer-events-none absolute left-[6%] top-16 hidden h-8 w-24 text-ink/15 lg:block" />
+      <Sparkle className="pointer-events-none absolute right-[7%] top-20 hidden h-9 w-9 text-brand-coral/40 lg:block" />
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* Section header */}
         <div className="mb-10 text-center">

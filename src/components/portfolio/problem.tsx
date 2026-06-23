@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { TrendingUp, Zap, CheckCircle2, Clock } from "lucide-react";
+import { Scribble, Star4 } from "@/components/portfolio/doodles";
 
 const problems = [
   {
@@ -23,7 +24,9 @@ const problems = [
 
 export function Problem() {
   return (
-    <section className="relative bg-canvas py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-canvas py-20 sm:py-28">
+      <Scribble className="pointer-events-none absolute right-[5%] top-20 hidden h-9 w-28 text-brand-coral/35 lg:block" />
+      <Star4 className="pointer-events-none absolute right-[14%] top-[46%] hidden h-7 w-7 text-ink/15 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 max-w-3xl">
           <motion.span

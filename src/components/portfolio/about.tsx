@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Building2, GraduationCap, MapPin } from "lucide-react";
+import { Sparkle, Squiggle } from "@/components/portfolio/doodles";
 
 const experience = [
   {
@@ -71,7 +72,9 @@ const chips = [
 
 export function About() {
   return (
-    <section id="about" className="relative bg-surface-soft py-20 sm:py-28">
+    <section id="about" className="relative overflow-hidden bg-surface-soft py-20 sm:py-28">
+      <Sparkle className="pointer-events-none absolute right-[5%] top-16 hidden h-9 w-9 text-brand-coral/40 lg:block" />
+      <Squiggle className="pointer-events-none absolute left-[3%] bottom-20 hidden h-8 w-24 text-ink/15 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           {/* About content */}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Star4, Loop } from "@/components/portfolio/doodles";
 import {
   Brain,
   Sparkles,
@@ -140,7 +141,9 @@ function TechBadge({ item }: { item: string }) {
 
 export function TechStack() {
   return (
-    <section id="stack" className="relative bg-canvas py-20 sm:py-28">
+    <section id="stack" className="relative overflow-hidden bg-canvas py-20 sm:py-28">
+      <Loop className="pointer-events-none absolute right-[4%] top-16 hidden h-12 w-12 text-brand-coral/30 lg:block" />
+      <Star4 className="pointer-events-none absolute left-[3%] top-[40%] hidden h-7 w-7 text-ink/15 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>

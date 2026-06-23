@@ -3,6 +3,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { PhoneCall, FileText, Hammer, Rocket } from "lucide-react";
+import { Sparkle, Scribble } from "@/components/portfolio/doodles";
 
 const steps = [
   {
@@ -48,7 +49,9 @@ const stepTint = [
 
 export function Process() {
   return (
-    <section id="process" className="relative bg-canvas py-20 sm:py-28">
+    <section id="process" className="relative overflow-hidden bg-canvas py-20 sm:py-28">
+      <Sparkle className="pointer-events-none absolute right-[6%] top-16 hidden h-9 w-9 text-brand-coral/40 lg:block" />
+      <Scribble className="pointer-events-none absolute left-[4%] top-20 hidden h-8 w-24 text-ink/15 xl:block" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-14 text-center">
           <motion.span

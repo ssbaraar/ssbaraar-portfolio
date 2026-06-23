@@ -7,13 +7,14 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
+// Order matches the on-page flow, top to bottom
 const navItems = [
-  { label: "Work", href: "/#work", id: "work" },
   { label: "Services", href: "/#services", id: "services" },
+  { label: "Work", href: "/#work", id: "work" },
   { label: "Process", href: "/#process", id: "process" },
   { label: "About", href: "/#about", id: "about" },
-  { label: "Blog", href: "/?view=blog", id: "blog" },
   { label: "FAQ", href: "/#faq", id: "faq" },
+  { label: "Blog", href: "/?view=blog", id: "blog" },
 ];
 
 export function Navbar() {
@@ -39,7 +40,7 @@ export function Navbar() {
 
   // Scroll-spy: highlight the section currently in view
   React.useEffect(() => {
-    const sectionIds = ["work", "services", "process", "about", "blog", "faq", "contact"];
+    const sectionIds = ["services", "work", "process", "about", "faq", "blog", "contact"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
