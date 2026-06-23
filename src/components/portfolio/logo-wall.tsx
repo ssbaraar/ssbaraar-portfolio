@@ -18,14 +18,14 @@ type Company = { name: string; file?: string };
 
 const companies: Company[] = [
   { name: "Motiveminds", file: "/logos/motiveminds.avif" },
-  { name: "GranHub" },
-  { name: "Synergy Solutions" },
+  { name: "GranHub", file: "/logos/granhub.png" },
+  { name: "Synergy Solutions", file: "/logos/synergy.png" },
   { name: "Blockchain Laboratories", file: "/logos/blockchain-laboratories.jpeg" },
   { name: "W3SaaS", file: "/logos/w3saas.png" },
   { name: "Evenbound", file: "/logos/evenbound.svg" },
   { name: "Paris Gourmet", file: "/logos/paris-gourmet.webp" },
   { name: "Nine Education", file: "/logos/nine-education.webp" },
-  { name: "Hyderabad Forex" },
+  { name: "Hyderabad Forex", file: "/logos/hyderabad-forex.jpeg" },
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
