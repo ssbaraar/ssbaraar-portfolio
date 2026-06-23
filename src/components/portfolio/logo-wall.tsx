@@ -15,6 +15,11 @@ type Company = { name: string; slug: string };
 
 const companies: Company[] = [
   { name: "Motiveminds", slug: "motiveminds" },
+  { name: "GranHub", slug: "granhub" },
+  { name: "Synergy Solutions", slug: "synergy" },
+  { name: "Blockchain Laboratories", slug: "blockchain-laboratories" },
+  { name: "W3SaaS", slug: "w3saas" },
+  { name: "Evenbound", slug: "evenbound" },
   { name: "Paris Gourmet", slug: "paris-gourmet" },
   { name: "Nine Education", slug: "nine-education" },
   { name: "Hyderabad Forex", slug: "hyderabad-forex" },
