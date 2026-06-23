@@ -24,7 +24,7 @@ const stats: Stat[] = [
     suffix: "+",
     label: "deploys",
     hint: "production AI systems shipped",
-    color: "var(--brand-teal)",
+    color: "var(--brand-mint)",
   },
   {
     value: 40,

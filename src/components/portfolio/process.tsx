@@ -44,7 +44,7 @@ const stepTint = [
   "var(--brand-pink)",
   "var(--brand-lavender)",
   "var(--brand-ochre)",
-  "var(--brand-teal)",
+  "var(--brand-mint)",
 ];
 
 export function Process() {

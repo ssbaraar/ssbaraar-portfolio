@@ -120,11 +120,11 @@ const certs = [
 // Per-cluster accent tint, cycled through the Clay brand palette
 const clusterTints = [
   "var(--brand-pink)",
-  "var(--brand-teal)",
+  "var(--brand-mint)",
   "var(--brand-lavender)",
   "var(--brand-coral)",
   "var(--brand-ochre)",
-  "var(--brand-teal)",
+  "var(--brand-mint)",
   "var(--brand-pink)",
   "var(--brand-lavender)",
 ];

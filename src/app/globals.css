@@ -129,6 +129,8 @@
   --surface-card: #1a2a2a;
   --surface-strong: #223333;
   --ink: #ffffff;
+  /* teal is near-black in light; override to readable mid-teal in dark */
+  --brand-teal: #2ea89a;
 
   --background: #0a1a1a;
   --foreground: #f5f0e0;

@@ -81,7 +81,7 @@ const cases: CaseStudy[] = [
 const accents = [
   "var(--brand-pink)",
   "var(--brand-lavender)",
-  "var(--brand-teal)",
+  "var(--brand-mint)",
   "var(--brand-ochre)",
 ];
 
@@ -251,7 +251,7 @@ export function CaseStudies() {
             don&apos;t leave until it runs in production.&rdquo;
           </p>
           <div className="mt-6 flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-teal font-display text-base font-semibold text-white">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-mint font-display text-base font-semibold text-night">
               B
             </div>
             <div>
