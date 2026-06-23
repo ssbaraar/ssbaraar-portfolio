@@ -17,7 +17,7 @@ import { motion, AnimatePresence } from "framer-motion";
 type Company = { name: string; file?: string };
 
 const companies: Company[] = [
-  { name: "Motiveminds", file: "/logos/motiveminds.avif" },
+  { name: "Motiveminds", file: "/logos/motiveminds.png" },
   { name: "GranHub", file: "/logos/granhub.png" },
   { name: "Synergy Solutions", file: "/logos/synergy.png" },
   { name: "Blockchain Laboratories", file: "/logos/blockchain-laboratories.jpeg" },
@@ -25,7 +25,7 @@ const companies: Company[] = [
   { name: "Evenbound", file: "/logos/evenbound.svg" },
   { name: "Paris Gourmet", file: "/logos/paris-gourmet.webp" },
   { name: "Nine Education", file: "/logos/nine-education.webp" },
-  { name: "Hyderabad Forex", file: "/logos/hyderabad-forex.jpeg" },
+  { name: "Hyderabad Forex", file: "/logos/hyderabad-forex.png" },
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
