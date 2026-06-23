@@ -34,24 +34,18 @@ export function Hero() {
         <Loop className="absolute right-[8%] top-[64%] hidden h-14 w-14 opacity-80 lg:block" />
         <Sparkle className="absolute left-[19%] top-[10%] hidden h-9 w-9 opacity-70 xl:block" />
 
-        {/* clay icons — gentle float */}
+        {/* clay icons — static, larger */}
         {[
-          { src: "/hero/icon-gear.png", cls: "left-[6%] top-[44%] h-16 w-16", d: 0 },
-          { src: "/hero/icon-plane.png", cls: "left-[3%] top-[70%] h-14 w-14 -rotate-6", d: 0.8 },
-          { src: "/hero/icon-spark.png", cls: "right-[7%] top-[16%] h-12 w-12", d: 1.4 },
+          { src: "/hero/icon-gear.png", cls: "left-[4%] top-[40%] h-28 w-28" },
+          { src: "/hero/icon-plane.png", cls: "left-[3%] top-[70%] h-24 w-24 -rotate-6" },
+          { src: "/hero/icon-spark.png", cls: "right-[5%] top-[14%] h-24 w-24" },
         ].map((it) => (
           // eslint-disable-next-line @next/next/no-img-element
-          <motion.img
+          <img
             key={it.src}
             src={it.src}
             alt=""
             className={`absolute hidden select-none object-contain drop-shadow-sm lg:block ${it.cls}`}
-            animate={reduce ? undefined : { y: [0, -12, 0] }}
-            transition={
-              reduce
-                ? undefined
-                : { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: it.d }
-            }
           />
         ))}
       </div>

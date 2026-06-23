@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
   Quote,
 } from "lucide-react";
-import { Squiggle, Loop } from "@/components/portfolio/doodles";
+import { Squiggle } from "@/components/portfolio/doodles";
 
 type CaseStudy = {
   id: string;
@@ -174,7 +174,12 @@ export function CaseStudies() {
   return (
     <section id="work" className="relative overflow-hidden bg-surface-soft py-20 sm:py-28">
       <Squiggle className="pointer-events-none absolute right-[4%] top-24 hidden h-9 w-24 text-ink/20 lg:block" />
-      <Loop className="pointer-events-none absolute left-[2%] bottom-24 hidden h-14 w-14 text-brand-coral/30 xl:block" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero/icon-spark.png"
+        alt=""
+        className="pointer-events-none absolute left-[1%] bottom-[14%] hidden h-20 w-20 select-none object-contain opacity-90 xl:block"
+      />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>

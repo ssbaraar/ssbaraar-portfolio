@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { PhoneCall, FileText, Hammer, Rocket } from "lucide-react";
-import { Sparkle, Scribble } from "@/components/portfolio/doodles";
+import { Sparkle } from "@/components/portfolio/doodles";
 
 const steps = [
   {
@@ -51,7 +51,12 @@ export function Process() {
   return (
     <section id="process" className="relative overflow-hidden bg-canvas py-20 sm:py-28">
       <Sparkle className="pointer-events-none absolute right-[6%] top-16 hidden h-9 w-9 text-brand-coral/40 lg:block" />
-      <Scribble className="pointer-events-none absolute left-[4%] top-20 hidden h-8 w-24 text-ink/15 xl:block" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero/icon-plane.png"
+        alt=""
+        className="pointer-events-none absolute left-[2%] top-[30%] hidden h-20 w-20 -rotate-6 select-none object-contain opacity-90 xl:block"
+      />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-14 text-center">
           <motion.span

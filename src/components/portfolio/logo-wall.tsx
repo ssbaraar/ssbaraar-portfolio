@@ -11,25 +11,25 @@ import { motion, AnimatePresence } from "framer-motion";
  * falls back to a clean styled wordmark — so it looks good before assets land.
  * Add more companies by extending `companies`.
  */
-type Company = { name: string; slug: string };
+type Company = { name: string; file?: string };
 
 const companies: Company[] = [
-  { name: "Motiveminds", slug: "motiveminds" },
-  { name: "GranHub", slug: "granhub" },
-  { name: "Synergy Solutions", slug: "synergy" },
-  { name: "Blockchain Laboratories", slug: "blockchain-laboratories" },
-  { name: "W3SaaS", slug: "w3saas" },
-  { name: "Evenbound", slug: "evenbound" },
-  { name: "Paris Gourmet", slug: "paris-gourmet" },
-  { name: "Nine Education", slug: "nine-education" },
-  { name: "Hyderabad Forex", slug: "hyderabad-forex" },
+  { name: "Motiveminds", file: "/logos/motiveminds.avif" },
+  { name: "GranHub" },
+  { name: "Synergy Solutions" },
+  { name: "Blockchain Laboratories", file: "/logos/blockchain-laboratories.jpeg" },
+  { name: "W3SaaS", file: "/logos/w3saas.png" },
+  { name: "Evenbound", file: "/logos/evenbound.svg" },
+  { name: "Paris Gourmet", file: "/logos/paris-gourmet.webp" },
+  { name: "Nine Education", file: "/logos/nine-education.webp" },
+  { name: "Hyderabad Forex" },
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
 
 function LogoMark({ c }: { c: Company }) {
   const [err, setErr] = React.useState(false);
-  if (err) {
+  if (err || !c.file) {
     return (
       <span className="font-display text-[15px] font-semibold tracking-tight text-ink/55 sm:text-base">
         {c.name}
@@ -39,10 +39,10 @@ function LogoMark({ c }: { c: Company }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`/logos/${c.slug}.png`}
+      src={c.file}
       alt={c.name}
       onError={() => setErr(true)}
-      className="max-h-10 max-w-[130px] object-contain opacity-85 transition-opacity"
+      className="max-h-11 max-w-[140px] object-contain opacity-90 transition-opacity"
     />
   );
 }
@@ -63,7 +63,7 @@ function LogoCell({ offset, period }: { offset: number; period: number }) {
     <div className="flex h-20 items-center justify-center bg-canvas px-4 sm:h-24">
       <AnimatePresence mode="wait">
         <motion.div
-          key={c.slug}
+          key={c.name}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}

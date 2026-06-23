@@ -15,7 +15,7 @@ import {
   RotateCw,
   RotateCcw,
 } from "lucide-react";
-import { Sparkle, Star4 } from "@/components/portfolio/doodles";
+import { Sparkle } from "@/components/portfolio/doodles";
 
 type Service = {
   id: string;
@@ -252,7 +252,12 @@ export function Services() {
   return (
     <section id="services" className="relative bg-canvas py-20 sm:py-28">
       <Sparkle className="pointer-events-none absolute right-[5%] top-20 hidden h-10 w-10 text-brand-coral/40 lg:block" />
-      <Star4 className="pointer-events-none absolute left-[3%] top-[44%] hidden h-8 w-8 text-ink/15 xl:block" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/hero/icon-gear.png"
+        alt=""
+        className="pointer-events-none absolute -left-2 bottom-[10%] hidden h-24 w-24 select-none object-contain opacity-90 xl:block"
+      />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
