@@ -2,7 +2,7 @@
 
 import { Navbar } from "@/components/portfolio/navbar";
 import { Hero } from "@/components/portfolio/hero";
-import { Marquee } from "@/components/portfolio/marquee";
+import { LogoWall } from "@/components/portfolio/logo-wall";
 import { Stats } from "@/components/portfolio/stats";
 import { AudienceToggle } from "@/components/portfolio/audience-toggle";
 import { Problem } from "@/components/portfolio/problem";
@@ -27,7 +27,7 @@ export function HomePage() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <Marquee />
+        <LogoWall />
         <Stats />
         <AudienceToggle />
         <Problem />
