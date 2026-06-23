@@ -9,8 +9,6 @@ import {
   Sparkle,
   Squiggle,
   Loop,
-  Star4,
-  ArrowDoodle,
 } from "@/components/portfolio/doodles";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -28,14 +26,34 @@ export function Hero() {
       id="top"
       className="relative overflow-hidden bg-canvas pt-28 pb-20 sm:pt-36 sm:pb-28"
     >
-      {/* Hand-drawn doodles — scattered around the hero */}
+      {/* Hand-drawn doodles + floating clay icons — scattered around the hero */}
       <div aria-hidden className="pointer-events-none absolute inset-0 text-ink">
-        <Hourglass className="absolute left-[4%] top-[20%] hidden h-24 w-20 -rotate-6 opacity-90 lg:block" />
-        <Loop className="absolute left-[8%] top-[55%] hidden h-16 w-16 opacity-80 lg:block" />
-        <Sparkle className="absolute right-[7%] top-[16%] hidden h-12 w-12 opacity-90 lg:block" />
-        <Squiggle className="absolute right-[5%] top-[40%] hidden h-10 w-28 opacity-80 lg:block" />
-        <Star4 className="absolute right-[16%] top-[62%] hidden h-9 w-9 opacity-70 lg:block" />
-        <ArrowDoodle className="absolute left-[20%] top-[10%] hidden h-16 w-16 opacity-70 xl:block" />
+        {/* doodles */}
+        <Hourglass className="absolute left-[4%] top-[15%] hidden h-20 w-16 -rotate-6 opacity-90 lg:block" />
+        <Squiggle className="absolute right-[5%] top-[42%] hidden h-9 w-24 opacity-80 lg:block" />
+        <Loop className="absolute right-[8%] top-[64%] hidden h-14 w-14 opacity-80 lg:block" />
+        <Sparkle className="absolute left-[19%] top-[10%] hidden h-9 w-9 opacity-70 xl:block" />
+
+        {/* clay icons — gentle float */}
+        {[
+          { src: "/hero/icon-gear.png", cls: "left-[6%] top-[44%] h-16 w-16", d: 0 },
+          { src: "/hero/icon-plane.png", cls: "left-[3%] top-[70%] h-14 w-14 -rotate-6", d: 0.8 },
+          { src: "/hero/icon-spark.png", cls: "right-[7%] top-[16%] h-12 w-12", d: 1.4 },
+        ].map((it) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <motion.img
+            key={it.src}
+            src={it.src}
+            alt=""
+            className={`absolute hidden select-none object-contain drop-shadow-sm lg:block ${it.cls}`}
+            animate={reduce ? undefined : { y: [0, -12, 0] }}
+            transition={
+              reduce
+                ? undefined
+                : { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: it.d }
+            }
+          />
+        ))}
       </div>
 
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
