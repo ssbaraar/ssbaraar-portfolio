@@ -55,13 +55,15 @@ export function Process() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-lavender px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+            className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
           >
-            From discovery to deployment
+            How we work
           </motion.span>
           <h2 className="font-display text-[2.25rem] font-semibold tracking-[-0.035em] text-ink sm:text-5xl">
             How it works,{" "}
-            <span className="text-muted-foreground">step by step.</span>
+            <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+              step by step.
+            </span>
           </h2>
         </div>
 
@@ -80,7 +82,9 @@ export function Process() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 style={{ "--tint": tint } as React.CSSProperties}
-                className="group relative rounded-3xl border border-border bg-card p-6 transition-transform duration-300 hover:-translate-y-1"
+                className={`group relative rounded-3xl border border-border bg-card p-6 transition-transform duration-300 hover:-translate-y-1.5 hover:rotate-0 ${
+                  ["lg:-rotate-2", "lg:rotate-1", "lg:-rotate-1", "lg:rotate-2"][i % 4]
+                }`}
               >
                 <div className="mb-5 flex items-center justify-between">
                   <div

@@ -11,6 +11,7 @@ import {
   MapPin,
   ArrowUpRight,
 } from "lucide-react";
+import { Sparkle, Squiggle } from "@/components/portfolio/doodles";
 
 const channels = [
   {
@@ -54,21 +55,25 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-[2rem] bg-brand-teal p-8 text-white sm:p-12 lg:p-16"
+          className="relative overflow-hidden rounded-[2rem] bg-night p-8 text-white sm:p-12 lg:p-16"
         >
-          {/* soft claymation orbs */}
-          <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-ochre/20 blur-2xl" />
-          <div aria-hidden className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-brand-pink/15 blur-2xl" />
+          {/* soft glows + a doodle */}
+          <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-ochre/15 blur-3xl" />
+          <div aria-hidden className="pointer-events-none absolute -bottom-20 left-1/3 h-48 w-48 rounded-full bg-brand-coral/10 blur-3xl" />
+          <Sparkle className="pointer-events-none absolute right-10 top-10 hidden h-10 w-10 text-white/30 sm:block" />
+          <Squiggle className="pointer-events-none absolute right-8 bottom-10 hidden h-8 w-24 text-white/25 sm:block" />
 
           <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
             <div>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/12 px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white/85">
-                Let&apos;s talk
+              <span className="mb-4 block text-[12px] font-semibold uppercase tracking-[0.2em] text-white/50">
+                Book a demo
               </span>
               <h2 className="font-display text-[2.4rem] font-semibold leading-[1.02] tracking-[-0.035em] text-balance text-white sm:text-5xl lg:text-[3.5rem]">
                 Ready to build something that{" "}
-                <span className="text-brand-ochre">actually runs</span> in
-                production?
+                <span className="font-serif-italic font-normal tracking-normal text-brand-ochre">
+                  actually runs
+                </span>{" "}
+                in production?
               </h2>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/75 sm:text-base">
                 Manual ops that should be automated. AI prototype that never

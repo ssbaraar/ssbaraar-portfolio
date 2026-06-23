@@ -148,13 +148,13 @@ export function TechStack() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-mint px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+              className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
             >
               Tech stack
             </motion.span>
             <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
               The full kit —{" "}
-              <span className="text-muted-foreground">
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
                 picked per job, not per comfort.
               </span>
             </h2>

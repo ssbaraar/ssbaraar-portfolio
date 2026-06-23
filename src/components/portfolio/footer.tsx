@@ -21,26 +21,26 @@ const navLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto overflow-hidden bg-surface-soft">
+    <footer className="relative mt-auto overflow-hidden bg-night text-white">
       <div className="relative z-10 mx-auto max-w-7xl px-5 pt-14 sm:px-8 sm:pt-16">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand block */}
           <div>
             <Link
               href="/#top"
-              className="inline-flex items-center gap-2.5 font-display text-base font-semibold text-ink"
+              className="inline-flex items-center gap-2.5 font-display text-base font-semibold text-white"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-ink font-display text-sm font-bold text-white">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white font-display text-sm font-bold text-ink">
                 B
               </span>
               Baraar Sreesha
             </Link>
-            <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/55">
               Applied AI &amp; GTM Systems Engineer building production RAG,
               agentic workflows, and Clay/n8n GTM automation for revenue teams.
               Bengaluru · remote worldwide.
             </p>
-            <p className="mt-4 text-[12.5px] text-muted-foreground/80">
+            <p className="mt-4 text-[12.5px] text-white/40">
               Open to: fractional retainers · scoped projects · full-time Applied
               AI / GTM / FDE roles
             </p>
@@ -48,7 +48,7 @@ export function Footer() {
 
           {/* Nav */}
           <div>
-            <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/45">
               Sitemap
             </div>
             <ul className="space-y-2.5">
@@ -56,7 +56,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-[14px] text-ink/70 transition-colors hover:text-brand-pink"
+                    className="text-[14px] text-white/65 transition-colors hover:text-brand-coral"
                   >
                     {link.label}
                   </Link>
@@ -67,7 +67,7 @@ export function Footer() {
 
           {/* Socials */}
           <div>
-            <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/45">
               Find me
             </div>
             <ul className="space-y-2.5">
@@ -77,7 +77,7 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] text-ink/70 transition-colors hover:text-brand-pink"
+                    className="text-[14px] text-white/65 transition-colors hover:text-brand-coral"
                   >
                     {s.label} ↗
                   </a>
@@ -95,9 +95,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-[12px] text-muted-foreground sm:flex-row sm:items-center">
+        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-[12px] text-white/45 sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} Baraar Sreesha Sreenivas.</span>
-          <div>Next.js · Tailwind · Framer Motion · Clay-inspired design</div>
+          <div>Next.js · Tailwind · Framer Motion · The Kiln-inspired design</div>
         </div>
       </div>
 
@@ -106,11 +106,11 @@ export function Footer() {
         aria-hidden
         viewBox="0 0 1440 160"
         preserveAspectRatio="none"
-        className="mt-10 block h-24 w-full sm:h-32"
+        className="mt-12 block h-24 w-full sm:h-32"
       >
-        <path d="M0 160 V96 Q180 40 360 86 T720 78 T1080 70 T1440 96 V160 Z" fill="#b8a4ed" />
-        <path d="M0 160 V120 Q220 72 440 112 T880 104 T1440 120 V160 Z" fill="#ffb084" />
-        <path d="M0 160 V138 Q260 104 520 134 T1040 128 T1440 140 V160 Z" fill="#1a3a3a" />
+        <path d="M0 160 V96 Q180 40 360 86 T720 78 T1080 70 T1440 96 V160 Z" fill="#b8a4ed" opacity="0.9" />
+        <path d="M0 160 V120 Q220 72 440 112 T880 104 T1440 120 V160 Z" fill="#ffb084" opacity="0.95" />
+        <path d="M0 160 V138 Q260 104 520 134 T1040 128 T1440 140 V160 Z" fill="#ff6b5a" />
       </svg>
     </footer>
   );

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Clock, Calendar, ArrowRight, Rss } from "lucide-react";
+import { ArrowUpRight, Clock, Calendar, ArrowRight } from "lucide-react";
 import { blogPosts, type BlogPost } from "@/lib/blog-posts";
 
 type StoredPost = BlogPost & { _stored?: boolean };
@@ -92,13 +92,15 @@ export function Blog() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-lavender px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+              className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
             >
-              <Rss className="h-3 w-3" />
               Writing
             </motion.span>
             <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
-              Things I&apos;ve shipped &amp; learned.
+              Things I&apos;ve{" "}
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+                shipped &amp; learned.
+              </span>
             </h2>
           </div>
           <Link

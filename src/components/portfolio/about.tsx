@@ -80,9 +80,9 @@ export function About() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-peach px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+              className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
             >
-              About me
+              About
             </motion.span>
 
             <motion.h2
@@ -91,9 +91,15 @@ export function About() {
               viewport={{ once: true }}
               className="font-display text-[2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[2.6rem]"
             >
-              I&apos;m Baraar Sreesha — I close the gap between{" "}
-              <span className="text-brand-pink">AI engineering</span> and{" "}
-              <span className="text-brand-teal">revenue operations</span>.
+              I close the gap between{" "}
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+                AI engineering
+              </span>{" "}
+              and{" "}
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+                revenue operations
+              </span>
+              .
             </motion.h2>
 
             <motion.div

@@ -179,13 +179,15 @@ export function CaseStudies() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-teal px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
+              className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
             >
-              Selected work
+              Case studies
             </motion.span>
             <h2 className="max-w-3xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
-              Outcomes,{" "}
-              <span className="text-muted-foreground">not screenshots.</span>
+              Outcomes, not{" "}
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+                screenshots.
+              </span>
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-muted-foreground">

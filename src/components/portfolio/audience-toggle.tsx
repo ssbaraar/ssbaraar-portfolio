@@ -67,13 +67,15 @@ export function AudienceToggle() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-pink px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
+            className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
           >
             Pick your lane
           </motion.span>
           <h2 className="font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem]">
             Same engineer,{" "}
-            <span className="text-muted-foreground">two ways to work with me.</span>
+            <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+              two ways to work.
+            </span>
           </h2>
         </div>
 

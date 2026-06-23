@@ -23,6 +23,8 @@
   --color-surface-card: var(--surface-card);
   --color-surface-strong: var(--surface-strong);
   --color-ink: var(--ink);
+  --color-night: var(--night);
+  --font-serif: var(--font-instrument);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -70,14 +72,15 @@
   --brand-ochre: #e8b94a;
   --brand-mint: #a4d4c5;
   --brand-coral: #ff6b5a;
-  --canvas: #fffaf0;
-  --surface-soft: #faf5e8;
-  --surface-card: #f5f0e0;
-  --surface-strong: #ebe6d6;
-  --ink: #0a0a0a;
+  --canvas: #fcfbf7;
+  --surface-soft: #f6f4ee;
+  --surface-card: #f1efe7;
+  --surface-strong: #e9e6db;
+  --ink: #141414;
+  --night: #0e0e0d;
 
-  /* Cream canvas + near-black ink */
-  --background: #fffaf0;
+  /* Warm near-white canvas + near-black ink (The Kiln) */
+  --background: #fcfbf7;
   --foreground: #0a0a0a;
   --card: #ffffff;
   --card-foreground: #0a0a0a;
@@ -189,6 +192,13 @@
     font-family: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
     letter-spacing: -0.035em;
     font-weight: 600;
+  }
+  /* The Kiln signature: italic-serif emphasis word inside a sans headline */
+  .font-serif-italic {
+    font-family: var(--font-instrument), Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
   }
   .font-mono-jb {
     font-family: var(--font-jetbrains-mono), ui-monospace, monospace;

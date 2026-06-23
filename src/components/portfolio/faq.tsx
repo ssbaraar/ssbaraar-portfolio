@@ -56,13 +56,15 @@ export function FAQ() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-ochre px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
+            className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
           >
             FAQ
           </motion.span>
           <h2 className="font-display text-[2.25rem] font-semibold tracking-[-0.035em] text-ink sm:text-5xl">
             The stuff people{" "}
-            <span className="text-muted-foreground">actually ask.</span>
+            <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+              actually ask.
+            </span>
           </h2>
         </div>
 

@@ -257,12 +257,16 @@ export function Services() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-pink px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
+              className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
             >
-              What I build
+              Services
             </motion.span>
             <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
-              Six ways to put me to work.
+              Six ways to put me to{" "}
+              <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+                work
+              </span>
+              .
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-muted-foreground sm:text-right">

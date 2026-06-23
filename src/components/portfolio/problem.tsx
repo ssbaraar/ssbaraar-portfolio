@@ -30,13 +30,15 @@ export function Problem() {
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-coral px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
+            className="mb-3 block text-[12px] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
           >
-            The before state
+            The problem
           </motion.span>
           <h2 className="font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
             Most AI projects never make it to production.{" "}
-            <span className="text-muted-foreground">The rest fail in Q1.</span>
+            <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
+              The rest fail in Q1.
+            </span>
           </h2>
         </div>
 
