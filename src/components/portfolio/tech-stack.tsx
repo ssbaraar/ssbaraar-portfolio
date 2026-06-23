@@ -116,10 +116,22 @@ const certs = [
   { label: "Dell Technologies AI-THON", issuer: "Dell" },
 ];
 
+// Per-cluster accent tint, cycled through the Clay brand palette
+const clusterTints = [
+  "var(--brand-pink)",
+  "var(--brand-teal)",
+  "var(--brand-lavender)",
+  "var(--brand-coral)",
+  "var(--brand-ochre)",
+  "var(--brand-teal)",
+  "var(--brand-pink)",
+  "var(--brand-lavender)",
+];
+
 function TechBadge({ item }: { item: string }) {
   const BrandIcon = brandIcons[item] as IconType | undefined;
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-secondary px-2.5 py-1 font-mono-jb text-[11px] text-foreground/80">
+    <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-card px-2.5 py-1 text-[11.5px] font-medium text-ink/75">
       {BrandIcon && <BrandIcon className="h-3 w-3 shrink-0 opacity-70" />}
       {item}
     </span>
@@ -128,33 +140,35 @@ function TechBadge({ item }: { item: string }) {
 
 export function TechStack() {
   return (
-    <section id="stack" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+    <section id="stack" className="relative bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-mint px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Tech stack
-            </motion.div>
-            <h2 className="max-w-2xl font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            </motion.span>
+            <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
               The full kit —{" "}
-              <span className="text-muted-foreground">picked per job, not per comfort.</span>
+              <span className="text-muted-foreground">
+                picked per job, not per comfort.
+              </span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
+          <p className="max-w-sm text-[15px] text-muted-foreground">
             I pick the right tool for the problem, not the one I&apos;m most
             comfortable with. Here&apos;s the bench.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {clusters.map((cluster, i) => {
             const ClusterIcon = cluster.icon;
+            const tint = clusterTints[i % clusterTints.length];
             return (
               <motion.div
                 key={cluster.title}
@@ -162,11 +176,19 @@ export function TechStack() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: (i % 4) * 0.08 }}
-                className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 transition-colors hover:border-foreground/20"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card p-5 transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="mb-3 flex items-center gap-2">
-                  <ClusterIcon className="h-3.5 w-3.5 shrink-0 text-primary/70" strokeWidth={1.8} />
-                  <h3 className="font-display text-xs font-bold uppercase tracking-wider text-muted-foreground">
+                <div className="mb-4 flex items-center gap-2.5">
+                  <span
+                    className="flex h-8 w-8 items-center justify-center rounded-xl"
+                    style={{
+                      color: tint,
+                      background: `color-mix(in srgb, ${tint} 16%, transparent)`,
+                    }}
+                  >
+                    <ClusterIcon className="h-4 w-4" strokeWidth={2} />
+                  </span>
+                  <h3 className="text-[12px] font-semibold uppercase tracking-[0.06em] text-ink">
                     {cluster.title}
                   </h3>
                 </div>
@@ -185,18 +207,18 @@ export function TechStack() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-5 overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-8"
+          className="mt-6 overflow-hidden rounded-3xl bg-surface-card p-6 sm:p-8"
         >
-          <h3 className="mb-4 font-display text-xs font-bold uppercase tracking-wider text-muted-foreground">
+          <h3 className="mb-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
             Certifications
           </h3>
           <div className="flex flex-wrap gap-2">
             {certs.map((cert) => (
               <span
                 key={cert.label}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1.5 text-xs"
+                className="inline-flex items-center gap-2 rounded-full bg-card px-3.5 py-1.5 text-[12.5px]"
               >
-                <span className="font-medium">{cert.label}</span>
+                <span className="font-semibold text-ink">{cert.label}</span>
                 <span className="text-muted-foreground">· {cert.issuer}</span>
               </span>
             ))}

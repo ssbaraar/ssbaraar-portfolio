@@ -8,6 +8,7 @@ type Stat = {
   suffix?: string;
   label: string;
   hint: string;
+  color: string;
 };
 
 const stats: Stat[] = [
@@ -16,24 +17,28 @@ const stats: Stat[] = [
     suffix: "+",
     label: "yrs",
     hint: "production AI experience",
+    color: "var(--brand-pink)",
   },
   {
     value: 5,
     suffix: "+",
     label: "deploys",
     hint: "production AI systems shipped",
+    color: "var(--brand-teal)",
   },
   {
     value: 40,
     suffix: "%",
     label: "reduction",
     hint: "manual ops via OCR pipeline",
+    color: "var(--brand-coral)",
   },
   {
     value: 3700,
     suffix: "+",
     label: "followers",
     hint: "AI community on LinkedIn",
+    color: "var(--brand-ochre)",
   },
 ];
 
@@ -76,9 +81,9 @@ function CountUp({
 
 export function Stats() {
   return (
-    <section className="py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+    <section className="bg-canvas py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -86,19 +91,22 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 sm:p-7"
+              className="relative overflow-hidden rounded-3xl border border-border bg-surface-card p-6 sm:p-7"
             >
-              <div className="font-display text-4xl font-bold leading-none tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              <div
+                className="font-display text-[2.75rem] font-semibold leading-none tracking-[-0.03em] sm:text-5xl lg:text-6xl"
+                style={{ color: stat.color }}
+              >
                 <CountUp
                   to={stat.value}
                   suffix={stat.suffix}
                   decimals={stat.value % 1 !== 0 ? 1 : 0}
                 />
               </div>
-              <div className="mt-3 font-display text-sm font-semibold sm:text-base">
+              <div className="mt-3 font-display text-[15px] font-semibold text-ink">
                 {stat.label}
               </div>
-              <div className="mt-1 text-xs text-muted-foreground sm:text-sm">
+              <div className="mt-1 text-[13px] text-muted-foreground sm:text-sm">
                 {stat.hint}
               </div>
             </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { motion } from "framer-motion";
 import { PhoneCall, FileText, Hammer, Rocket } from "lucide-react";
 
@@ -38,32 +39,39 @@ const steps = [
   },
 ];
 
+const stepTint = [
+  "var(--brand-pink)",
+  "var(--brand-lavender)",
+  "var(--brand-ochre)",
+  "var(--brand-teal)",
+];
+
 export function Process() {
   return (
-    <section id="process" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-12 text-center">
-          <motion.div
+    <section id="process" className="relative bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-14 text-center">
+          <motion.span
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-lavender px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             From discovery to deployment
-          </motion.div>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          </motion.span>
+          <h2 className="font-display text-[2.25rem] font-semibold tracking-[-0.035em] text-ink sm:text-5xl">
             How it works,{" "}
             <span className="text-muted-foreground">step by step.</span>
           </h2>
         </div>
 
-        <div className="relative grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
           {/* Connecting line */}
-          <div className="pointer-events-none absolute left-0 right-0 top-[4.5rem] hidden h-px bg-[repeating-linear-gradient(to_right,var(--border)_0,var(--border)_4px,transparent_4px,transparent_8px)] lg:block" />
+          <div className="pointer-events-none absolute left-0 right-0 top-[4.75rem] hidden h-0.5 bg-[repeating-linear-gradient(to_right,var(--border)_0,var(--border)_6px,transparent_6px,transparent_12px)] lg:block" />
 
           {steps.map((step, i) => {
             const Icon = step.icon;
+            const tint = stepTint[i % stepTint.length];
             return (
               <motion.div
                 key={step.id}
@@ -71,23 +79,40 @@ export function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative rounded-2xl border border-border bg-card p-6 transition-colors hover:border-foreground/20"
+                style={{ "--tint": tint } as React.CSSProperties}
+                className="group relative rounded-3xl border border-border bg-card p-6 transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="mb-5 flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-secondary text-muted-foreground transition-colors group-hover:border-primary/30 group-hover:text-primary">
-                    <Icon className="h-5 w-5" strokeWidth={1.8} />
+                  <div
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl"
+                    style={{
+                      color: "var(--tint)",
+                      background:
+                        "color-mix(in srgb, var(--tint) 15%, transparent)",
+                    }}
+                  >
+                    <Icon className="h-5 w-5" strokeWidth={2} />
                   </div>
-                  <span className="font-display text-5xl font-bold leading-none text-foreground/8">
+                  <span
+                    className="font-display text-5xl font-semibold leading-none"
+                    style={{
+                      color:
+                        "color-mix(in srgb, var(--tint) 35%, transparent)",
+                    }}
+                  >
                     0{step.id}
                   </span>
                 </div>
-                <h3 className="font-display text-lg font-bold tracking-tight">
+                <h3 className="font-display text-[1.15rem] font-semibold tracking-[-0.02em] text-ink">
                   {step.title}
                 </h3>
-                <div className="mt-1 font-mono-jb text-[11px] uppercase tracking-wider text-primary">
+                <div
+                  className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.08em]"
+                  style={{ color: "var(--tint)" }}
+                >
                   {step.duration}
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-[13.5px] leading-relaxed text-muted-foreground">
                   {step.description}
                 </p>
               </motion.div>

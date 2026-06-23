@@ -71,30 +71,29 @@ const chips = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section id="about" className="relative bg-surface-soft py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           {/* About content */}
           <div>
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-peach px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               About me
-            </motion.div>
+            </motion.span>
 
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl"
+              className="font-display text-[2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-ink sm:text-[2.6rem]"
             >
               I&apos;m Baraar Sreesha — I close the gap between{" "}
-              <span className="text-primary">AI engineering</span> and{" "}
-              <span className="text-primary">revenue operations</span>.
+              <span className="text-brand-pink">AI engineering</span> and{" "}
+              <span className="text-brand-teal">revenue operations</span>.
             </motion.h2>
 
             <motion.div
@@ -102,7 +101,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mt-6 space-y-3 text-base leading-relaxed text-muted-foreground"
+              className="mt-6 space-y-3 text-[15.5px] leading-relaxed text-muted-foreground"
             >
               <p>
                 I build AI systems that ship to production — not just demos.
@@ -126,9 +125,9 @@ export function About() {
               {chips.map((chip) => (
                 <span
                   key={chip}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-[12.5px] font-medium text-ink"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary/60" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-pink" />
                   {chip}
                 </span>
               ))}
@@ -141,20 +140,20 @@ export function About() {
               transition={{ delay: 0.2 }}
               className="mt-6 grid grid-cols-2 gap-3"
             >
-              <div className="rounded-xl border border-border bg-card p-4">
-                <div className="font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
+              <div className="rounded-2xl bg-card p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                   Based
                 </div>
-                <div className="mt-1 flex items-center gap-1.5 font-display text-sm font-semibold">
-                  <MapPin className="h-3.5 w-3.5 text-primary" />
+                <div className="mt-1 flex items-center gap-1.5 font-display text-[15px] font-semibold text-ink">
+                  <MapPin className="h-4 w-4 text-brand-pink" />
                   Bengaluru, India
                 </div>
               </div>
-              <div className="rounded-xl border border-border bg-card p-4">
-                <div className="font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
+              <div className="rounded-2xl bg-card p-4">
+                <div className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                   Community
                 </div>
-                <div className="mt-1 font-display text-sm font-semibold">
+                <div className="mt-1 font-display text-[15px] font-semibold text-ink">
                   RAG++ · 3,700+ LI
                 </div>
               </div>
@@ -163,12 +162,12 @@ export function About() {
 
           {/* Experience timeline */}
           <div>
-            <h3 className="mb-6 font-display text-xs font-bold uppercase tracking-wider text-muted-foreground">
+            <h3 className="mb-6 text-[12px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
               Experience timeline
             </h3>
 
             <div className="relative">
-              <div className="absolute left-[18px] top-2 bottom-2 w-px bg-border" />
+              <div className="absolute left-[19px] top-2 bottom-2 w-0.5 bg-border" />
 
               <div className="space-y-4">
                 {experience.map((item, i) => {
@@ -182,27 +181,27 @@ export function About() {
                       transition={{ duration: 0.4, delay: i * 0.08 }}
                       className="relative pl-12"
                     >
-                      <div className="absolute left-0 top-0 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground">
+                      <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-brand-teal text-white">
                         <Icon className="h-4 w-4" strokeWidth={2} />
                       </div>
 
-                      <div className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-foreground/20">
-                        <div className="font-mono-jb text-[10px] uppercase tracking-wider text-primary">
+                      <div className="rounded-2xl bg-card p-4 transition-transform duration-300 hover:-translate-y-0.5">
+                        <div className="text-[11px] font-semibold uppercase tracking-wide text-brand-pink">
                           {item.period}
                         </div>
-                        <h4 className="mt-1 font-display text-base font-bold leading-tight tracking-tight">
+                        <h4 className="mt-1 font-display text-[15px] font-semibold leading-tight tracking-[-0.02em] text-ink">
                           {item.role}
                         </h4>
-                        <div className="mt-0.5 text-xs text-muted-foreground">
+                        <div className="mt-0.5 text-[12px] text-muted-foreground">
                           {item.company} · {item.location}
                         </div>
                         <ul className="mt-3 space-y-1.5">
                           {item.bullets.map((b) => (
                             <li
                               key={b}
-                              className="flex items-start gap-2 text-xs text-foreground/75"
+                              className="flex items-start gap-2 text-[12.5px] text-ink/75"
                             >
-                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary/60" />
+                              <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-pink/60" />
                               <span>{b}</span>
                             </li>
                           ))}

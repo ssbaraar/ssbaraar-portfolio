@@ -49,19 +49,18 @@ const faqs = [
 
 export function FAQ() {
   return (
-    <section id="faq" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+    <section id="faq" className="relative bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-4xl px-5 sm:px-8">
         <div className="mb-12 text-center">
-          <motion.div
+          <motion.span
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-ochre px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             FAQ
-          </motion.div>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-5xl">
+          </motion.span>
+          <h2 className="font-display text-[2.25rem] font-semibold tracking-[-0.035em] text-ink sm:text-5xl">
             The stuff people{" "}
             <span className="text-muted-foreground">actually ask.</span>
           </h2>
@@ -71,24 +70,24 @@ export function FAQ() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-border bg-card p-4 sm:p-6"
+          className="rounded-3xl bg-card p-4 sm:p-6"
         >
-          <Accordion type="single" collapsible className="space-y-2">
+          <Accordion type="single" collapsible className="space-y-2.5">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="overflow-hidden rounded-xl border border-border bg-secondary/40 px-4 data-[state=open]:border-foreground/15 data-[state=open]:bg-secondary/60"
+                className="overflow-hidden rounded-2xl bg-surface-card px-4 data-[state=open]:bg-surface-strong"
               >
-                <AccordionTrigger className="py-4 text-left font-display text-base font-semibold tracking-tight hover:no-underline sm:text-lg">
+                <AccordionTrigger className="py-4 text-left font-display text-[15px] font-semibold tracking-[-0.02em] text-ink hover:no-underline sm:text-[17px]">
                   <span className="flex items-start gap-3">
-                    <span className="font-mono-jb mt-0.5 text-xs text-primary">
+                    <span className="mt-0.5 font-display text-[13px] font-bold text-brand-pink">
                       0{i + 1}
                     </span>
                     <span className="pr-2">{faq.q}</span>
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="pb-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <AccordionContent className="pb-4 text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
                   <span className="block pl-7">{faq.a}</span>
                 </AccordionContent>
               </AccordionItem>

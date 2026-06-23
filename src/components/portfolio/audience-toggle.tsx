@@ -59,27 +59,26 @@ export function AudienceToggle() {
   const data = content[audience];
 
   return (
-    <section className="py-12 sm:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section className="bg-canvas py-16 sm:py-24">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
         {/* Section header */}
         <div className="mb-10 text-center">
-          <motion.div
+          <motion.span
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-pink px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Pick your lane
-          </motion.div>
-          <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          </motion.span>
+          <h2 className="font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem]">
             Same engineer,{" "}
             <span className="text-muted-foreground">two ways to work with me.</span>
           </h2>
         </div>
 
         {/* Toggle */}
-        <div className="mx-auto mb-10 flex max-w-md items-center gap-1.5 rounded-lg border border-border bg-secondary p-1.5">
+        <div className="mx-auto mb-10 flex max-w-md items-center gap-1.5 rounded-2xl bg-surface-card p-1.5">
           {(Object.keys(content) as Audience[]).map((key) => {
             const item = content[key];
             const Icon = item.icon;
@@ -90,14 +89,14 @@ export function AudienceToggle() {
                 type="button"
                 onClick={() => setAudience(key)}
                 className={cn(
-                  "relative flex flex-1 items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold transition-colors",
-                  isActive ? "text-background" : "text-muted-foreground hover:text-foreground"
+                  "relative flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors",
+                  isActive ? "text-white" : "text-muted-foreground hover:text-ink"
                 )}
               >
                 {isActive && (
                   <motion.span
                     layoutId="audience-pill"
-                    className="absolute inset-0 rounded-md bg-foreground"
+                    className="absolute inset-0 rounded-xl bg-ink"
                     transition={{ type: "spring", stiffness: 350, damping: 32 }}
                   />
                 )}
@@ -116,21 +115,21 @@ export function AudienceToggle() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.3 }}
-            className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-10"
+            className="relative overflow-hidden rounded-3xl bg-card p-6 sm:p-10"
           >
             <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
-                <h3 className="font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+                <h3 className="font-display text-[1.6rem] font-semibold leading-tight tracking-[-0.025em] text-ink sm:text-[2rem]">
                   {data.headline}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <p className="mt-4 text-[14.5px] leading-relaxed text-muted-foreground sm:text-base">
                   {data.sub}
                 </p>
                 <a
                   href={data.href}
                   target={data.href.startsWith("#") ? undefined : "_blank"}
                   rel={data.href.startsWith("#") ? undefined : "noopener noreferrer"}
-                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 active:opacity-80"
+                  className="mt-6 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   {data.cta}
                   <ArrowRight className="h-4 w-4" />
@@ -138,14 +137,14 @@ export function AudienceToggle() {
               </div>
               <div className="grid gap-6">
                 <div>
-                  <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
+                  <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-brand-pink">
                     {audience === "recruiters" ? "Roles I fit" : "Ways to engage"}
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {data.roles.map((role) => (
                       <span
                         key={role}
-                        className="rounded-full border border-border bg-secondary px-3 py-1.5 text-xs font-medium"
+                        className="rounded-full bg-surface-card px-3 py-1.5 text-[12.5px] font-medium text-ink/80"
                       >
                         {role}
                       </span>
@@ -153,16 +152,16 @@ export function AudienceToggle() {
                   </div>
                 </div>
                 <div>
-                  <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">
+                  <div className="mb-3 text-[12px] font-semibold uppercase tracking-[0.1em] text-brand-pink">
                     Proof
                   </div>
                   <ul className="space-y-2">
                     {data.proof.map((p) => (
                       <li
                         key={p}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                        className="flex items-start gap-2 text-[13.5px] text-muted-foreground"
                       >
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-teal" />
                         <span>{p}</span>
                       </li>
                     ))}

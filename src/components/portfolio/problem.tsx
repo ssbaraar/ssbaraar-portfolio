@@ -23,25 +23,24 @@ const problems = [
 
 export function Problem() {
   return (
-    <section className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+    <section className="relative bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mb-12 max-w-3xl">
-          <motion.div
+          <motion.span
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-coral px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-destructive/70" />
             The before state
-          </motion.div>
-          <h2 className="font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+          </motion.span>
+          <h2 className="font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
             Most AI projects never make it to production.{" "}
             <span className="text-muted-foreground">The rest fail in Q1.</span>
           </h2>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
           {problems.map((p, i) => {
             const Icon = p.icon;
             return (
@@ -51,15 +50,15 @@ export function Problem() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-7"
+                className="relative overflow-hidden rounded-3xl border border-border bg-surface-card p-7 sm:p-8"
               >
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-secondary">
-                  <Icon className="h-5 w-5 text-muted-foreground" strokeWidth={1.8} />
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-coral/15 text-brand-coral">
+                  <Icon className="h-5 w-5" strokeWidth={2} />
                 </div>
-                <h3 className="font-display text-lg font-bold leading-tight tracking-tight">
+                <h3 className="font-display text-[1.2rem] font-semibold leading-snug tracking-[-0.02em] text-ink">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
               </motion.div>
@@ -72,13 +71,16 @@ export function Problem() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-7 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-5"
+          className="mt-6 flex items-center gap-3.5 rounded-3xl bg-brand-lavender p-6 text-ink sm:p-7"
         >
-          <TrendingUp className="h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
-          <p className="text-sm sm:text-base">
-            <span className="font-bold">My lane:</span>{" "}
-            <span className="text-muted-foreground">
-              AI engineering ∩ revenue operations. I build the system, not just the model.
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-ink/10">
+            <TrendingUp className="h-5 w-5" strokeWidth={2} />
+          </span>
+          <p className="text-[15px] sm:text-base">
+            <span className="font-semibold">My lane:</span>{" "}
+            <span className="text-ink/75">
+              AI engineering ∩ revenue operations. I build the system, not just
+              the model.
             </span>
           </p>
         </motion.div>

@@ -89,7 +89,7 @@ export function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <motion.div
             style={{ scaleX: progressScale }}
-            className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-px max-w-7xl origin-left bg-primary/70"
+            className="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-0.5 max-w-7xl origin-left bg-brand-pink"
           />
         </div>
 
@@ -106,7 +106,7 @@ export function Navbar() {
               href="/#top"
               className="group flex items-center gap-2.5 font-display text-base font-semibold tracking-tight"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-ink text-white">
                 <span className="font-display text-sm font-bold">B</span>
               </span>
               <span className="hidden sm:inline">Sreesha</span>
@@ -132,14 +132,14 @@ export function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="nav-active-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-primary/20 ring-1 ring-inset ring-primary/40"
+                        className="absolute inset-0 -z-10 rounded-full bg-surface-card"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
                     <span className="relative">{item.label}</span>
                     {/* Hover underline (only when not active) */}
                     {!isActive && (
-                      <span className="absolute inset-x-3 -bottom-0.5 h-px origin-left scale-x-0 bg-primary transition-transform duration-300 group-hover:scale-x-100" />
+                      <span className="absolute inset-x-3 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-brand-pink transition-transform duration-300 group-hover:scale-x-100" />
                     )}
                   </Link>
                 );
@@ -150,7 +150,7 @@ export function Navbar() {
               <ThemeToggle />
               <Link
                 href="/#contact"
-                className="hidden rounded-lg bg-foreground px-4 py-2 text-sm font-semibold text-background transition-opacity hover:opacity-90 active:opacity-80 sm:inline-flex"
+                className="hidden cursor-pointer rounded-xl bg-ink px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:inline-flex"
               >
                 Let&apos;s talk →
               </Link>

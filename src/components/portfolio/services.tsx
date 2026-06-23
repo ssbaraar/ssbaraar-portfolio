@@ -124,51 +124,70 @@ const services: Service[] = [
   },
 ];
 
+// Clay 6-color feature-card cycle: pink → teal → lavender → peach → ochre → cream
+type Skin = {
+  card: string;
+  text: string;
+  soft: string;
+  tile: string;
+  rule: string;
+  dot: string;
+  btn: string;
+};
+
+const skins: Skin[] = [
+  { card: "bg-brand-pink", text: "text-white", soft: "text-white/85", tile: "bg-white/20 text-white", rule: "border-white/25", dot: "bg-white/70", btn: "bg-white text-ink" },
+  { card: "bg-brand-teal", text: "text-white", soft: "text-white/80", tile: "bg-white/15 text-white", rule: "border-white/20", dot: "bg-brand-mint", btn: "bg-white text-ink" },
+  { card: "bg-brand-lavender", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
+  { card: "bg-brand-peach", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
+  { card: "bg-brand-ochre", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
+  { card: "bg-surface-card", text: "text-ink", soft: "text-muted-foreground", tile: "bg-ink/[0.06] text-ink", rule: "border-ink/10", dot: "bg-ink/40", btn: "bg-ink text-white" },
+];
+
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = service.icon;
+  const s = skins[index % skins.length];
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 transition-colors hover:border-foreground/20 sm:p-7"
+      transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8 ${s.card} ${s.text}`}
     >
-      <div className="mb-5 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-secondary text-muted-foreground transition-colors group-hover:border-primary/30 group-hover:text-primary">
-          <Icon className="h-5 w-5" strokeWidth={1.7} />
+      <div className="mb-6 flex items-start justify-between">
+        <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${s.tile}`}>
+          <Icon className="h-5 w-5" strokeWidth={2} />
         </div>
-        <span className="rounded-md border border-border bg-secondary px-2 py-0.5 font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
+        <span className={`font-display text-sm font-semibold ${s.soft}`}>
           0{index + 1}
         </span>
       </div>
 
-      <h3 className="font-display text-xl font-bold leading-tight tracking-tight sm:text-2xl">
+      <h3 className="font-display text-[1.45rem] font-semibold leading-[1.1] tracking-[-0.02em]">
         {service.title}
       </h3>
-      <p className="mt-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground">
-        {service.audience}
-      </p>
-      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+      <p className={`mt-2 text-[13px] font-medium ${s.soft}`}>{service.audience}</p>
+      <p className={`mt-3 text-[14px] leading-relaxed ${s.soft}`}>
         {service.outcome}
       </p>
 
-      <ul className="mt-5 space-y-2">
+      <ul className="mt-5 space-y-2.5">
         {service.bullets.map((b) => (
-          <li key={b} className="flex items-start gap-2 text-sm text-foreground/80">
-            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+          <li key={b} className={`flex items-start gap-2.5 text-[13.5px] ${s.soft}`}>
+            <span className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
             <span>{b}</span>
           </li>
         ))}
       </ul>
 
-      <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
+      <div className={`mt-auto flex items-center justify-between border-t ${s.rule} pt-5`}>
         <div>
-          <div className="flex items-center gap-1.5 font-display text-sm font-bold">
-            <DollarSign className="h-3.5 w-3.5 text-muted-foreground" />
+          <div className="flex items-center gap-1.5 font-display text-base font-semibold">
+            <DollarSign className="h-4 w-4 opacity-70" />
             {service.price.replace(/^\$/, "")}
           </div>
-          <div className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-foreground">
+          <div className={`mt-0.5 flex items-center gap-1.5 text-[12px] ${s.soft}`}>
             <Clock className="h-3 w-3" />
             {service.timeline}
           </div>
@@ -176,7 +195,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         <a
           href="#contact"
           aria-label={`Discuss ${service.title}`}
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-border transition-colors hover:border-primary hover:text-primary"
+          className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-transform group-hover:rotate-12 ${s.btn}`}
         >
           <ArrowUpRight className="h-4 w-4" />
         </a>
@@ -187,29 +206,29 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
 export function Services() {
   return (
-    <section id="services" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-14 sm:flex-row sm:items-end">
+    <section id="services" className="relative bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-pink px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               What I build
-            </motion.div>
-            <h2 className="max-w-2xl font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            </motion.span>
+            <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
               Six ways to put me to work.
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground sm:text-right">
-            Fixed-price or retainer. Every project ships with deployment + 2-week post-launch support.
+          <p className="max-w-sm text-[15px] text-muted-foreground sm:text-right">
+            Fixed-price or retainer. Every project ships with deployment + 2-week
+            post-launch support.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <ServiceCard key={s.id} service={s} index={i} />
           ))}
@@ -220,17 +239,20 @@ export function Services() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-5 flex flex-col items-start justify-between gap-4 rounded-2xl border border-dashed border-border bg-card p-6 sm:flex-row sm:items-center"
+          className="mt-6 flex flex-col items-start justify-between gap-4 rounded-3xl bg-brand-teal p-7 text-white sm:flex-row sm:items-center sm:p-8"
         >
           <div>
-            <h3 className="font-display text-lg font-bold">AI Audit — entry offer</h3>
-            <p className="mt-1 text-sm text-muted-foreground">
-              45-min call + written roadmap. Filters tire-kickers, feeds bigger projects.
+            <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">
+              AI Audit — entry offer
+            </h3>
+            <p className="mt-1.5 text-[14px] text-white/80">
+              45-min call + written roadmap. Filters tire-kickers, feeds bigger
+              projects.
             </p>
           </div>
           <div className="text-left sm:text-right">
-            <div className="font-display text-2xl font-bold">$150 – $300</div>
-            <div className="text-xs text-muted-foreground">fixed scope</div>
+            <div className="font-display text-3xl font-semibold">$150 – $300</div>
+            <div className="text-[12px] text-white/70">fixed scope</div>
           </div>
         </motion.div>
       </div>

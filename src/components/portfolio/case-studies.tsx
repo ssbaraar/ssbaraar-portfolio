@@ -80,53 +80,81 @@ const cases: CaseStudy[] = [
   },
 ];
 
+const accents = [
+  "var(--brand-pink)",
+  "var(--brand-lavender)",
+  "var(--brand-teal)",
+  "var(--brand-ochre)",
+];
+
 function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
+  const accent = accents[index % accents.length];
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay: (index % 2) * 0.1 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/20"
+      transition={{ duration: 0.55, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      style={{ "--accent": accent } as React.CSSProperties}
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card transition-transform duration-300 hover:-translate-y-1"
     >
-      {/* Top accent line */}
-      <div className="h-px w-full bg-primary/40" />
+      {/* Top accent bar */}
+      <div className="h-2 w-full" style={{ background: "var(--accent)" }} />
 
-      <div className="flex flex-1 flex-col p-6 sm:p-7">
+      <div className="flex flex-1 flex-col p-6 sm:p-8">
         {/* Header */}
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        <div className="mb-5 flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <div>
-            <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+            <div className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.08em] text-ink">
+              <span
+                className="h-2 w-2 rounded-full"
+                style={{ background: "var(--accent)" }}
+              />
               {study.industry}
             </div>
-            <div className="mt-0.5 font-mono-jb text-[11px] text-muted-foreground/70">
+            <div className="mt-1 text-[12px] text-muted-foreground">
               {study.client}
             </div>
           </div>
-          <span className="self-start rounded-md border border-border bg-secondary px-2.5 py-1 font-mono-jb text-[10px] uppercase tracking-wider text-muted-foreground">
+          <span
+            className="self-start rounded-full px-3 py-1 text-[11px] font-semibold"
+            style={{
+              color: "var(--accent)",
+              background: "color-mix(in srgb, var(--accent) 14%, transparent)",
+            }}
+          >
             {study.type}
           </span>
         </div>
 
         {/* Headline */}
-        <h3 className="font-display text-xl font-bold leading-tight tracking-tight sm:text-2xl">
+        <h3 className="font-display text-[1.4rem] font-semibold leading-[1.12] tracking-[-0.025em] text-ink sm:text-[1.6rem]">
           {study.headline}
         </h3>
 
         {/* Results grid */}
-        <div className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-3 gap-2.5">
           {study.results.map((r) => {
             const Icon = r.icon;
             return (
               <div
                 key={r.label}
-                className="rounded-xl border border-border bg-secondary/50 p-3"
+                className="rounded-2xl bg-surface-card p-3"
               >
-                <Icon className="h-4 w-4 text-primary" strokeWidth={2} />
-                <div className="mt-2 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                <span
+                  className="flex h-7 w-7 items-center justify-center rounded-lg"
+                  style={{
+                    color: "var(--accent)",
+                    background:
+                      "color-mix(in srgb, var(--accent) 16%, transparent)",
+                  }}
+                >
+                  <Icon className="h-3.5 w-3.5" strokeWidth={2.2} />
+                </span>
+                <div className="mt-2 text-[9.5px] font-medium uppercase tracking-wide text-muted-foreground">
                   {r.label}
                 </div>
-                <div className="mt-0.5 font-display text-sm font-bold leading-tight">
+                <div className="mt-0.5 font-display text-[12.5px] font-semibold leading-tight text-ink">
                   {r.value}
                 </div>
               </div>
@@ -139,21 +167,23 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
           {study.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-border bg-secondary px-2.5 py-1 font-mono-jb text-[10px] text-muted-foreground"
+              className="rounded-full bg-surface-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-          <span className="text-xs text-muted-foreground">
+        <div className="mt-auto flex items-center justify-between border-t border-border pt-5">
+          <span className="text-[12px] text-muted-foreground">
             Case 0{index + 1} · production-deployed
           </span>
           <a
             href="#contact"
             aria-label="Discuss a similar build"
-            className="inline-flex items-center gap-1 text-sm font-semibold transition-colors hover:text-primary"
+            className="inline-flex cursor-pointer items-center gap-1 text-[13.5px] font-semibold text-ink transition-colors"
+            onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "")}
           >
             Build something like this
             <ArrowUpRight className="h-4 w-4" />
@@ -166,30 +196,30 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
 
 export function CaseStudies() {
   return (
-    <section id="work" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-14 sm:flex-row sm:items-end">
+    <section id="work" className="relative bg-surface-soft py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-teal px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-white"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Selected work
-            </motion.div>
-            <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            </motion.span>
+            <h2 className="max-w-3xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
               Outcomes,{" "}
               <span className="text-muted-foreground">not screenshots.</span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm text-muted-foreground">
-            Four production deployments — across lead intelligence, sales automation, enterprise RAG, and regulated finance.
+          <p className="max-w-sm text-[15px] text-muted-foreground">
+            Four production deployments — across lead intelligence, sales
+            automation, enterprise RAG, and regulated finance.
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
+        <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
           {cases.map((c, i) => (
             <CaseCard key={c.id} study={c} index={i} />
           ))}
@@ -200,21 +230,25 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-5 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center"
+          className="mt-6 flex flex-col items-start justify-between gap-4 overflow-hidden rounded-3xl bg-brand-peach p-7 text-ink sm:flex-row sm:items-center sm:p-8"
         >
           <div>
-            <h3 className="font-display text-lg font-bold">
+            <h3 className="font-display text-[1.3rem] font-semibold tracking-[-0.02em]">
               Self-hosted n8n on GCP — production automation backbone
             </h3>
-            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-              Replaced $500+/mo SaaS subscriptions with self-hosted n8n on GCP — Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure layer behind every GTM/RevOps workflow I ship.
+            <p className="mt-1.5 max-w-2xl text-[14px] text-ink/75">
+              Replaced $500+/mo SaaS subscriptions with self-hosted n8n on GCP —
+              Docker Compose, PostgreSQL, Nginx, SSL. The infrastructure layer
+              behind every GTM/RevOps workflow I ship.
             </p>
           </div>
           <div className="shrink-0 text-left sm:text-right">
-            <div className="font-mono-jb text-xs uppercase tracking-wider text-muted-foreground">
+            <div className="text-[11px] font-semibold uppercase tracking-wide text-ink/60">
               Infrastructure
             </div>
-            <div className="font-display text-lg font-bold">Docker · GCP · n8n</div>
+            <div className="font-display text-[1.3rem] font-semibold">
+              Docker · GCP · n8n
+            </div>
           </div>
         </motion.div>
 
@@ -223,22 +257,24 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-10 rounded-2xl border border-border bg-card p-7 sm:p-10"
+          className="mt-6 rounded-3xl bg-card p-8 sm:p-10"
         >
-          <Quote className="h-7 w-7 text-primary" />
-          <p className="mt-4 font-display text-xl font-medium leading-snug tracking-tight sm:text-2xl">
+          <Quote className="h-8 w-8 text-brand-pink" fill="currentColor" />
+          <p className="mt-4 font-display text-[1.35rem] font-medium leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
             &ldquo;I build the system, not just the model. From LangGraph agent
             to FastAPI deployment to HubSpot sync — I own the full stack and I
             don&apos;t leave until it runs in production.&rdquo;
           </p>
-          <div className="mt-5 flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground font-display text-sm font-bold text-background">
+          <div className="mt-6 flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-teal font-display text-base font-semibold text-white">
               B
             </div>
             <div>
-              <div className="text-sm font-semibold">Baraar Sreesha</div>
-              <div className="text-xs text-muted-foreground">
-                Applied AI & GTM Systems Engineer · Bengaluru
+              <div className="text-[14px] font-semibold text-ink">
+                Baraar Sreesha
+              </div>
+              <div className="text-[12px] text-muted-foreground">
+                Applied AI &amp; GTM Systems Engineer · Bengaluru
               </div>
             </div>
           </div>

@@ -7,8 +7,22 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-display: var(--font-bricolage);
   --font-mono: var(--font-jetbrains-mono);
+
+  /* Clay brand color tokens */
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-lavender: var(--brand-lavender);
+  --color-brand-peach: var(--brand-peach);
+  --color-brand-ochre: var(--brand-ochre);
+  --color-brand-mint: var(--brand-mint);
+  --color-brand-coral: var(--brand-coral);
+  --color-canvas: var(--canvas);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-card: var(--surface-card);
+  --color-surface-strong: var(--surface-strong);
+  --color-ink: var(--ink);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,90 +60,111 @@
 }
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.75rem; /* Clay md — buttons & inputs 12px; cards use rounded-2xl/3xl */
 
-  /* Zinc neutrals — clean, professional */
-  --background: oklch(0.985 0 0);
-  --foreground: oklch(0.09 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.09 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.09 0 0);
+  /* Clay brand palette (hex per spec) */
+  --brand-pink: #ff4d8b;
+  --brand-teal: #1a3a3a;
+  --brand-lavender: #b8a4ed;
+  --brand-peach: #ffb084;
+  --brand-ochre: #e8b94a;
+  --brand-mint: #a4d4c5;
+  --brand-coral: #ff6b5a;
+  --canvas: #fffaf0;
+  --surface-soft: #faf5e8;
+  --surface-card: #f5f0e0;
+  --surface-strong: #ebe6d6;
+  --ink: #0a0a0a;
 
-  /* Electric blue primary */
-  --primary: oklch(0.55 0.22 264);
-  --primary-foreground: oklch(1 0 0);
+  /* Cream canvas + near-black ink */
+  --background: #fffaf0;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
 
-  /* Neutral secondary */
-  --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.09 0 0);
+  /* Near-black primary CTA */
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
 
-  --muted: oklch(0.96 0 0);
-  --muted-foreground: oklch(0.52 0 0);
+  /* Cream secondaries */
+  --secondary: #f5f0e0;
+  --secondary-foreground: #0a0a0a;
 
-  --accent: oklch(0.96 0 0);
-  --accent-foreground: oklch(0.09 0 0);
+  --muted: #faf5e8;
+  --muted-foreground: #6a6a6a;
 
-  --destructive: oklch(0.62 0.24 27);
-  --border: oklch(0.91 0 0);
-  --input: oklch(0.91 0 0);
-  --ring: oklch(0.55 0.22 264);
+  --accent: #f5f0e0;
+  --accent-foreground: #0a0a0a;
 
-  --chart-1: oklch(0.55 0.22 264);
-  --chart-2: oklch(0.65 0.19 264);
-  --chart-3: oklch(0.72 0 0);
-  --chart-4: oklch(0.82 0 0);
-  --chart-5: oklch(0.91 0 0);
+  --destructive: #ef4444;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #0a0a0a;
 
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.09 0 0);
-  --sidebar-primary: oklch(0.55 0.22 264);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0 0);
-  --sidebar-accent-foreground: oklch(0.09 0 0);
-  --sidebar-border: oklch(0.91 0 0);
-  --sidebar-ring: oklch(0.55 0.22 264);
+  --chart-1: #ff4d8b;
+  --chart-2: #1a3a3a;
+  --chart-3: #b8a4ed;
+  --chart-4: #ffb084;
+  --chart-5: #e8b94a;
+
+  --sidebar: #fffaf0;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #0a0a0a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f5f0e0;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #0a0a0a;
 }
 
+/* Dark mode — coherent dark-teal Clay variant (light-first, but toggle stays usable) */
 .dark {
-  --background: oklch(0.09 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.13 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.13 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --canvas: #0a1a1a;
+  --surface-soft: #102222;
+  --surface-card: #1a2a2a;
+  --surface-strong: #223333;
+  --ink: #ffffff;
 
-  --primary: oklch(0.65 0.19 264);
-  --primary-foreground: oklch(0.09 0 0);
+  --background: #0a1a1a;
+  --foreground: #f5f0e0;
+  --card: #142525;
+  --card-foreground: #f5f0e0;
+  --popover: #142525;
+  --popover-foreground: #f5f0e0;
 
-  --secondary: oklch(0.17 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+  --primary: #fffaf0;
+  --primary-foreground: #0a0a0a;
 
-  --muted: oklch(0.17 0 0);
-  --muted-foreground: oklch(0.62 0 0);
+  --secondary: #1a2a2a;
+  --secondary-foreground: #f5f0e0;
 
-  --accent: oklch(0.17 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --muted: #1a2a2a;
+  --muted-foreground: #9ab0aa;
 
-  --destructive: oklch(0.68 0.21 22);
-  --border: oklch(0.21 0 0);
-  --input: oklch(0.21 0 0);
-  --ring: oklch(0.65 0.19 264);
+  --accent: #1a2a2a;
+  --accent-foreground: #f5f0e0;
 
-  --chart-1: oklch(0.65 0.19 264);
-  --chart-2: oklch(0.55 0.22 264);
-  --chart-3: oklch(0.5 0 0);
-  --chart-4: oklch(0.62 0 0);
-  --chart-5: oklch(0.72 0 0);
+  --destructive: #ef4444;
+  --border: #28403c;
+  --input: #28403c;
+  --ring: #a4d4c5;
 
-  --sidebar: oklch(0.11 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.65 0.19 264);
-  --sidebar-primary-foreground: oklch(0.09 0 0);
-  --sidebar-accent: oklch(0.17 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.21 0 0);
-  --sidebar-ring: oklch(0.65 0.19 264);
+  --chart-1: #ff4d8b;
+  --chart-2: #a4d4c5;
+  --chart-3: #b8a4ed;
+  --chart-4: #ffb084;
+  --chart-5: #e8b94a;
+
+  --sidebar: #0a1a1a;
+  --sidebar-foreground: #f5f0e0;
+  --sidebar-primary: #fffaf0;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #1a2a2a;
+  --sidebar-accent-foreground: #f5f0e0;
+  --sidebar-border: #28403c;
+  --sidebar-ring: #a4d4c5;
 }
 
 @layer base {
@@ -144,15 +179,16 @@
     font-feature-settings: "ss01", "cv11";
   }
   ::selection {
-    background: oklch(0.55 0.22 264 / 0.15);
+    background: color-mix(in srgb, var(--brand-pink) 28%, transparent);
     color: inherit;
   }
 }
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-space-grotesk), system-ui, sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.035em;
+    font-weight: 600;
   }
   .font-mono-jb {
     font-family: var(--font-jetbrains-mono), ui-monospace, monospace;

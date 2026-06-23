@@ -31,10 +31,10 @@ function BlogCard({ post }: { post: StoredPost }) {
   return (
     <Link
       href={`/?blog=${post.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/20"
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card transition-transform duration-300 hover:-translate-y-1"
     >
       {post.coverImage ? (
-        <div className="aspect-[1200/630] overflow-hidden border-b border-border bg-secondary">
+        <div className="aspect-[1200/630] overflow-hidden border-b border-border bg-surface-card">
           <img
             src={post.coverImage}
             alt={post.title}
@@ -43,11 +43,11 @@ function BlogCard({ post }: { post: StoredPost }) {
           />
         </div>
       ) : (
-        <div className="h-px w-full bg-primary/40" />
+        <div className="h-1.5 w-full bg-brand-pink" />
       )}
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-4 flex items-center gap-2 text-xs">
-          <span className="rounded-md border border-border bg-secondary px-2.5 py-1 font-mono-jb uppercase tracking-wider text-muted-foreground">
+          <span className="rounded-full bg-brand-lavender/40 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink">
             {post.category}
           </span>
           <span className="flex items-center gap-1 text-muted-foreground">
@@ -55,14 +55,14 @@ function BlogCard({ post }: { post: StoredPost }) {
             {post.readingTime}
           </span>
         </div>
-        <h3 className="mb-2 font-display text-lg font-bold leading-tight tracking-tight sm:text-xl">
+        <h3 className="mb-2 font-display text-[1.15rem] font-semibold leading-snug tracking-[-0.02em] text-ink sm:text-xl">
           {post.title}
         </h3>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+        <p className="text-[13.5px] leading-relaxed text-muted-foreground">
           {post.excerpt}
         </p>
-        <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
-          <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <div className="mt-auto flex items-center justify-between border-t border-border pt-4">
+          <div className="flex items-center gap-1.5 text-[12px] text-muted-foreground">
             <Calendar className="h-3 w-3" />
             {new Date(post.publishedAt).toLocaleDateString("en-US", {
               year: "numeric",
@@ -70,7 +70,7 @@ function BlogCard({ post }: { post: StoredPost }) {
               day: "numeric",
             })}
           </div>
-          <span className="inline-flex items-center gap-1 text-sm font-semibold transition-colors group-hover:text-primary">
+          <span className="inline-flex items-center gap-1 text-[13.5px] font-semibold text-ink transition-colors group-hover:text-brand-pink">
             Read
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </span>
@@ -84,26 +84,26 @@ export function Blog() {
   const recentPosts = useRecentPosts(3);
 
   return (
-    <section id="blog" className="relative py-16 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+    <section id="blog" className="relative bg-surface-soft py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end">
           <div>
-            <motion.div
+            <motion.span
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-lavender px-3.5 py-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-ink"
             >
-              <Rss className="h-3 w-3 text-primary" />
+              <Rss className="h-3 w-3" />
               Writing
-            </motion.div>
-            <h2 className="max-w-2xl font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+            </motion.span>
+            <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
               Things I&apos;ve shipped &amp; learned.
             </h2>
           </div>
           <Link
             href="/?view=blog"
-            className="group inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-4 py-2 text-sm font-semibold transition-colors hover:border-foreground/20 hover:bg-secondary"
+            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
             View all posts
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
