@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BrandMark } from "@/components/portfolio/brand-mark";
 
 const socials = [
   { label: "LinkedIn", href: "https://linkedin.com/in/baraarsreesha" },
@@ -30,9 +31,7 @@ export function Footer() {
               href="/#top"
               className="inline-flex items-center gap-2.5 font-display text-base font-semibold text-white"
             >
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white font-display text-sm font-bold text-ink">
-                B
-              </span>
+              <BrandMark tone="cream" className="h-9 w-9" />
               Baraar Sreesha
             </Link>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/55">
