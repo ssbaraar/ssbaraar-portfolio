@@ -12,7 +12,8 @@ import {
   Clock,
   DollarSign,
   ArrowUpRight,
-  ChevronDown,
+  RotateCw,
+  RotateCcw,
 } from "lucide-react";
 
 type Service = {
@@ -139,86 +140,110 @@ const skins: Skin[] = [
   { card: "bg-surface-card", text: "text-ink", soft: "text-muted-foreground", tile: "bg-ink/[0.06] text-ink", rule: "border-ink/10", dot: "bg-ink/40", btn: "bg-ink text-white" },
 ];
 
+// Staggered vertical offsets per column for an intentionally "uneven" grid
+const stagger = ["lg:mt-0", "lg:mt-16", "lg:mt-8"];
+
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = service.icon;
   const s = skins[index % skins.length];
-  const [open, setOpen] = React.useState(false);
+  const [flipped, setFlipped] = React.useState(false);
 
   return (
-    <motion.article
+    <motion.div
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${s.card} ${s.text}`}
+      className={`${stagger[index % 3]} [perspective:1600px]`}
     >
-      <div className="mb-5 flex items-start justify-between">
-        <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${s.tile}`}>
-          <Icon className="h-5 w-5" strokeWidth={2} />
-        </div>
-        <span className={`font-display text-sm font-semibold ${s.soft}`}>
-          0{index + 1}
-        </span>
-      </div>
-
-      <h3 className="font-display text-[1.3rem] font-semibold leading-[1.12] tracking-[-0.02em] sm:text-[1.4rem]">
-        {service.title}
-      </h3>
-      {/* Catchy one-liner replaces the long paragraph */}
-      <p className={`mt-2.5 text-[14.5px] font-medium leading-snug ${s.soft}`}>
-        {service.tagline}
-      </p>
-
-      {/* Price row */}
-      <div className={`mt-5 flex items-center justify-between border-t ${s.rule} pt-4`}>
-        <div className="flex items-center gap-1.5 font-display text-[17px] font-semibold">
-          <DollarSign className="h-4 w-4 opacity-70" />
-          {service.price.replace(/^\$/, "")}
-        </div>
-        <span
-          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold ${s.tile}`}
+      <div className="group relative h-[23rem] w-full transition-transform duration-300 hover:-translate-y-1.5 sm:h-[24rem]">
+        <div
+          className="relative h-full w-full rounded-3xl transition-transform duration-[650ms] [transform-style:preserve-3d] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
         >
-          <Clock className="h-3 w-3" />
-          {service.timeline}
-        </span>
+          {/* FRONT */}
+          <button
+            type="button"
+            onClick={() => setFlipped(true)}
+            aria-label={`Show details for ${service.title}`}
+            className={`absolute inset-0 flex cursor-pointer flex-col rounded-3xl p-6 text-left [backface-visibility:hidden] sm:p-7 ${s.card} ${s.text}`}
+          >
+            <div className="mb-5 flex items-start justify-between">
+              <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${s.tile}`}>
+                <Icon className="h-5 w-5" strokeWidth={2} />
+              </div>
+              <span className={`font-display text-sm font-semibold ${s.soft}`}>
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 className="font-display text-[1.35rem] font-semibold leading-[1.12] tracking-[-0.02em] sm:text-[1.5rem]">
+              {service.title}
+            </h3>
+            <p className={`mt-2.5 text-[14.5px] font-medium leading-snug ${s.soft}`}>
+              {service.tagline}
+            </p>
+
+            <div className={`mt-auto flex items-center justify-between border-t ${s.rule} pt-4`}>
+              <div className="flex items-center gap-1.5 font-display text-[17px] font-semibold">
+                <DollarSign className="h-4 w-4 opacity-70" />
+                {service.price.replace(/^\$/, "")}
+              </div>
+              <span
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-transform group-hover:rotate-[-12deg] ${s.tile}`}
+              >
+                <RotateCw className="h-3 w-3" />
+                Flip for details
+              </span>
+            </div>
+          </button>
+
+          {/* BACK */}
+          <div
+            className={`absolute inset-0 flex flex-col rounded-3xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-7 ${s.card} ${s.text}`}
+          >
+            <div className="mb-2.5 flex items-center justify-between">
+              <span className={`text-[11px] font-semibold uppercase tracking-[0.12em] ${s.soft}`}>
+                What&apos;s included
+              </span>
+              <button
+                type="button"
+                onClick={() => setFlipped(false)}
+                aria-label="Flip back"
+                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-full ${s.tile}`}
+              >
+                <RotateCcw className="h-3.5 w-3.5" />
+              </button>
+            </div>
+
+            <h3 className="font-display text-[1.05rem] font-semibold leading-tight">
+              {service.title}
+            </h3>
+            <div className={`mt-1 flex items-center gap-1.5 text-[11.5px] font-medium ${s.soft}`}>
+              <Clock className="h-3 w-3" />
+              {service.timeline}
+            </div>
+
+            <ul className="mt-3 space-y-2">
+              {service.bullets.map((b) => (
+                <li key={b} className={`flex items-start gap-2 text-[12.5px] ${s.soft}`}>
+                  <span className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#contact"
+              className={`mt-auto inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl text-[13px] font-semibold ${s.btn}`}
+            >
+              Discuss this build
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
-
-      {/* Interactive details toggle */}
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className={`mt-3 flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-2.5 text-[12.5px] font-semibold transition-colors ${s.tile}`}
-      >
-        <span>{service.audience}</span>
-        <ChevronDown
-          className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        />
-      </button>
-
-      <motion.div
-        initial={false}
-        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
-        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
-        className="overflow-hidden"
-      >
-        <ul className="space-y-2.5 pt-4">
-          {service.bullets.map((b) => (
-            <li key={b} className={`flex items-start gap-2.5 text-[13px] ${s.soft}`}>
-              <span className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
-        <a
-          href="#contact"
-          className={`mt-4 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl text-[13px] font-semibold ${s.btn}`}
-        >
-          Discuss this build
-          <ArrowUpRight className="h-4 w-4" />
-        </a>
-      </motion.div>
-    </motion.article>
+    </motion.div>
   );
 }
 
@@ -246,7 +271,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <ServiceCard key={s.id} service={s} index={i} />
           ))}
