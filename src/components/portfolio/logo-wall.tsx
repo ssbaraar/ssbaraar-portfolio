@@ -4,12 +4,15 @@ import * as React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * "Trusted by teams at" — a 2-row logo wall where each cell smoothly
- * crossfades through the company pool, so logos roll/swap in place.
+ * "Trusted by teams at" — a 2-row logo wall.
  *
- * Logos load from /public/logos/<slug>.png. If a file is missing, the cell
- * falls back to a clean styled wordmark — so it looks good before assets land.
- * Add more companies by extending `companies`.
+ * Rotation is COORDINATED: the 8 cells always show 8 DISTINCT companies at once
+ * (never a duplicate). On each slow tick a single cell swaps to the one company
+ * currently hidden, with a smooth crossfade. With 9 companies and 8 cells the
+ * hidden one rotates through, so every company gets airtime.
+ *
+ * Logos load from /public/logos/<file>. Missing files fall back to a styled
+ * wordmark. Add companies by extending `companies`.
  */
 type Company = { name: string; file?: string };
 
@@ -26,6 +29,7 @@ const companies: Company[] = [
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
+const SWAP_MS = 4200; // slow, calm cadence
 
 function LogoMark({ c }: { c: Company }) {
   const [err, setErr] = React.useState(false);
@@ -47,30 +51,20 @@ function LogoMark({ c }: { c: Company }) {
   );
 }
 
-function LogoCell({ offset, period }: { offset: number; period: number }) {
-  const [idx, setIdx] = React.useState(offset % companies.length);
-
-  React.useEffect(() => {
-    const id = setInterval(
-      () => setIdx((v) => (v + 1) % companies.length),
-      period
-    );
-    return () => clearInterval(id);
-  }, [period]);
-
-  const c = companies[idx];
+function LogoCell({ company }: { company: Company }) {
   return (
-    <div className="flex h-20 items-center justify-center bg-canvas px-4 sm:h-24">
-      <AnimatePresence mode="wait">
+    <div className="relative flex h-20 items-center justify-center bg-canvas px-4 sm:h-24">
+      {/* default (sync) AnimatePresence overlaps exit+enter -> true crossfade, no blank */}
+      <AnimatePresence>
         <motion.div
-          key={c.name}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center justify-center"
+          key={company.name}
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.94 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="absolute inset-0 flex items-center justify-center px-4"
         >
-          <LogoMark c={c} />
+          <LogoMark c={company} />
         </motion.div>
       </AnimatePresence>
     </div>
@@ -78,6 +72,36 @@ function LogoCell({ offset, period }: { offset: number; period: number }) {
 }
 
 export function LogoWall() {
+  // slots[i] = index into `companies` shown in cell i. Always all-distinct.
+  const [slots, setSlots] = React.useState<number[]>(() =>
+    Array.from({ length: CELLS }, (_, i) => i % companies.length)
+  );
+
+  React.useEffect(() => {
+    // Nothing to rotate if there aren't more companies than cells.
+    if (companies.length <= CELLS) return;
+    let cursor = 0;
+    const id = setInterval(() => {
+      setSlots((prev) => {
+        const shown = new Set(prev);
+        // the (single, with 9/8) company not currently visible
+        let hidden = -1;
+        for (let i = 0; i < companies.length; i++) {
+          if (!shown.has(i)) {
+            hidden = i;
+            break;
+          }
+        }
+        if (hidden === -1) return prev;
+        const next = prev.slice();
+        next[cursor % CELLS] = hidden; // swap one cell to the hidden company
+        cursor += 1;
+        return next;
+      });
+    }, SWAP_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       aria-label="Companies I've worked with"
@@ -89,13 +113,8 @@ export function LogoWall() {
         </p>
 
         <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-4">
-          {Array.from({ length: CELLS }).map((_, i) => (
-            <LogoCell
-              key={i}
-              // row 2 is offset so the same logo never stacks in a column
-              offset={i + Math.floor(i / 4) * 2}
-              period={2600 + (i % 4) * 320 + Math.floor(i / 4) * 180}
-            />
+          {slots.map((companyIdx, cellIdx) => (
+            <LogoCell key={cellIdx} company={companies[companyIdx]} />
           ))}
         </div>
       </div>
