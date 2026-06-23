@@ -29,7 +29,7 @@ const companies: Company[] = [
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
-const SWAP_MS = 4200; // slow, calm cadence
+const SWAP_MS = 2600; // slightly faster cadence
 
 function LogoMark({ c }: { c: Company }) {
   const [err, setErr] = React.useState(false);
@@ -61,7 +61,7 @@ function LogoCell({ company }: { company: Company }) {
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.94 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0 flex items-center justify-center px-4"
         >
           <LogoMark c={company} />
