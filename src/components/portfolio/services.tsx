@@ -121,29 +121,11 @@ const services: Service[] = [
   },
 ];
 
-// Clay 6-color feature-card cycle: pink → teal → lavender → peach → ochre → cream
-type Skin = {
-  card: string;
-  text: string;
-  soft: string;
-  tile: string;
-  rule: string;
-  dot: string;
-  btn: string;
-};
-
-const skins: Skin[] = [
-  { card: "bg-brand-pink", text: "text-white", soft: "text-white/85", tile: "bg-white/20 text-white", rule: "border-white/25", dot: "bg-white/70", btn: "bg-white text-ink" },
-  { card: "bg-brand-teal", text: "text-white", soft: "text-white/80", tile: "bg-white/15 text-white", rule: "border-white/20", dot: "bg-brand-mint", btn: "bg-white text-ink" },
-  { card: "bg-brand-lavender", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
-  { card: "bg-brand-peach", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
-  { card: "bg-brand-ochre", text: "text-ink", soft: "text-ink/75", tile: "bg-ink/10 text-ink", rule: "border-ink/15", dot: "bg-ink/50", btn: "bg-ink text-white" },
-  { card: "bg-surface-card", text: "text-ink", soft: "text-muted-foreground", tile: "bg-ink/[0.06] text-ink", rule: "border-ink/10", dot: "bg-ink/40", btn: "bg-ink text-white" },
-];
+// Per-card accent (clay palette) for small touches on the white cards
+const accents = ["#ff4d8b", "#1a3a3a", "#b8a4ed", "#ffb084", "#e8b94a", "#ff6b5a"];
 
 function ServiceCard({ service, index }: { service: Service; index: number }) {
-  const Icon = service.icon;
-  const s = skins[index % skins.length];
+  const accent = accents[index % accents.length];
   const [flipped, setFlipped] = React.useState(false);
 
   return (
@@ -152,11 +134,12 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      style={{ "--accent": accent } as React.CSSProperties}
       className="[perspective:1600px]"
     >
-      <div className="group relative h-[23rem] w-full transition-transform duration-300 hover:-translate-y-1.5 sm:h-[24rem]">
+      <div className="group relative h-[25.5rem] w-full transition-transform duration-300 hover:-translate-y-1.5 sm:h-[26rem]">
         <div
-          className="relative h-full w-full rounded-3xl transition-transform duration-[650ms] [transform-style:preserve-3d] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
+          className="relative h-full w-full transition-transform duration-[650ms] [transform-style:preserve-3d] [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
           style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
         >
           {/* FRONT */}
@@ -164,68 +147,88 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             type="button"
             onClick={() => setFlipped(true)}
             aria-label={`Show details for ${service.title}`}
-            className={`absolute inset-0 flex cursor-pointer flex-col rounded-3xl p-6 text-left [backface-visibility:hidden] sm:p-7 ${s.card} ${s.text}`}
+            className="absolute inset-0 flex cursor-pointer flex-col overflow-hidden rounded-3xl border border-border bg-card text-left [backface-visibility:hidden]"
           >
-            <div className="mb-5 flex items-start justify-between">
-              <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${s.tile}`}>
-                <Icon className="h-5 w-5" strokeWidth={2} />
-              </div>
-              <span className={`font-display text-sm font-semibold ${s.soft}`}>
+            {/* Clay illustration */}
+            <div
+              className="relative h-[11.5rem] w-full shrink-0 overflow-hidden"
+              style={{ background: "#f6f3ea" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/services/${service.id}.png`}
+                alt={`${service.title} — clay illustration`}
+                className="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <span className="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/80 font-display text-[12px] font-semibold text-ink backdrop-blur">
                 0{index + 1}
               </span>
             </div>
 
-            <h3 className="font-display text-[1.35rem] font-semibold leading-[1.12] tracking-[-0.02em] sm:text-[1.5rem]">
-              {service.title}
-            </h3>
-            <p className={`mt-2.5 text-[14.5px] font-medium leading-snug ${s.soft}`}>
-              {service.tagline}
-            </p>
+            {/* Content */}
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <h3 className="font-display text-[1.25rem] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[1.35rem]">
+                {service.title}
+              </h3>
+              <p className="mt-2 text-[13.5px] font-medium leading-snug text-muted-foreground">
+                {service.tagline}
+              </p>
 
-            <div className={`mt-auto flex items-center justify-between border-t ${s.rule} pt-4`}>
-              <div className="flex items-center gap-1.5 font-display text-[17px] font-semibold">
-                <DollarSign className="h-4 w-4 opacity-70" />
-                {service.price.replace(/^\$/, "")}
+              <div className="mt-auto flex items-center justify-between border-t border-border pt-4">
+                <div className="flex items-center gap-1 font-display text-[16px] font-semibold text-ink">
+                  <DollarSign className="h-4 w-4 opacity-60" />
+                  {service.price.replace(/^\$/, "")}
+                </div>
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-transform group-hover:rotate-[-12deg]"
+                  style={{
+                    color: accent,
+                    background: "color-mix(in srgb, var(--accent) 14%, transparent)",
+                  }}
+                >
+                  <RotateCw className="h-3 w-3" />
+                  Flip for details
+                </span>
               </div>
-              <span
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold transition-transform group-hover:rotate-[-12deg] ${s.tile}`}
-              >
-                <RotateCw className="h-3 w-3" />
-                Flip for details
-              </span>
             </div>
           </button>
 
           {/* BACK */}
-          <div
-            className={`absolute inset-0 flex flex-col rounded-3xl p-6 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-7 ${s.card} ${s.text}`}
-          >
+          <div className="absolute inset-0 flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-5 [backface-visibility:hidden] [transform:rotateY(180deg)] sm:p-6">
             <div className="mb-2.5 flex items-center justify-between">
-              <span className={`text-[11px] font-semibold uppercase tracking-[0.12em] ${s.soft}`}>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                 What&apos;s included
               </span>
               <button
                 type="button"
                 onClick={() => setFlipped(false)}
                 aria-label="Flip back"
-                className={`flex h-8 w-8 cursor-pointer items-center justify-center rounded-full ${s.tile}`}
+                className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full"
+                style={{
+                  color: accent,
+                  background: "color-mix(in srgb, var(--accent) 14%, transparent)",
+                }}
               >
                 <RotateCcw className="h-3.5 w-3.5" />
               </button>
             </div>
 
-            <h3 className="font-display text-[1.05rem] font-semibold leading-tight">
+            <h3 className="font-display text-[1.1rem] font-semibold leading-tight text-ink">
               {service.title}
             </h3>
-            <div className={`mt-1 flex items-center gap-1.5 text-[11.5px] font-medium ${s.soft}`}>
+            <div className="mt-1 flex items-center gap-1.5 text-[11.5px] font-medium text-muted-foreground">
               <Clock className="h-3 w-3" />
-              {service.timeline}
+              {service.timeline} · {service.price}
             </div>
 
             <ul className="mt-3 space-y-2">
               {service.bullets.map((b) => (
-                <li key={b} className={`flex items-start gap-2 text-[12.5px] ${s.soft}`}>
-                  <span className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+                <li key={b} className="flex items-start gap-2 text-[12.5px] text-ink/75">
+                  <span
+                    className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full"
+                    style={{ background: accent }}
+                  />
                   <span>{b}</span>
                 </li>
               ))}
@@ -233,7 +236,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
             <a
               href="#contact"
-              className={`mt-auto inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl text-[13px] font-semibold ${s.btn}`}
+              className="mt-auto inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-ink text-[13px] font-semibold text-white"
             >
               Discuss this build
               <ArrowUpRight className="h-4 w-4" />
