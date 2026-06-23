@@ -12,6 +12,7 @@ import {
   Clock,
   DollarSign,
   ArrowUpRight,
+  ChevronDown,
 } from "lucide-react";
 
 type Service = {
@@ -19,7 +20,7 @@ type Service = {
   icon: typeof Radar;
   title: string;
   audience: string;
-  outcome: string;
+  tagline: string;
   bullets: string[];
   price: string;
   timeline: string;
@@ -30,9 +31,8 @@ const services: Service[] = [
     id: "lead-intel",
     icon: Radar,
     title: "GTM Lead Intelligence Sprint",
-    audience: "Recruiting · Outbound · B2B SaaS founders",
-    outcome:
-      "Replace manual prospect research with a pipeline that sources, enriches, scores, and routes 100–500 sales-ready accounts into your CRM every week.",
+    audience: "B2B SaaS · Outbound",
+    tagline: "100–500 sales-ready accounts in your CRM, every week.",
     bullets: [
       "ICP filter design + account criteria",
       "Sourcing via Clay, Apollo, scraping, Google Maps",
@@ -46,9 +46,8 @@ const services: Service[] = [
     id: "clay-n8n",
     icon: Workflow,
     title: "Clay + n8n Outbound Engine",
-    audience: "Outbound agencies · SDR teams · Sales-led SaaS",
-    outcome:
-      "Automate your entire outbound ops — lead sourcing to personalized messaging to CRM sequencing — into one reliable, repeatable system.",
+    audience: "Agencies · SDR teams",
+    tagline: "Your entire outbound ops — one repeatable system.",
     bullets: [
       "Clay table architecture + waterfall enrichment",
       "n8n automation + HubSpot/Salesforce push",
@@ -62,9 +61,8 @@ const services: Service[] = [
     id: "rag",
     icon: Database,
     title: "RAG System Build",
-    audience: "Teams with docs, wikis, or compliance libraries",
-    outcome:
-      "A production knowledge assistant your team can query in plain English — citation-grounded responses, hybrid retrieval, FastAPI deployment.",
+    audience: "Docs · Wikis · Compliance",
+    tagline: "Query your docs in plain English — with citations.",
     bullets: [
       "Multi-document ingestion + OCR pipeline if needed",
       "Hybrid retrieval (BM25 keyword + vector semantic)",
@@ -78,9 +76,8 @@ const services: Service[] = [
     id: "agents",
     icon: Bot,
     title: "Agentic AI Workflow Build",
-    audience: "Teams that need a multi-step AI system, not a chatbot",
-    outcome:
-      "Production multi-agent system with tool calling, planning loops, self-correction, and structured output — wired into your stack via API.",
+    audience: "Multi-step AI systems",
+    tagline: "A real multi-agent system — not a chatbot.",
     bullets: [
       "Multi-agent architecture (LangGraph / CrewAI / AutoGen)",
       "Tool calling, planning loops, state mgmt",
@@ -94,9 +91,8 @@ const services: Service[] = [
     id: "docs",
     icon: FileScan,
     title: "Document Intake + AI Assistant",
-    audience: "Forex · Insurance · Mortgage · Legal · Consulting",
-    outcome:
-      "Automate document-heavy intake and put an AI layer over your docs. Proven at Hyderabad Forex (−40% data entry, −30% onboarding time).",
+    audience: "Forex · Legal · Mortgage",
+    tagline: "OCR + an AI layer over your document-heavy intake.",
     bullets: [
       "PDF / form / document ingestion + OCR pipeline",
       "Field extraction + structured data output",
@@ -110,9 +106,8 @@ const services: Service[] = [
     id: "retainer",
     icon: InfinityIcon,
     title: "Fractional AI Retainer",
-    audience: "Companies that need ongoing AI eng — no full-time hire",
-    outcome:
-      "A dedicated fractional AI engineer — weekly builds, iterations, enrichment, CRM automation, new AI features, monitoring.",
+    audience: "Ongoing AI engineering",
+    tagline: "A dedicated AI engineer, on tap.",
     bullets: [
       "8–20 hrs/week depending on tier",
       "Weekly async updates + Loom walkthroughs",
@@ -147,16 +142,18 @@ const skins: Skin[] = [
 function ServiceCard({ service, index }: { service: Service; index: number }) {
   const Icon = service.icon;
   const s = skins[index % skins.length];
+  const [open, setOpen] = React.useState(false);
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className={`group relative flex flex-col overflow-hidden rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1 sm:p-8 ${s.card} ${s.text}`}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${s.card} ${s.text}`}
     >
-      <div className="mb-6 flex items-start justify-between">
-        <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${s.tile}`}>
+      <div className="mb-5 flex items-start justify-between">
+        <div className={`flex h-11 w-11 items-center justify-center rounded-2xl ${s.tile}`}>
           <Icon className="h-5 w-5" strokeWidth={2} />
         </div>
         <span className={`font-display text-sm font-semibold ${s.soft}`}>
@@ -164,42 +161,63 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
         </span>
       </div>
 
-      <h3 className="font-display text-[1.45rem] font-semibold leading-[1.1] tracking-[-0.02em]">
+      <h3 className="font-display text-[1.3rem] font-semibold leading-[1.12] tracking-[-0.02em] sm:text-[1.4rem]">
         {service.title}
       </h3>
-      <p className={`mt-2 text-[13px] font-medium ${s.soft}`}>{service.audience}</p>
-      <p className={`mt-3 text-[14px] leading-relaxed ${s.soft}`}>
-        {service.outcome}
+      {/* Catchy one-liner replaces the long paragraph */}
+      <p className={`mt-2.5 text-[14.5px] font-medium leading-snug ${s.soft}`}>
+        {service.tagline}
       </p>
 
-      <ul className="mt-5 space-y-2.5">
-        {service.bullets.map((b) => (
-          <li key={b} className={`flex items-start gap-2.5 text-[13.5px] ${s.soft}`}>
-            <span className={`mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div className={`mt-auto flex items-center justify-between border-t ${s.rule} pt-5`}>
-        <div>
-          <div className="flex items-center gap-1.5 font-display text-base font-semibold">
-            <DollarSign className="h-4 w-4 opacity-70" />
-            {service.price.replace(/^\$/, "")}
-          </div>
-          <div className={`mt-0.5 flex items-center gap-1.5 text-[12px] ${s.soft}`}>
-            <Clock className="h-3 w-3" />
-            {service.timeline}
-          </div>
+      {/* Price row */}
+      <div className={`mt-5 flex items-center justify-between border-t ${s.rule} pt-4`}>
+        <div className="flex items-center gap-1.5 font-display text-[17px] font-semibold">
+          <DollarSign className="h-4 w-4 opacity-70" />
+          {service.price.replace(/^\$/, "")}
         </div>
+        <span
+          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold ${s.tile}`}
+        >
+          <Clock className="h-3 w-3" />
+          {service.timeline}
+        </span>
+      </div>
+
+      {/* Interactive details toggle */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className={`mt-3 flex w-full cursor-pointer items-center justify-between rounded-xl px-3 py-2.5 text-[12.5px] font-semibold transition-colors ${s.tile}`}
+      >
+        <span>{service.audience}</span>
+        <ChevronDown
+          className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <motion.div
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+        className="overflow-hidden"
+      >
+        <ul className="space-y-2.5 pt-4">
+          {service.bullets.map((b) => (
+            <li key={b} className={`flex items-start gap-2.5 text-[13px] ${s.soft}`}>
+              <span className={`mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
         <a
           href="#contact"
-          aria-label={`Discuss ${service.title}`}
-          className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition-transform group-hover:rotate-12 ${s.btn}`}
+          className={`mt-4 inline-flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl text-[13px] font-semibold ${s.btn}`}
         >
+          Discuss this build
           <ArrowUpRight className="h-4 w-4" />
         </a>
-      </div>
+      </motion.div>
     </motion.article>
   );
 }

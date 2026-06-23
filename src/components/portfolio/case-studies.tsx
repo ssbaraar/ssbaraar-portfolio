@@ -25,10 +25,10 @@ const cases: CaseStudy[] = [
   {
     id: "lead-intel",
     client: "US B2B SaaS — Series B, ~80 staff",
-    industry: "B2B SaaS · Sales-led",
+    industry: "GTM intelligence",
     type: "GTM Lead Intelligence + HubSpot Automation",
     headline:
-      "Replaced $2,000/mo data subscriptions with a custom pipeline at a fraction of cost — and fresher.",
+      "Killed $2k/mo data subscriptions — fresher data, a fraction of the cost.",
     stack: ["Python", "Clay", "n8n", "HubSpot API", "Google Maps", "LLMs"],
     results: [
       { icon: DollarSign, label: "Subscription cost", value: "$2k/mo → fraction" },
@@ -39,10 +39,9 @@ const cases: CaseStudy[] = [
   {
     id: "pitch-deck",
     client: "B2B SaaS sales team — US",
-    industry: "Outbound · Sales automation",
+    industry: "Sales automation",
     type: "AI Pitch Deck + Outbound Email Automation",
-    headline:
-      "Deck + personalized email delivered in minutes, not hours. Sales team redirected to closing.",
+    headline: "Decks + personalized email in minutes, not hours.",
     stack: ["n8n", "Gemini", "Google Slides API", "Gmail API", "Drive"],
     results: [
       { icon: Clock, label: "Time per deck + email", value: "2–4h → <10min" },
@@ -53,10 +52,9 @@ const cases: CaseStudy[] = [
   {
     id: "enterprise-rag",
     client: "Enterprise — 500+ employees",
-    industry: "Knowledge management",
+    industry: "Enterprise RAG",
     type: "Multi-document RAG with hybrid retrieval",
-    headline:
-      "Citation-grounded knowledge assistant over hundreds of internal PDFs — production-deployed.",
+    headline: "Citation-grounded assistant over hundreds of internal PDFs.",
     stack: ["LangChain", "LlamaIndex", "FAISS", "AstraDB", "BM25", "FastAPI", "Docker"],
     results: [
       { icon: Clock, label: "Doc search time", value: "30–90min → <2min" },
@@ -67,10 +65,9 @@ const cases: CaseStudy[] = [
   {
     id: "forex-ocr",
     client: "Hyderabad Forex Limited — named, disclosed",
-    industry: "Forex · Financial services",
+    industry: "Regulated finance",
     type: "OCR KYC pipeline + FastAPI automation",
-    headline:
-      "40% reduction in manual data entry. 30% faster onboarding. Production OCR at a regulated financial firm.",
+    headline: "−40% manual entry, −30% onboarding at a regulated forex firm.",
     stack: ["Python", "OCR / CV", "FastAPI", "REST APIs"],
     results: [
       { icon: TrendingDown, label: "Manual data entry", value: "−40% auto-extracted" },
@@ -101,70 +98,48 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
       {/* Top accent bar */}
       <div className="h-2 w-full" style={{ background: "var(--accent)" }} />
 
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
-        {/* Header */}
-        <div className="mb-5 flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-          <div>
-            <div className="inline-flex items-center gap-1.5 text-[12px] font-semibold uppercase tracking-[0.08em] text-ink">
-              <span
-                className="h-2 w-2 rounded-full"
-                style={{ background: "var(--accent)" }}
-              />
-              {study.industry}
-            </div>
-            <div className="mt-1 text-[12px] text-muted-foreground">
-              {study.client}
-            </div>
-          </div>
+      <div className="flex flex-1 flex-col p-6 sm:p-7">
+        {/* Compact label row */}
+        <div className="mb-4 flex items-center gap-2">
           <span
-            className="self-start rounded-full px-3 py-1 text-[11px] font-semibold"
+            className="rounded-full px-2.5 py-1 text-[11px] font-semibold"
             style={{
               color: "var(--accent)",
               background: "color-mix(in srgb, var(--accent) 14%, transparent)",
             }}
           >
-            {study.type}
+            {study.industry}
+          </span>
+          <span className="text-[11px] font-medium text-muted-foreground">
+            Case 0{index + 1}
           </span>
         </div>
 
-        {/* Headline */}
-        <h3 className="font-display text-[1.4rem] font-semibold leading-[1.12] tracking-[-0.025em] text-ink sm:text-[1.6rem]">
+        {/* Headline — short, max 2 lines */}
+        <h3 className="line-clamp-2 font-display text-[1.3rem] font-semibold leading-[1.14] tracking-[-0.025em] text-ink sm:text-[1.45rem]">
           {study.headline}
         </h3>
 
-        {/* Results grid */}
-        <div className="mt-6 grid grid-cols-3 gap-2.5">
-          {study.results.map((r) => {
-            const Icon = r.icon;
-            return (
+        {/* Metrics — the hero of the card */}
+        <div className="mt-5 grid grid-cols-3 gap-2.5">
+          {study.results.map((r) => (
+            <div key={r.label} className="rounded-2xl bg-surface-card p-3 text-center">
               <div
-                key={r.label}
-                className="rounded-2xl bg-surface-card p-3"
+                className="font-display text-[15px] font-bold leading-tight"
+                style={{ color: "var(--accent)" }}
               >
-                <span
-                  className="flex h-7 w-7 items-center justify-center rounded-lg"
-                  style={{
-                    color: "var(--accent)",
-                    background:
-                      "color-mix(in srgb, var(--accent) 16%, transparent)",
-                  }}
-                >
-                  <Icon className="h-3.5 w-3.5" strokeWidth={2.2} />
-                </span>
-                <div className="mt-2 text-[9.5px] font-medium uppercase tracking-wide text-muted-foreground">
-                  {r.label}
-                </div>
-                <div className="mt-0.5 font-display text-[12.5px] font-semibold leading-tight text-ink">
-                  {r.value}
-                </div>
+                {r.value}
               </div>
-            );
-          })}
+              <div className="mt-1 text-[9.5px] font-medium leading-tight text-muted-foreground">
+                {r.label}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Stack */}
-        <div className="mt-5 flex flex-wrap gap-1.5">
-          {study.stack.map((tech) => (
+        {/* Stack — capped */}
+        <div className="mt-4 flex flex-wrap items-center gap-1.5">
+          {study.stack.slice(0, 4).map((tech) => (
             <span
               key={tech}
               className="rounded-full bg-surface-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground"
@@ -172,23 +147,23 @@ function CaseCard({ study, index }: { study: CaseStudy; index: number }) {
               {tech}
             </span>
           ))}
+          {study.stack.length > 4 && (
+            <span className="text-[11px] font-medium text-muted-foreground/70">
+              +{study.stack.length - 4}
+            </span>
+          )}
         </div>
 
-        <div className="mt-auto flex items-center justify-between border-t border-border pt-5">
-          <span className="text-[12px] text-muted-foreground">
-            Case 0{index + 1} · production-deployed
-          </span>
-          <a
-            href="#contact"
-            aria-label="Discuss a similar build"
-            className="inline-flex cursor-pointer items-center gap-1 text-[13.5px] font-semibold text-ink transition-colors"
-            onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "")}
-          >
-            Build something like this
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </div>
+        <a
+          href="#contact"
+          aria-label="Discuss a similar build"
+          className="group/btn mt-5 inline-flex cursor-pointer items-center gap-1.5 text-[13.5px] font-semibold text-ink transition-colors"
+          onMouseEnter={(e) => (e.currentTarget.style.color = accent)}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "")}
+        >
+          Build something like this
+          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+        </a>
       </div>
     </motion.article>
   );
