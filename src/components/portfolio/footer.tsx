@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import { BrandMark } from "@/components/portfolio/brand-mark";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { SiHuggingface } from "react-icons/si";
 
 const socials = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/baraarsreesha" },
-  { label: "GitHub", href: "https://github.com/ssbaraar" },
-  { label: "HuggingFace", href: "https://huggingface.co/ssbaraar" },
-  { label: "Twitter / X", href: "https://twitter.com/sreesha_baraar" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/baraarsreesha", Icon: FaLinkedinIn },
+  { label: "GitHub", href: "https://github.com/ssbaraar", Icon: FaGithub },
+  { label: "HuggingFace", href: "https://huggingface.co/ssbaraar", Icon: SiHuggingface },
+  { label: "Twitter / X", href: "https://twitter.com/sreesha_baraar", Icon: FaXTwitter },
 ];
 
 const navLinks = [
@@ -70,22 +73,23 @@ export function Footer() {
               Find me
             </div>
             <ul className="space-y-2.5">
-              {socials.map((s) => (
-                <li key={s.label}>
+              {socials.map(({ label, href, Icon }) => (
+                <li key={label}>
                   <a
-                    href={s.href}
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] text-white/65 transition-colors hover:text-brand-coral"
+                    className="inline-flex items-center gap-2.5 text-[14px] text-white/65 transition-colors hover:text-brand-coral"
                   >
-                    {s.label} ↗
+                    <Icon className="h-4 w-4 shrink-0" />
+                    {label}
                   </a>
                 </li>
               ))}
               <li>
                 <a
                   href="mailto:ssbaraar02@gmail.com"
-                  className="text-[14px] text-ink/70 transition-colors hover:text-brand-pink"
+                  className="text-[14px] text-white/65 transition-colors hover:text-brand-pink"
                 >
                   ssbaraar02@gmail.com
                 </a>
@@ -94,9 +98,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-[12px] text-white/45 sm:flex-row sm:items-center">
+        <div className="mt-10 border-t border-white/10 pt-6 text-[12px] text-white/40">
           <span>© {new Date().getFullYear()} Baraar Sreesha Sreenivas.</span>
-          <div>Next.js · Tailwind · Framer Motion · The Kiln-inspired design</div>
         </div>
       </div>
 

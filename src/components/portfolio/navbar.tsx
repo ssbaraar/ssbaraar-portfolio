@@ -150,7 +150,7 @@ export function Navbar() {
               <ThemeToggle />
               <Link
                 href="/#contact"
-                className="hidden cursor-pointer rounded-xl bg-ink px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:inline-flex"
+                className="hidden cursor-pointer rounded-xl bg-night px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:inline-flex"
               >
                 Let&apos;s talk →
               </Link>

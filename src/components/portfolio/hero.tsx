@@ -91,7 +91,7 @@ export function Hero() {
             href="https://calendly.com/baraarsreesha/intro"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-ink px-7 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
+            className="group inline-flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-night px-7 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:w-auto"
           >
             <Calendar className="h-4 w-4" />
             Book a 20-min intro call

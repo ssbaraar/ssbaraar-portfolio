@@ -101,7 +101,7 @@ export function AudienceToggle() {
                 {isActive && (
                   <motion.span
                     layoutId="audience-pill"
-                    className="absolute inset-0 rounded-xl bg-ink"
+                    className="absolute inset-0 rounded-xl bg-night"
                     transition={{ type: "spring", stiffness: 350, damping: 32 }}
                   />
                 )}
@@ -166,7 +166,7 @@ export function AudienceToggle() {
                         key={p}
                         className="flex items-start gap-2 text-[13.5px] text-muted-foreground"
                       >
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-teal" />
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-teal dark:text-brand-mint" />
                         <span>{p}</span>
                       </li>
                     ))}

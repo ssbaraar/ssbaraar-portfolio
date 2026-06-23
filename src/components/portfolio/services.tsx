@@ -236,7 +236,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
 
             <a
               href="#contact"
-              className="mt-auto inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-ink text-[13px] font-semibold text-white"
+              className="mt-auto inline-flex h-11 w-full cursor-pointer items-center justify-center gap-1.5 rounded-xl bg-night text-[13px] font-semibold text-white"
             >
               Discuss this build
               <ArrowUpRight className="h-4 w-4" />

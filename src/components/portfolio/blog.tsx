@@ -108,7 +108,7 @@ export function Blog() {
           </div>
           <Link
             href="/?view=blog"
-            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="group inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-night px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
             View all posts
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
