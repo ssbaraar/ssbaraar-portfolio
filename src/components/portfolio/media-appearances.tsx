@@ -32,15 +32,15 @@ const appearances: Appearance[] = [
   },
   {
     type: "podcast",
-    title: "AI & AI Agents — Setu School Podcast",
+    title: "Agentic AI Application Development",
     publisher: "Setu School",
     description:
-      "Guest on the Setu School podcast discussing AI Agents, multi-agent architectures, and the future of agentic AI systems in production.",
-    thumbnail: "",
+      "Live session with Setu School on building Agentic AI applications — covering multi-agent architectures, LangGraph, CrewAI, and deploying AI agents to production.",
+    thumbnail: "/setu-school-thumbnail.png",
     url: "https://www.linkedin.com/feed/update/urn:li:ugcPost:7340370584800739328/",
     date: "2025",
-    badge: "Podcast Guest",
-    badgeColor: "#10b981",
+    badge: "Live Session",
+    badgeColor: "#ef4444",
   },
 ];
 
