@@ -208,12 +208,14 @@ Production tutorials and case studies:
 ## Contact & social
 
 - **Email:** ssbaraar02@gmail.com
-- **LinkedIn:** https://linkedin.com/in/baraarsreesha
+- **Portfolio:** https://ssbaraar-portfolio.vercel.app
+- **LinkedIn:** https://www.linkedin.com/in/baraarsreesha
 - **GitHub:** https://github.com/ssbaraar
 - **HuggingFace:** https://huggingface.co/ssbaraar
+- **Medium:** https://medium.com/@baraarsreeshasreenivas
+- **F6S:** https://www.f6s.com/member/sreesha-baraar
 - **Twitter/X:** https://twitter.com/sreesha_baraar
 - **Book a call:** https://calendly.com/baraarsreesha/intro_call
-- **Portfolio:** https://ssbaraar-portfolio.vercel.app
 
 ---
 

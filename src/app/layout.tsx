@@ -157,10 +157,13 @@ const personSchema = {
       description:
         "AI Agent and Applied AI Engineer building agentic pipelines, RAG systems, and GTM automation for B2B revenue teams. Forward-deployed engineer based in Bengaluru, available remote worldwide.",
       sameAs: [
-        "https://linkedin.com/in/baraarsreesha",
+        "https://www.linkedin.com/in/baraarsreesha",
         "https://github.com/ssbaraar",
         "https://twitter.com/sreesha_baraar",
         "https://huggingface.co/ssbaraar",
+        "https://medium.com/@baraarsreeshasreenivas",
+        "https://www.f6s.com/member/sreesha-baraar",
+        "https://ssbaraar-portfolio.vercel.app",
       ],
       address: {
         "@type": "PostalAddress",
