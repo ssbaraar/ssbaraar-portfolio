@@ -20,7 +20,7 @@ export async function GET() {
       priority: "1.0",
     },
     {
-      loc: `${BASE_URL}/?view=blog`,
+      loc: `${BASE_URL}/blog`,
       changefreq: "daily",
       priority: "0.9",
     },
@@ -30,7 +30,7 @@ export async function GET() {
       priority: "0.5",
     },
     ...posts.map((p) => ({
-      loc: `${BASE_URL}/?blog=${p.slug}`,
+      loc: `${BASE_URL}/blog/${p.slug}`,
       changefreq: "monthly",
       priority: "0.8",
       lastmod: p.publishedAt,
