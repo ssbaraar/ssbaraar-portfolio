@@ -10,6 +10,7 @@ import { Services } from "@/components/portfolio/services";
 import { CaseStudies } from "@/components/portfolio/case-studies";
 import { Process } from "@/components/portfolio/process";
 import { TechStack } from "@/components/portfolio/tech-stack";
+import { MediaAppearances } from "@/components/portfolio/media-appearances";
 import { About } from "@/components/portfolio/about";
 import { FAQ } from "@/components/portfolio/faq";
 import { Blog } from "@/components/portfolio/blog";
@@ -29,6 +30,7 @@ export function HomePage() {
         <Hero />
         <LogoWall />
         <Stats />
+        <MediaAppearances />
         <AudienceToggle />
         <Problem />
         <Services />

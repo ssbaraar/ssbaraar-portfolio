@@ -223,6 +223,24 @@ const personSchema = {
       },
     },
     {
+      "@type": "VideoObject",
+      "@id": `${SITE_URL}/#datastax-video`,
+      name: "DataStax AI Hero: Sreesha Baraar",
+      description:
+        "Baraar Sreesha Sreenivas featured by DataStax as an AI Hero — sharing insights on Generative AI engineering, favorite dev tools (Langflow, Deepseek), and advice for aspiring AI engineers.",
+      thumbnailUrl: "https://i.ytimg.com/vi/yYd5TDdlD0A/hqdefault.jpg",
+      embedUrl: "https://www.youtube.com/embed/yYd5TDdlD0A",
+      contentUrl: "https://www.youtube.com/shorts/yYd5TDdlD0A",
+      uploadDate: "2025-01-01",
+      duration: "PT1M54S",
+      publisher: {
+        "@type": "Organization",
+        name: "DataStax",
+        url: "https://www.datastax.com",
+      },
+      author: { "@id": `${SITE_URL}/#person` },
+    },
+    {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#service`,
       name: "Baraar Sreesha — AI Engineering Services",
