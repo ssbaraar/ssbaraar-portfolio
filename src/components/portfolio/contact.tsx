@@ -83,7 +83,7 @@ export function Contact() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="https://calendly.com/baraarsreesha/intro"
+                  href="https://calendly.com/baraarsreesha/intro_call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-[#141414] transition-transform hover:-translate-y-0.5 active:translate-y-0"

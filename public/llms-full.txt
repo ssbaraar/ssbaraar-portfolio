@@ -212,7 +212,7 @@ Production tutorials and case studies:
 - **GitHub:** https://github.com/ssbaraar
 - **HuggingFace:** https://huggingface.co/ssbaraar
 - **Twitter/X:** https://twitter.com/sreesha_baraar
-- **Book a call:** https://calendly.com/baraarsreesha/intro
+- **Book a call:** https://calendly.com/baraarsreesha/intro_call
 - **Portfolio:** https://ssbaraar-portfolio.vercel.app
 
 ---

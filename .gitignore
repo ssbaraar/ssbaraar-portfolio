@@ -61,4 +61,7 @@ server.log
 .prisma/
 prisma/*.db
 prisma/*.db-journal
-.env*
+.env*k
+.agents 
+
+.tokensave

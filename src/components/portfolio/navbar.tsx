@@ -215,7 +215,7 @@ export function Navbar() {
                 );
               })}
               <Link
-                href="https://calendly.com/baraarsreesha/intro"
+                href="https://calendly.com/baraarsreesha/intro_call"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}

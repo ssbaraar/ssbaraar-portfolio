@@ -29,7 +29,7 @@ const companies: Company[] = [
 ];
 
 const CELLS = 8; // 2 rows × 4 on desktop
-const SWAP_MS = 2600; // slightly faster cadence
+const SWAP_MS = 1000;
 
 function LogoMark({ c }: { c: Company }) {
   const [err, setErr] = React.useState(false);

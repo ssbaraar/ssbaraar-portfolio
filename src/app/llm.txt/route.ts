@@ -71,7 +71,7 @@ ${blogList}
 
 ## How to work with me
 
-- **Book a 20-min intro call:** https://calendly.com/baraarsreesha/intro
+- **Book a 20-min intro call:** https://calendly.com/baraarsreesha/intro_call
 - **Email:** ssbaraar02@gmail.com
 - **LinkedIn:** https://linkedin.com/in/baraarsreesha (3,700+ followers)
 - **GitHub:** https://github.com/ssbaraar (27 public repos)
