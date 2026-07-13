@@ -9,16 +9,22 @@ import { blogPosts, type BlogPost } from "@/lib/blog-posts";
 
 type StoredPost = BlogPost & { _stored?: boolean };
 
+function byMostRecent(posts: StoredPost[]): StoredPost[] {
+  return [...posts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+}
+
 function useRecentPosts(limit = 3): StoredPost[] {
   const [posts, setPosts] = React.useState<StoredPost[]>(
-    blogPosts.slice(0, limit)
+    byMostRecent(blogPosts).slice(0, limit)
   );
   React.useEffect(() => {
     try {
       const stored = localStorage.getItem("blog_posts");
       if (stored) {
         const userPosts = JSON.parse(stored) as StoredPost[];
-        const all = [...userPosts, ...blogPosts];
+        const all = byMostRecent([...userPosts, ...blogPosts]);
         setPosts(all.slice(0, limit));
       }
     } catch {
@@ -115,7 +121,7 @@ export function Blog() {
           </Link>
         </div>
 
-        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-3">
           {recentPosts.map((post, i) => (
             <motion.div
               key={post.slug}
