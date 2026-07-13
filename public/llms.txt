@@ -40,6 +40,11 @@ Production tutorials and case studies on AI Agent and Applied AI engineering:
 - [Self-hosting n8n on GCP: A production setup with Docker, PostgreSQL, and Nginx](https://ssbaraar-portfolio.vercel.app/blog/self-hosting-n8n-on-gcp-production-setup)
 - [LangGraph vs CrewAI vs AutoGen: When to use each one — my honest comparison after shipping in all three](https://ssbaraar-portfolio.vercel.app/blog/langgraph-vs-crewai-vs-autogen-real-comparison)
 - [How I replaced a $2,000/month data subscription with a custom Clay pipeline that's actually fresher](https://ssbaraar-portfolio.vercel.app/blog/replace-2000-mo-apollo-zoominfo-with-clay-pipeline)
+- [Agentic AI in GTM & RevOps: What MCP Servers Actually Change in 2026](https://ssbaraar-portfolio.vercel.app/blog/agentic-ai-gtm-revops-mcp-servers-2026)
+- [Claude Sonnet 5 vs GPT-5.6: Which Model Should Power Your AI Agents in 2026](https://ssbaraar-portfolio.vercel.app/blog/claude-sonnet-5-vs-gpt-5-6-agentic-coding)
+- [The Best RAG Stack for B2B Knowledge Assistants in 2026 (Qdrant vs Pinecone vs FAISS vs AstraDB)](https://ssbaraar-portfolio.vercel.app/blog/best-rag-stack-2026-vector-db-comparison)
+- [AEO vs GEO vs Traditional SEO: What Actually Changed for AI Search in 2026](https://ssbaraar-portfolio.vercel.app/blog/aeo-vs-geo-vs-seo-ai-search-2026)
+- [How to Build an MCP-Powered Slack Agent for RevOps (Step-by-Step)](https://ssbaraar-portfolio.vercel.app/blog/build-mcp-powered-slack-agent-revops-tutorial)
 
 ## Contact
 

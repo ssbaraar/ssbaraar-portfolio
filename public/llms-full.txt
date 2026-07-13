@@ -203,6 +203,31 @@ Production tutorials and case studies:
    Category: Case Study
    Summary: Step-by-step breakdown of building a custom lead intelligence pipeline in Clay that replaces Apollo + ZoomInfo. Covers enrichment waterfall design, n8n integration for HubSpot sync, cost analysis, and data freshness comparison.
 
+4. **Agentic AI in GTM & RevOps: What MCP Servers Actually Change in 2026**
+   URL: https://ssbaraar-portfolio.vercel.app/blog/agentic-ai-gtm-revops-mcp-servers-2026
+   Category: Opinion
+   Summary: What Model Context Protocol (MCP) servers actually change for GTM/RevOps automation versus n8n and Zapier — where agent-driven tool access genuinely helps, where it's overhyped, and how it fits alongside deterministic workflows.
+
+5. **Claude Sonnet 5 vs GPT-5.6: Which Model Should Power Your AI Agents in 2026**
+   URL: https://ssbaraar-portfolio.vercel.app/blog/claude-sonnet-5-vs-gpt-5-6-agentic-coding
+   Category: Comparison
+   Summary: Comparing Claude Sonnet 5 against GPT-5.6 Sol, Terra, and Luna for production AI agents — tool-use reliability across long agent loops, debugging capability, and cost per completed agent task rather than cost per token.
+
+6. **The Best RAG Stack for B2B Knowledge Assistants in 2026 (Qdrant vs Pinecone vs FAISS vs AstraDB)**
+   URL: https://ssbaraar-portfolio.vercel.app/blog/best-rag-stack-2026-vector-db-comparison
+   Category: Comparison
+   Summary: Practical comparison of Qdrant, Pinecone, FAISS, and AstraDB for enterprise RAG, plus why chunking strategy, hybrid search, and reranking matter more than vector database choice.
+
+7. **AEO vs GEO vs Traditional SEO: What Actually Changed for AI Search in 2026**
+   URL: https://ssbaraar-portfolio.vercel.app/blog/aeo-vs-geo-vs-seo-ai-search-2026
+   Category: Opinion
+   Summary: Distinguishes what Google's AI Overviews actually require (standard SEO/E-E-A-T, no special markup) from what changes for ChatGPT, Perplexity, and Claude specifically (structure, llms.txt, FAQPage schema, AI-crawler allowlisting), grounded in the Princeton GEO study's citation-boost data.
+
+8. **How to Build an MCP-Powered Slack Agent for RevOps (Step-by-Step)**
+   URL: https://ssbaraar-portfolio.vercel.app/blog/build-mcp-powered-slack-agent-revops-tutorial
+   Category: Tutorial
+   Summary: Hands-on tutorial building an MCP server that exposes HubSpot deal data and Slack posting as agent tools, wiring the tool-calling loop, scheduling it, and the security/scoping mistakes made along the way.
+
 ---
 
 ## Contact & social
