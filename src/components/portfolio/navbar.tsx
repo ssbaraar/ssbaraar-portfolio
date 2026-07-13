@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { BrandMark } from "@/components/portfolio/brand-mark";
 import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -108,7 +107,11 @@ export function Navbar() {
               href="/#top"
               className="group flex items-center gap-2.5 font-display text-base font-semibold tracking-tight"
             >
-              <BrandMark className="h-9 w-9" />
+              <img
+                src="/avatar-logo.webp"
+                alt="Baraar Sreesha"
+                className="h-9 w-9 rounded-full object-cover"
+              />
               <span className="hidden sm:inline">Sreesha</span>
             </Link>
 

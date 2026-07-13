@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { BrandMark } from "@/components/portfolio/brand-mark";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { SiHuggingface } from "react-icons/si";
@@ -34,7 +33,11 @@ export function Footer() {
               href="/#top"
               className="inline-flex items-center gap-2.5 font-display text-base font-semibold text-white"
             >
-              <BrandMark tone="cream" className="h-9 w-9" />
+              <img
+                src="/avatar-logo.webp"
+                alt="Baraar Sreesha"
+                className="h-9 w-9 rounded-full object-cover"
+              />
               Baraar Sreesha
             </Link>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/55">
