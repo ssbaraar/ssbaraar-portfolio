@@ -860,6 +860,7 @@ result = crew.kickoff(inputs={"company_name": "Acme Corp"})`,
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: "agentic-ai-gtm-revops-mcp-servers-2026",
+    coverImage: "/blog/agentic-ai-gtm-revops-mcp-servers-2026-cover.webp",
     title: "Agentic AI in GTM & RevOps: What MCP Servers Actually Change in 2026",
     description:
       "MCP servers let AI agents call your CRM, Slack, and Sheets through one standard interface instead of bespoke n8n/Zapier nodes. Here's what actually changes for GTM and RevOps automation in 2026.",
@@ -1007,6 +1008,7 @@ result = crew.kickoff(inputs={"company_name": "Acme Corp"})`,
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: "claude-sonnet-5-vs-gpt-5-6-agentic-coding",
+    coverImage: "/blog/claude-sonnet-5-vs-gpt-5-6-agentic-coding-cover.webp",
     title: "Claude Sonnet 5 vs GPT-5.6: Which Model Should Power Your AI Agents in 2026",
     description:
       "Claude Sonnet 5 vs GPT-5.6 Sol, Terra, and Luna compared for production AI agents — tool-use reliability, long-run agent loops, debugging, and real cost per agent task, not just per token.",
@@ -1122,6 +1124,7 @@ while agent_should_continue(state):
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: "best-rag-stack-2026-vector-db-comparison",
+    coverImage: "/blog/best-rag-stack-2026-vector-db-comparison-cover.webp",
     title: "The Best RAG Stack for B2B Knowledge Assistants in 2026 (Qdrant vs Pinecone vs FAISS vs AstraDB)",
     description:
       "A practical comparison of Qdrant, Pinecone, FAISS, and AstraDB for enterprise RAG in 2026, plus the chunking, hybrid search, and reranking choices that matter more than the DB.",
@@ -1302,6 +1305,7 @@ while agent_should_continue(state):
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: "aeo-vs-geo-vs-seo-ai-search-2026",
+    coverImage: "/blog/aeo-vs-geo-vs-seo-ai-search-2026-cover.webp",
     title: "AEO vs GEO vs Traditional SEO: What Actually Changed for AI Search in 2026",
     description:
       "AEO vs GEO vs traditional SEO explained with 2026 data: what Google's AI Overviews actually require, what changes for ChatGPT and Perplexity, and the Princeton GEO study numbers that matter.",
@@ -1437,6 +1441,7 @@ while agent_should_continue(state):
   // ──────────────────────────────────────────────────────────────────────────
   {
     slug: "build-mcp-powered-slack-agent-revops-tutorial",
+    coverImage: "/blog/build-mcp-powered-slack-agent-revops-tutorial-cover.webp",
     title: "How to Build an MCP-Powered Slack Agent for RevOps (Step-by-Step)",
     description:
       "A hands-on MCP server tutorial: build a Slack agent that queries HubSpot for stalled deals and posts a daily RevOps summary, step by step, no n8n needed.",
