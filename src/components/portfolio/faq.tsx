@@ -48,9 +48,26 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export function FAQ() {
   return (
     <section id="faq" className="relative overflow-hidden bg-canvas py-20 sm:py-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Sparkle className="pointer-events-none absolute left-[8%] top-24 hidden h-9 w-9 text-brand-coral/40 lg:block" />
       <Star4 className="pointer-events-none absolute right-[9%] top-28 hidden h-7 w-7 text-ink/15 lg:block" />
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
