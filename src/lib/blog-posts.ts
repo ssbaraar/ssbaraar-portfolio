@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: "11 min",
     emoji: "🏗️",
     accent: "var(--lime)",
-    coverImage: "/blog/n8n-gcp-cover.svg",
+    coverImage: "/blog/n8n-gcp-cover.webp",
     keywords: [
       "self-host n8n",
       "n8n GCP",
@@ -341,7 +341,7 @@ find /tmp -name "n8n-backup-*.sql.gz" -mtime +7 -delete
     readingTime: "13 min",
     emoji: "🤖",
     accent: "var(--coral)",
-    coverImage: "/blog/langgraph-crewai-autogen-cover.svg",
+    coverImage: "/blog/langgraph-crewai-autogen-cover.webp",
     keywords: [
       "LangGraph vs CrewAI",
       "LangGraph vs AutoGen",
@@ -627,7 +627,7 @@ result = crew.kickoff(inputs={"company_name": "Acme Corp"})`,
     readingTime: "9 min",
     emoji: "💸",
     accent: "var(--lavender)",
-    coverImage: "/blog/clay-pipeline-cover.svg",
+    coverImage: "/blog/clay-pipeline-cover.webp",
     keywords: [
       "Clay pipeline",
       "replace Apollo ZoomInfo",
