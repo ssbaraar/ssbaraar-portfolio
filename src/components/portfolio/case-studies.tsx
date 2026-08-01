@@ -246,9 +246,9 @@ export function CaseStudies() {
         >
           <Quote className="h-8 w-8 text-brand-pink" fill="currentColor" />
           <p className="mt-4 font-display text-[1.35rem] font-medium leading-snug tracking-[-0.02em] text-ink sm:text-[1.7rem]">
-            &ldquo;I build the system, not just the model. From LangGraph agent
-            to FastAPI deployment to HubSpot sync — I own the full stack and I
-            don&apos;t leave until it runs in production.&rdquo;
+            &ldquo;I don&apos;t start with a model. I start in the room where
+            the work happens — then pick the tools, size the token cost, build
+            the system, and stay until the team runs it without me.&rdquo;
           </p>
           <div className="mt-6 flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-mint font-display text-base font-semibold text-night">
@@ -259,7 +259,7 @@ export function CaseStudies() {
                 Baraar Sreesha
               </div>
               <div className="text-[12px] text-muted-foreground">
-                Applied AI &amp; GTM Systems Engineer · Bengaluru
+                Associate Consultant — AI Consulting &amp; Solutions · Bengaluru
               </div>
             </div>
           </div>

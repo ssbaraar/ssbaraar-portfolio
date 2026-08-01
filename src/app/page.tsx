@@ -179,23 +179,24 @@ export async function generateMetadata({
   }
 
   return {
-    title: "Baraar Sreesha — Applied AI & GTM Engineer",
+    title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
     description:
-      "Applied AI & GTM Engineer. I build agentic pipelines, RAG systems, and Clay/n8n/HubSpot automation for B2B revenue teams — deployed to production, not just demoed.",
+      "AI Consultant & Applied AI Engineer. I embed with your team, map the process, select models and tools, model the token cost — then build and deploy agentic pipelines and RAG systems that run in production.",
     alternates: { canonical: "/" },
     openGraph: {
-      title: "Baraar Sreesha — Applied AI & GTM Engineer",
+      title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
       description:
-        "Agentic AI • RAG • GTM automation that ships to production. Bengaluru, remote worldwide.",
+        "AI consulting that ends in a shipped system • process audit, tool selection, token economics. Bengaluru, remote worldwide.",
       siteName: "Baraar Sreesha",
       type: "website",
       url: "/",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Baraar Sreesha — Applied AI & GTM Engineer" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Baraar Sreesha — AI Consultant & Applied AI Engineer" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Baraar Sreesha — Applied AI & GTM Engineer",
-      description: "Agentic AI • RAG • GTM automation that ships to production.",
+      title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
+      description:
+        "AI consulting that ends in a shipped system • process, tools, token economics.",
       images: ["/opengraph-image"],
       creator: "@sreesha_baraar",
     },

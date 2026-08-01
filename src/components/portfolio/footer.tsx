@@ -41,13 +41,13 @@ export function Footer() {
               Baraar Sreesha
             </Link>
             <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/55">
-              Applied AI &amp; GTM Systems Engineer building production RAG,
-              agentic workflows, and Clay/n8n GTM automation for revenue teams.
-              Bengaluru · remote worldwide.
+              AI Consultant &amp; Applied AI Engineer. I map the process, choose
+              the tools and models, size the token cost — then build and deploy
+              the system. Bengaluru · remote worldwide.
             </p>
             <p className="mt-4 text-[12.5px] text-white/40">
-              Open to: fractional retainers · scoped projects · full-time Applied
-              AI / GTM / FDE roles
+              Open to: fractional advisory · scoped projects · full-time AI
+              consulting / Applied AI / FDE roles
             </p>
           </div>
 

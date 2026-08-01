@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Baraar Sreesha — Applied AI & GTM Engineer";
+export const alt = "Baraar Sreesha — AI Consultant & Applied AI Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -93,9 +93,8 @@ export default function Image() {
             maxWidth: "880px",
           }}
         >
-          I build{" "}
-          <span style={{ color: "#4f8ef7" }}>AI systems</span>
-          {" "}that ship to production.
+          <span style={{ color: "#4f8ef7" }}>AI consulting</span>
+          {" "}that ends in a system you actually run.
         </div>
 
         {/* Sub-line */}
@@ -111,7 +110,7 @@ export default function Image() {
           </div>
           <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "rgba(255,255,255,0.3)" }} />
           <div style={{ fontSize: "22px", color: "rgba(255,255,255,0.55)" }}>
-            Applied AI · GTM · RAG · Bengaluru
+            AI Consultant · Applied AI Engineer · Bengaluru
           </div>
         </div>
       </div>

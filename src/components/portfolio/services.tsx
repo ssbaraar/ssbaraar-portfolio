@@ -7,7 +7,6 @@ import {
   Workflow,
   Database,
   Bot,
-  FileScan,
   Infinity as InfinityIcon,
   Clock,
   DollarSign,
@@ -19,6 +18,7 @@ import { Sparkle } from "@/components/portfolio/doodles";
 
 type Service = {
   id: string;
+  image: string;
   icon: typeof Radar;
   title: string;
   audience: string;
@@ -30,52 +30,56 @@ type Service = {
 
 const services: Service[] = [
   {
-    id: "lead-intel",
-    icon: Radar,
-    title: "GTM Lead Intelligence Sprint",
-    audience: "B2B SaaS · Outbound",
-    tagline: "100–500 sales-ready accounts in your CRM, every week.",
+    id: "ai-consulting",
+    image: "clay-n8n",
+    icon: Workflow,
+    title: "Embedded AI Consulting",
+    audience: "Leadership · Ops · Cross-functional",
+    tagline: "I sit with your team, then tell you where AI actually belongs.",
     bullets: [
-      "ICP filter design + account criteria",
-      "Sourcing via Clay, Apollo, scraping, Google Maps",
-      "Waterfall enrichment + LLM lead scoring",
-      "HubSpot / Salesforce / Airtable handoff",
+      "Embedded process mapping — how the work really happens today",
+      "AI opportunity map scored by payback, effort, and risk",
+      "Build vs buy vs API call, decided per workflow",
+      "Adoption roadmap + enablement your team can run without me",
     ],
-    price: "$1,500 – $3,000",
+    price: "$2,500 – $6,000",
+    timeline: "2–4 weeks",
+  },
+  {
+    id: "token-economics",
+    image: "docs",
+    icon: DollarSign,
+    title: "AI Cost & Tool Selection Review",
+    audience: "Teams already spending on LLMs",
+    tagline: "Same output, a fraction of the token bill.",
+    bullets: [
+      "Token spend teardown per workflow, model, and user",
+      "Model routing: cheap default, escalate only when it earns it",
+      "Caching, batching, context trimming, prompt-cost fixes",
+      "Before/after cost model + budget alerts that hold",
+    ],
+    price: "$1,500 – $3,500",
     timeline: "1–2 weeks",
   },
   {
-    id: "clay-n8n",
-    icon: Workflow,
-    title: "Clay + n8n Outbound Engine",
-    audience: "Agencies · SDR teams",
-    tagline: "Your entire outbound ops — one repeatable system.",
-    bullets: [
-      "Clay table architecture + waterfall enrichment",
-      "n8n automation + HubSpot/Salesforce push",
-      "LLM personalization (first lines, research packets)",
-      "Alerts + error handling + monitoring + docs",
-    ],
-    price: "$2,500 – $5,000",
-    timeline: "2–4 weeks",
-  },
-  {
     id: "rag",
+    image: "rag",
     icon: Database,
-    title: "RAG System Build",
-    audience: "Docs · Wikis · Compliance",
-    tagline: "Query your docs in plain English — with citations.",
+    title: "RAG & Document Intelligence",
+    audience: "Docs · Wikis · Compliance · Intake",
+    tagline: "Query your documents in plain English — with citations.",
     bullets: [
-      "Multi-document ingestion + OCR pipeline if needed",
+      "Multi-document ingestion + OCR pipeline for scanned intake",
       "Hybrid retrieval (BM25 keyword + vector semantic)",
       "Citation-grounded answers + hallucination guardrails",
-      "FastAPI service + Docker deployment",
+      "FastAPI service + Docker deployment, wired into your ops",
     ],
-    price: "$3,000 – $6,000",
-    timeline: "2–4 weeks",
+    price: "$3,000 – $8,000",
+    timeline: "2–5 weeks",
   },
   {
     id: "agents",
+    image: "agents",
     icon: Bot,
     title: "Agentic AI Workflow Build",
     audience: "Multi-step AI systems",
@@ -84,37 +88,39 @@ const services: Service[] = [
       "Multi-agent architecture (LangGraph / CrewAI / AutoGen)",
       "Tool calling, planning loops, state mgmt",
       "Self-correcting workflows with error recovery",
-      "Observability + evals + FastAPI/Docker deploy",
+      "Observability + evals + cost-per-run budgets",
     ],
     price: "$3,000 – $8,000",
     timeline: "3–5 weeks",
   },
   {
-    id: "docs",
-    icon: FileScan,
-    title: "Document Intake + AI Assistant",
-    audience: "Forex · Legal · Mortgage",
-    tagline: "OCR + an AI layer over your document-heavy intake.",
+    id: "lead-intel",
+    image: "lead-intel",
+    icon: Radar,
+    title: "GTM Lead Intelligence Sprint",
+    audience: "B2B SaaS · Outbound",
+    tagline: "100–500 sales-ready accounts in your CRM, every week.",
     bullets: [
-      "PDF / form / document ingestion + OCR pipeline",
-      "Field extraction + structured data output",
-      "RAG assistant for internal document search",
-      "FastAPI REST API wired into CRM / ops",
+      "ICP filter design + account criteria",
+      "Sourcing via Clay, Apollo, scraping, Google Maps",
+      "Waterfall enrichment + LLM lead scoring within a set cost/lead",
+      "HubSpot / Salesforce / Airtable handoff",
     ],
-    price: "$3,000 – $8,000",
-    timeline: "3–6 weeks",
+    price: "$1,500 – $3,000",
+    timeline: "1–2 weeks",
   },
   {
     id: "retainer",
+    image: "retainer",
     icon: InfinityIcon,
-    title: "Fractional AI Retainer",
-    audience: "Ongoing AI engineering",
-    tagline: "A dedicated AI engineer, on tap.",
+    title: "Fractional AI Consultant",
+    audience: "Ongoing advisory + engineering",
+    tagline: "A consultant who also writes the code, on tap.",
     bullets: [
       "8–20 hrs/week depending on tier",
-      "Weekly async updates + Loom walkthroughs",
+      "Standing seat in your planning + vendor calls",
+      "Monthly AI spend review + roadmap session",
       "Priority response within 4 business hours",
-      "Monthly scope review + roadmap session",
     ],
     price: "$1,500 – $4,000 / mo",
     timeline: "Ongoing",
@@ -156,7 +162,7 @@ function ServiceCard({ service, index }: { service: Service; index: number }) {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`/services/${service.id}.png`}
+                src={`/services/${service.image}.png`}
                 alt={`${service.title} — clay illustration`}
                 className="h-full w-full object-contain"
                 loading="lazy"
@@ -270,16 +276,16 @@ export function Services() {
               Services
             </motion.span>
             <h2 className="max-w-2xl font-display text-[2.25rem] font-semibold leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">
-              Six ways to put me to{" "}
+              Advisory first,{" "}
               <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
-                work
+                then the build
               </span>
               .
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-muted-foreground sm:text-right">
-            Fixed-price or retainer. Every project ships with deployment + 2-week
-            post-launch support.
+            Fixed-price or retainer. Every engagement includes a written cost
+            model, deployment, and 2-week post-launch support.
           </p>
         </div>
 
@@ -298,11 +304,11 @@ export function Services() {
         >
           <div>
             <h3 className="font-display text-xl font-semibold tracking-[-0.02em]">
-              AI Audit — entry offer
+              AI Readiness Audit — entry offer
             </h3>
             <p className="mt-1.5 text-[14px] text-white/80">
-              45-min call + written roadmap. Filters tire-kickers, feeds bigger
-              projects.
+              45-min working session + written roadmap: where AI pays off, which
+              tools, what it costs to run.
             </p>
           </div>
           <div className="text-left sm:text-right">

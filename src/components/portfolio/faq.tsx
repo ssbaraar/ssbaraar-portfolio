@@ -11,28 +11,40 @@ import { Sparkle, Star4 } from "@/components/portfolio/doodles";
 
 const faqs = [
   {
-    q: "What's your rate?",
-    a: "Fixed-price: $1,500 (lead intelligence sprint) → $8,000 (full RAG / multi-agent build). Fractional retainers start at $1,500/month. I publish ranges to save us both time. Specifics on a 20-min call.",
+    q: "Who is Baraar Sreesha?",
+    a: "Baraar Sreesha Sreenivas — also written Sreesha Baraar, Baraar Sreenivas, or B. Sreesha, and known online as ssbaraar — is an AI consultant and Applied AI Engineer based in Bengaluru, India. He is currently Associate Consultant for AI Consulting & Solutions at Motiveminds Consulting, where he embeds with client teams to map their processes, select the right models and tools, model token cost, and build the resulting systems. Previously Senior Software Engineer for GenAI & Solutions Architecture at Motiveminds, GenAI/GTM engineer at W3 SaaS Technologies (Dubai DIFC), and a full-stack developer at Hyderabad Forex Limited. He holds a B.E. in Computer Science from JSS Science and Technology University, Mysuru, and was featured by DataStax as an AI Hero.",
   },
   {
-    q: "How long does a typical project take?",
-    a: "1–6 weeks. Lead intelligence sprint: 1–2 weeks. RAG system: 3–4 weeks. Multi-agent workflow: 3–5 weeks. Detailed scope doc with timeline before any work begins — no surprises.",
+    q: "What does a consulting engagement actually look like?",
+    a: "I embed with the team doing the work for 3–5 days — sitting in on the process, tracing every handoff and workaround. You get a process map, a scored list of AI opportunities (payback vs effort vs risk), a tool and model recommendation per workflow, and the token cost to run it at your volume. Then we decide together what gets built.",
+  },
+  {
+    q: "How do you control AI / token costs?",
+    a: "I model cost per run before choosing a model. Then: route cheap models by default and escalate only when the task earns it, cache and batch what repeats, trim context aggressively, and set per-workflow budget alerts. Most teams I review are paying frontier prices for work a small model does identically.",
+  },
+  {
+    q: "How do you choose which tools and models to use?",
+    a: "Build vs buy vs plain API call, decided per workflow — against your constraints, not my preferences. Off-the-shelf wins more often than vendors admit. I put the trade-offs (cost, lock-in, latency, data residency, who maintains it) in writing so your team can defend the decision after I'm gone.",
+  },
+  {
+    q: "What's your rate?",
+    a: "Fixed-price: $1,500 (cost & tool selection review) → $8,000 (full RAG / multi-agent build). Embedded consulting runs $2,500–$6,000. Fractional retainers start at $1,500/month. I publish ranges to save us both time.",
+  },
+  {
+    q: "How long does a typical engagement take?",
+    a: "1–6 weeks. Cost & tool review: 1–2 weeks. Embedded consulting: 2–4 weeks. RAG system: 2–5 weeks. Multi-agent workflow: 3–5 weeks. Detailed scope doc with timeline before any work begins — no surprises.",
   },
   {
     q: "Do you work on a retainer?",
-    a: "Yes. 8–20 hrs/week, $1,500–$4,000/month. Minimum 4-week commitment. Weekly async updates + monthly roadmap session included.",
+    a: "Yes. 8–20 hrs/week, $1,500–$4,000/month. Minimum 4-week commitment. Standing seat in planning and vendor calls, monthly AI spend review, and a roadmap session included.",
   },
   {
     q: "Can you show NDA-protected client work?",
     a: "I share anonymized-but-specific details: industry, size, stack, outcomes. Reference contacts available (with client permission) for serious engagements.",
   },
   {
-    q: "Do you only do the build, or also the strategy?",
-    a: "Both. I translate your business objective into an architecture first — then build it. I won't recommend a technology before I understand what's actually broken.",
-  },
-  {
-    q: "What tools / stack do you use?",
-    a: "GenAI: LangGraph, CrewAI, AutoGen, LangChain. RAG: Qdrant, Pinecone, FAISS. GTM: Clay, n8n, HubSpot, Apollo. Backend: FastAPI + Docker. Right tool for the job, not the one I'm most comfortable with.",
+    q: "Do you only advise, or also build?",
+    a: "Both — that's the point. I translate the business objective into an architecture first, then build and deploy it myself. A recommendation I can't ship is a recommendation I shouldn't have made.",
   },
   {
     q: "Do you handle deployment, or just the build?",
@@ -40,7 +52,7 @@ const faqs = [
   },
   {
     q: "Are you open to full-time roles?",
-    a: "Yes — remote Applied AI, GTM Engineer, Forward Deployed AI, AI Automation Engineering roles. Serious inquiries welcome.",
+    a: "Yes — remote AI Consultant, Applied AI, Forward Deployed AI, AI Solutions Architect, and GTM Engineer roles. Serious inquiries welcome.",
   },
   {
     q: "Where are you based and what timezone?",

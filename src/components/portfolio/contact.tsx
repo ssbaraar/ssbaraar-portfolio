@@ -66,19 +66,19 @@ export function Contact() {
           <div className="relative grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:gap-12">
             <div>
               <span className="mb-4 block text-[12px] font-semibold uppercase tracking-[0.2em] text-white/50">
-                Book a demo
+                Start here
               </span>
               <h2 className="font-display text-[2.4rem] font-semibold leading-[1.02] tracking-[-0.035em] text-balance text-white sm:text-5xl lg:text-[3.5rem]">
-                Ready to build something that{" "}
+                Not sure where AI fits{" "}
                 <span className="font-serif-italic font-normal tracking-normal text-brand-ochre">
-                  actually runs
+                  in your company
                 </span>{" "}
-                in production?
+                yet?
               </h2>
               <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/75 sm:text-base">
-                Manual ops that should be automated. AI prototype that never
-                shipped. GTM system on spreadsheets. A 20-min call is enough for me
-                to tell you if I can help.
+                A pilot that never shipped. A token bill nobody can explain. Four
+                vendors pitching the same thing. A 20-min call is enough for me to
+                tell you if I can help — and where I&apos;d start.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">

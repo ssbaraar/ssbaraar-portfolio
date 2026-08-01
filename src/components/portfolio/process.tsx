@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { PhoneCall, FileText, Hammer, Rocket } from "lucide-react";
+import { PhoneCall, FileText, Users, Rocket } from "lucide-react";
 import { Sparkle } from "@/components/portfolio/doodles";
 
 const steps = [
@@ -16,27 +16,27 @@ const steps = [
   },
   {
     id: 2,
-    icon: FileText,
-    title: "Scoping & proposal",
-    duration: "2–3 days",
+    icon: Users,
+    title: "Sit in & map the process",
+    duration: "3–5 days",
     description:
-      "I map the architecture, scope the build, define deliverables + acceptance criteria. Fixed-price proposal. No hourly surprises.",
+      "I embed with the team doing the work. Every handoff, every workaround, every spreadsheet. You get a process map and a scored list of where AI actually pays off.",
   },
   {
     id: 3,
-    icon: Hammer,
-    title: "Build & iterate",
-    duration: "1–6 weeks",
+    icon: FileText,
+    title: "Tools, models & cost model",
+    duration: "2–3 days",
     description:
-      "I build with weekly async Loom updates. You see every major decision. No black boxes, no surprise pivots.",
+      "Build vs buy vs API, per workflow. Which model at which step, and the token cost per run at your volume. Fixed-price proposal, no hourly surprises.",
   },
   {
     id: 4,
     icon: Rocket,
-    title: "Deploy + handoff",
-    duration: "Final week",
+    title: "Build, deploy & enable",
+    duration: "1–6 weeks",
     description:
-      "I deploy, write the docs, run a walkthrough call. You own the code. 2-week post-launch support included.",
+      "I build with weekly async Loom updates, deploy it, write the docs, and train your team. You own the code. 2-week post-launch support included.",
   },
 ];
 
@@ -68,7 +68,7 @@ export function Process() {
             How we work
           </motion.span>
           <h2 className="font-display text-[2.25rem] font-semibold tracking-[-0.035em] text-ink sm:text-5xl">
-            How it works,{" "}
+            The engagement,{" "}
             <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
               step by step.
             </span>

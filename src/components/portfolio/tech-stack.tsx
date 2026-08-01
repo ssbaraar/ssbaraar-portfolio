@@ -98,9 +98,9 @@ const clusters: Cluster[] = [
     items: ["Docker", "Docker Compose", "GCP", "PostgreSQL", "Nginx", "CI/CD", "Git"],
   },
   {
-    title: "Observability & evals",
+    title: "Observability, evals & cost",
     icon: BarChart2,
-    items: ["LangSmith", "Langfuse", "Phoenix Arize", "Evals", "Guardrails", "Hallucination control"],
+    items: ["LangSmith", "Langfuse", "Token cost tracking", "Model routing", "Evals", "Guardrails"],
   },
   {
     title: "Data & scraping",
@@ -163,8 +163,8 @@ export function TechStack() {
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-muted-foreground">
-            I pick the right tool for the problem, not the one I&apos;m most
-            comfortable with. Here&apos;s the bench.
+            Tool selection is half the job. I pick against your constraints —
+            cost, lock-in, latency — not my comfort. Here&apos;s the bench.
           </p>
         </div>
 

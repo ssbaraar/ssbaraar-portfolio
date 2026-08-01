@@ -23,14 +23,14 @@ const stats: Stat[] = [
     value: 5,
     suffix: "+",
     label: "deploys",
-    hint: "production AI systems shipped",
+    hint: "advised, built, and shipped",
     color: "var(--brand-mint)",
   },
   {
     value: 40,
     suffix: "%",
     label: "reduction",
-    hint: "manual ops via OCR pipeline",
+    hint: "manual ops removed after process audit",
     color: "var(--brand-coral)",
   },
   {

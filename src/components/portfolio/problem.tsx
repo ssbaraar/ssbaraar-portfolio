@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Zap, CheckCircle2, Clock } from "lucide-react";
+import { TrendingUp, Zap, DollarSign, Clock } from "lucide-react";
 import { Scribble, Star4 } from "@/components/portfolio/doodles";
 
 const problems = [
   {
+    icon: Clock,
+    title: "The tool got picked before the process was mapped.",
+    body: "A vendor was chosen in a demo call. Nobody sat with the team doing the work, so the system automates a process that never existed.",
+  },
+  {
+    icon: DollarSign,
+    title: "The token bill outran the value.",
+    body: "Frontier model on every call, full context every time, no caching or routing. The pilot works — it just costs more than the people it replaced.",
+  },
+  {
     icon: Zap,
     title: "Worked in staging, broke on day one.",
     body: "Pilot looked great in the demo. Then it hit real data, real users, real latency. Production is a different planet.",
-  },
-  {
-    icon: Clock,
-    title: "Manual work that should've been automated.",
-    body: "Revenue team researching leads by hand. CRM updated one field at a time. Prospects routed through spreadsheets.",
-  },
-  {
-    icon: CheckCircle2,
-    title: "Beautiful demo. Nobody uses it.",
-    body: "Vendor delivered a slick demo. The system around it — retrieval, routing, fallbacks — was never built.",
   },
 ];
 
@@ -84,8 +84,8 @@ export function Problem() {
           <p className="text-[15px] sm:text-base">
             <span className="font-semibold">My lane:</span>{" "}
             <span className="text-ink/75">
-              AI engineering ∩ revenue operations. I build the system, not just
-              the model.
+              consulting that ends in code. I map the process, choose the tools,
+              size the token cost — then build the system, not just the model.
             </span>
           </p>
         </motion.div>

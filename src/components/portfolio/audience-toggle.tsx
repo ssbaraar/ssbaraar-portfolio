@@ -12,20 +12,20 @@ const content = {
   recruiters: {
     label: "I'm hiring",
     icon: Briefcase,
-    headline: "Hire an engineer who ships, not one who demos.",
-    sub: "2.5+ years building RAG, multi-agent workflows, and GTM automation that runs in production. I don't leave until it's deployed, monitored, and the team can run it without me.",
+    headline: "Hire a consultant who ships the thing he recommended.",
+    sub: "2.5+ years building RAG, multi-agent workflows, and GTM automation that runs in production — now advising on where AI belongs, which tools to buy, and what it costs to run. I don't leave until the team can run it without me.",
     roles: [
+      "AI Consultant",
       "Applied AI Engineer",
-      "GenAI Engineer",
       "Forward Deployed AI Engineer",
+      "AI Solutions Architect",
       "GTM Engineer / AI GTM",
-      "AI Automation Engineer",
       "Fractional / contract AI",
     ],
     proof: [
+      "Associate Consultant — AI Consulting & Solutions @ Motiveminds",
       "Senior SWE — GenAI @ Motiveminds (enterprise SAP/Salesforce)",
       "SWE — GenAI/GTM @ W3 SaaS, Dubai DIFC (fintech-grade)",
-      "GenAI Research Intern @ Blockchain Laboratories, Wyoming",
       "Full-stack @ Hyderabad Forex (OCR pipeline, regulated finance)",
     ],
     cta: "Download ATS resume",
@@ -34,15 +34,15 @@ const content = {
   founders: {
     label: "I need a build",
     icon: Rocket,
-    headline: "Your AI pilot stalls in staging. I finish the build.",
-    sub: "I work with founder-led B2B SaaS, outbound agencies, and SMBs ($1M–$10M) to replace manual GTM work with systems that actually run.",
+    headline: "You know AI should help. Nobody's told you where.",
+    sub: "I sit with founder-led B2B SaaS, agencies, and SMBs ($1M–$10M): map the process, pick the tools, size the token cost — then build what survives that filter.",
     roles: [
-      "Lead Intelligence Sprint",
-      "Clay + n8n Outbound Engine",
-      "RAG Knowledge System",
+      "Embedded AI Consulting",
+      "AI Cost & Tool Selection Review",
+      "RAG & Document Intelligence",
       "Agentic AI Workflow",
-      "Document Intake + AI Assistant",
-      "Fractional AI Retainer",
+      "Lead Intelligence Sprint",
+      "Fractional AI Consultant",
     ],
     proof: [
       "Replaced $2,000/mo data subscriptions with a fresher Clay pipeline",
@@ -75,7 +75,7 @@ export function AudienceToggle() {
             Pick your lane
           </motion.span>
           <h2 className="font-display text-[2rem] font-semibold tracking-[-0.03em] text-ink sm:text-[2.6rem]">
-            Same engineer,{" "}
+            Same consultant,{" "}
             <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
               two ways to work.
             </span>

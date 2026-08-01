@@ -55,9 +55,9 @@ export function Hero() {
         <motion.div {...fade(0)} className="mb-7 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-card px-3 py-1.5 text-[13px] font-medium text-ink">
             <span className="rounded-full bg-brand-teal px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-              Open
+              New
             </span>
-            Available for fractional &amp; full-time — Q3 2026
+            Associate Consultant @ Motiveminds — open for advisory &amp; builds
           </span>
         </motion.div>
 
@@ -66,9 +66,9 @@ export function Hero() {
           {...fade(0.08)}
           className="font-display text-[2.7rem] font-semibold leading-[1.02] tracking-[-0.04em] text-balance text-ink sm:text-6xl lg:text-[4.4rem]"
         >
-          Applied AI systems,{" "}
+          AI consulting that ends in{" "}
           <span className="font-serif-italic font-normal tracking-normal text-brand-coral">
-            shipped to production.
+            a system you actually run.
           </span>
         </motion.h1>
 
@@ -77,9 +77,9 @@ export function Hero() {
           className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed sm:text-[17px]"
           style={{ color: "#4a4a46" }}
         >
-          I&apos;m an Applied AI Engineer who builds RAG pipelines, multi-agent
-          systems, and Clay / n8n / HubSpot automation that B2B revenue teams
-          actually run — not demos that die in staging.
+          I&apos;m an AI consultant and engineer. I sit inside your company, map
+          how the work actually happens, decide where AI belongs, pick the
+          models and tools that fit your budget — then build and deploy it.
         </motion.p>
 
         {/* CTAs */}
@@ -109,8 +109,8 @@ export function Hero() {
           {...fade(0.4)}
           className="mt-8 text-[13px] font-medium text-muted-foreground"
         >
-          5+ systems shipped · Bengaluru, IST · remote worldwide · replies in 1
-          business day
+          Process audit → tool &amp; model selection → token economics → shipped
+          system · Bengaluru, IST · remote worldwide
         </motion.p>
       </div>
     </section>
