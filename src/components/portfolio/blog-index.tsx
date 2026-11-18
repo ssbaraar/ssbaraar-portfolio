@@ -38,7 +38,7 @@ const categories = ["All", "Tutorial", "Comparison", "Case Study", "Opinion"] as
 function BlogCard({ post }: { post: StoredPost }) {
   return (
     <Link
-      href={`/?blog=${post.slug}`}
+      href={post._stored ? `/?blog=${post.slug}` : `/blog/${post.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-foreground/20"
     >
       {post.coverImage ? (
@@ -120,7 +120,7 @@ export function BlogIndex() {
 
   return (
     <>
-      <PageViewTracker />
+      <React.Suspense fallback={null}><PageViewTracker /></React.Suspense>
       <main className="flex-1 pt-28 pb-16 sm:pt-32 sm:pb-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Back link */}
@@ -148,8 +148,7 @@ export function BlogIndex() {
             transition={{ delay: 0.05 }}
             className="font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
           >
-            Things I&apos;ve{" "}
-            shipped &amp; learned.
+            Engineering field notes
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

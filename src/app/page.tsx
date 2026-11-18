@@ -1,10 +1,9 @@
-import { Navbar } from "@/components/portfolio/navbar";
+import { permanentRedirect } from "next/navigation";
 import { Footer } from "@/components/portfolio/footer";
 import { CursorGlow } from "@/components/portfolio/cursor-glow";
 import { AntiInspect } from "@/components/portfolio/anti-inspect";
 import { AdminPanel } from "@/components/portfolio/admin-panel";
 import { HomePage } from "@/components/portfolio/home-page";
-import { BlogIndex } from "@/components/portfolio/blog-index";
 import { BlogPostPage } from "@/components/portfolio/blog-post-page";
 import { blogPosts } from "@/lib/blog-posts";
 import { getAllPosts, getPostBySlug } from "@/lib/storage";
@@ -33,6 +32,10 @@ export default async function Home({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
+
+  if (params.blog && blogPosts.some(post => post.slug === params.blog)) {
+    permanentRedirect(`/blog/${params.blog}`);
+  }
 
   // Full-screen blog post view
   if (params.blog) {
@@ -86,20 +89,8 @@ export default async function Home({
   }
 
   // Blog index view
-  if (params.view === "blog") {
-    return (
-      <div className="relative flex min-h-screen flex-col bg-background">
-        <AntiInspect />
-        <CursorGlow />
-        <Navbar />
-        <BlogIndex />
-        <Footer />
-        <AdminPanel />
-      </div>
-    );
-  }
+  if (params.view === "blog") permanentRedirect("/blog");
 
-  // Default: homepage
   return <HomePage />;
 }
 
@@ -178,27 +169,13 @@ export async function generateMetadata({
     };
   }
 
+  const title = "Baraar Sreesha | Applied AI Engineer & AI Consultant";
+  const description = "Explore Baraar Sreesha’s enterprise RAG, CRM automation and Python engineering work. Read case studies, view his résumé or book an AI consulting call.";
   return {
-    title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
-    description:
-      "AI Consultant & Applied AI Engineer. I embed with your team, map the process, select models and tools, model the token cost — then build and deploy agentic pipelines and RAG systems that run in production.",
+    title: { absolute: title },
+    description,
     alternates: { canonical: "/" },
-    openGraph: {
-      title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
-      description:
-        "AI consulting that ends in a shipped system • process audit, tool selection, token economics. Bengaluru, remote worldwide.",
-      siteName: "Baraar Sreesha",
-      type: "website",
-      url: "/",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Baraar Sreesha — AI Consultant & Applied AI Engineer" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Baraar Sreesha — AI Consultant & Applied AI Engineer",
-      description:
-        "AI consulting that ends in a shipped system • process, tools, token economics.",
-      images: ["/opengraph-image"],
-      creator: "@sreesha_baraar",
-    },
+    openGraph: { title, description, type: "profile", url: "/", images: ["/opengraph-image"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/opengraph-image"] },
   };
 }

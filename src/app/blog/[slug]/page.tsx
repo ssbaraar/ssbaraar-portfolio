@@ -1,3 +1,4 @@
+import "../journal.css";
 import { Suspense } from "react";
 import { blogPosts } from "@/lib/blog-posts";
 import { BlogPostPage } from "@/components/portfolio/blog-post-page";
@@ -96,7 +97,7 @@ export default async function BlogPostRoute({
   };
 
   return (
-    <>
+    <div className="journal">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -104,6 +105,6 @@ export default async function BlogPostRoute({
       <Suspense fallback={null}>
         <BlogPostPage post={post} allPosts={blogPosts} />
       </Suspense>
-    </>
+    </div>
   );
 }

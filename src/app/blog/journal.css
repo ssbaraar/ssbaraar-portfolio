@@ -1,0 +1,13 @@
+.journal {
+  color-scheme:light;
+  --background:#f8f7f1; --foreground:#20231f; --card:#f8f7f1;
+  --card-foreground:#20231f; --secondary:#e8eade; --primary:#44583a;
+  --muted-foreground:#51594c; --border:#bfc3b7;
+  color:var(--foreground); background:var(--background);
+}
+.journal-header { display:flex; justify-content:space-between; align-items:center; padding:22px 5vw; border-bottom:1px solid var(--border); }
+.journal-header a { font-weight:bold; }
+.journal-header span { font:12px monospace; text-transform:uppercase; }
+.journal :is(h1,h2,h3) { font-family:Georgia,serif; font-weight:400; letter-spacing:-.035em; }
+.journal :is(.rounded-2xl,.rounded-3xl) { border-radius:3px; }
+.journal-header + main { padding-top:2.5rem; }

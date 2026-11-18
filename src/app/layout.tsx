@@ -1,44 +1,10 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  Bricolage_Grotesque,
-  JetBrains_Mono,
-  Instrument_Serif,
-} from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/portfolio/theme-provider";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://ssbaraar-portfolio.vercel.app";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-  style: ["normal", "italic"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -48,62 +14,6 @@ export const metadata: Metadata = {
   },
   description:
     "AI Consultant & Applied AI Engineer. I embed with your team, map the process, select the models and tools, model the token cost — then build and deploy agentic pipelines and RAG systems that run in production.",
-  keywords: [
-    "AI Consultant",
-    "AI consulting",
-    "AI adoption consultant",
-    "AI integration consultant",
-    "LLM cost optimization",
-    "token cost optimization",
-    "AI tool selection",
-    "AI process audit",
-    "AI Agent Engineer",
-    "Applied AI Engineer",
-    "GenAI Engineer",
-    "Agentic Engineer",
-    "Agentic Systems Engineer",
-    "Forward Deployed Engineer",
-    "Fractional GTM Engineer",
-    "AI Automation Engineer",
-    "GTM Engineer",
-    "Clay n8n Specialist",
-    "Make Zapier Automation",
-    "RAG",
-    "LangGraph",
-    "CrewAI",
-    "AutoGen",
-    "FastAPI",
-    "Clay",
-    "n8n",
-    "Make",
-    "Zapier",
-    "HubSpot automation",
-    "Fractional AI",
-    "Baraar",
-    "Sreesha",
-    "Sreenivas",
-    "Baraar Sreesha",
-    "Baraar Sreenivas",
-    "Sreesha Baraar",
-    "Sreesha Sreenivas",
-    "Sreenivas Baraar",
-    "Sreenivas Sreesha",
-    "Baraar Sreesha Sreenivas",
-    "Baraar Sreenivas Sreesha",
-    "Sreesha Baraar Sreenivas",
-    "Sreesha Sreenivas Baraar",
-    "Sreenivas Baraar Sreesha",
-    "Sreenivas Sreesha Baraar",
-    "SSB",
-    "ssbaraar",
-    "B Sreesha",
-    "Sreenivas B",
-    "Baraar Sree",
-    "Srini B",
-    "self-host n8n GCP",
-    "LangGraph vs CrewAI comparison",
-    "Clay pipeline lead intelligence",
-  ],
   authors: [{ name: "Baraar Sreesha Sreenivas", url: SITE_URL }],
   creator: "Baraar Sreesha Sreenivas",
   alternates: {
@@ -148,44 +58,10 @@ const personSchema = {
       givenName: "Baraar",
       additionalName: "Sreesha",
       familyName: "Sreenivas",
-      alternateName: [
-        // singles
-        "Baraar",
-        "Sreesha",
-        "Sreenivas",
-        // initialisms + short forms people actually type
-        "SSB",
-        "B Sreesha",
-        "B. Sreesha",
-        "Sreenivas B",
-        "Sreenivas B.",
-        "Baraar Sree",
-        "Sree Baraar",
-        "Srini B",
-        "Srini Baraar",
-        "ssbaraar",
-        // 2-word permutations
-        "Baraar Sreesha",
-        "Baraar Sreenivas",
-        "Sreesha Baraar",
-        "Sreesha Sreenivas",
-        "Sreenivas Baraar",
-        "Sreenivas Sreesha",
-        // 3-word permutations
-        "Baraar Sreesha Sreenivas",
-        "Baraar Sreenivas Sreesha",
-        "Sreesha Baraar Sreenivas",
-        "Sreesha Sreenivas Baraar",
-        "Sreenivas Baraar Sreesha",
-        "Sreenivas Sreesha Baraar",
-      ],
+      alternateName: ["Baraar Sreesha", "Sreesha Baraar", "ssbaraar"],
       url: SITE_URL,
       email: "ssbaraar02@gmail.com",
       jobTitle: "AI Consultant & Applied AI Engineer",
-      hasOccupation: {
-        "@type": "Occupation",
-        name: "Associate Consultant — AI Consulting & Solutions",
-      },
       worksFor: {
         "@type": "Organization",
         name: "Motiveminds Consulting Private Limited",
@@ -256,14 +132,7 @@ const personSchema = {
       name: "Baraar Sreesha",
       description: "Portfolio and blog of Baraar Sreesha — AI Agent & Applied AI Engineer",
       publisher: { "@id": `${SITE_URL}/#person` },
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/?view=blog&q={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
+
     },
     {
       "@type": "VideoObject",
@@ -315,7 +184,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${bricolage.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground`}
+        className="font-sans antialiased bg-background text-foreground"
       >
         <script
           type="application/ld+json"

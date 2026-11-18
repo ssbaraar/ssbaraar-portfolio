@@ -62,6 +62,10 @@
 }
 
 :root {
+  --font-inter: Arial, Helvetica, sans-serif;
+  --font-bricolage: Arial, Helvetica, sans-serif;
+  --font-instrument: Georgia, serif;
+  --font-jetbrains-mono: ui-monospace, Menlo, monospace;
   --radius: 0.75rem; /* Clay md — buttons & inputs 12px; cards use rounded-2xl/3xl */
 
   /* Clay brand palette (hex per spec) */
